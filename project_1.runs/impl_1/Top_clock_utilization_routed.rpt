@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------
 | Tool Version      : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date              : Fri Jan 03 23:10:00 2025
+| Date              : Fri Jan 03 23:46:00 2025
 | Host              : Chiaro running 64-bit major release  (build 9200)
 | Command           : report_clock_utilization -file Top_clock_utilization_routed.rpt
 | Design            : Top
@@ -47,7 +47,7 @@ Table of Contents
 +-------+-------+-----------------+------------+----------------+--------------+------+-------------------+---------------+-------------+-----------------+--------------+-------+-------------------------+------------------+
 | GlbID | SrcId | Driver Type/Pin | Constraint | Site           | Clock Region | Root | Clock Delay Group | Clock Regions | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin              | Net              |
 +-------+-------+-----------------+------------+----------------+--------------+------+-------------------+---------------+-------------+-----------------+--------------+-------+-------------------------+------------------+
-| g0    | src0  | BUFG/O          | None       | BUFGCTRL_X0Y0  | n/a          |      |                   |             2 |          46 |               1 |              |       | oVSync_OBUF_BUFG_inst/O | oVSync_OBUF_BUFG |
+| g0    | src0  | BUFG/O          | None       | BUFGCTRL_X0Y0  | n/a          |      |                   |             2 |          50 |               1 |              |       | oVSync_OBUF_BUFG_inst/O | oVSync_OBUF_BUFG |
 | g1    | src1  | BUFG/O          | None       | BUFGCTRL_X0Y16 | n/a          |      |                   |             2 |          41 |               0 |              |       | iClk_IBUF_BUFG_inst/O   | iClk_IBUF_BUFG   |
 +-------+-------+-----------------+------------+----------------+--------------+------+-------------------+---------------+-------------+-----------------+--------------+-------+-------------------------+------------------+
 * Note: Multiple constraint types applied to the driver. Please check for potential conflicts.
@@ -59,7 +59,7 @@ Table of Contents
 +-------+--------+-----------------+------------+---------------+--------------+-------------+-----------------+---------------------+--------------+----------------------------+---------------------------+
 | SrcID | GlbIDs | Driver Type/Pin | Constraint | Site          | Clock Region | Clock Loads | Non-Clock Loads | Source Clock Period | Source Clock | Driver Pin                 | Net                       |
 +-------+--------+-----------------+------------+---------------+--------------+-------------+-----------------+---------------------+--------------+----------------------------+---------------------------+
-| src0  | g0     | FDRE/Q          | None       | SLICE_X77Y142 | X1Y2         |           0 |               2 |                     |              | game/VGA_Disp/oVSync_reg/Q | game/VGA_Disp/oVSync_OBUF |
+| src0  | g0     | FDRE/Q          | None       | SLICE_X75Y139 | X1Y2         |           0 |               2 |                     |              | game/VGA_Disp/oVSync_reg/Q | game/VGA_Disp/oVSync_OBUF |
 | src1  | g1     | IBUF/O          | IOB_X1Y126 | IOB_X1Y126    | X1Y2         |           0 |               1 |                     |              | iClk_IBUF_inst/O           | iClk_IBUF                 |
 +-------+--------+-----------------+------------+---------------+--------------+-------------+-----------------+---------------------+--------------+----------------------------+---------------------------+
 * Note: Multiple constraint types applied to the driver. Please check for potential conflicts.
@@ -71,8 +71,8 @@ Table of Contents
 +-------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+-----------------------------+-----------------------+
 | LocId | Driver Type/Pin | Constraint | Site/BEL          | Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock | Driver Pin                  | Net                   |
 +-------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+-----------------------------+-----------------------+
-| 0     | FDRE/Q          | None       | SLICE_X72Y139/AFF | X1Y2         |          30 |               1 |              |       | game/VGA_Disp/clk_25M_reg/Q | game/VGA_Disp/clk_25M |
-| 1     | FDRE/Q          | None       | SLICE_X72Y138/AFF | X1Y2         |           1 |               1 |              |       | game/VGA_Disp/clk_50M_reg/Q | game/VGA_Disp/clk_50M |
+| 0     | FDRE/Q          | None       | SLICE_X75Y132/AFF | X1Y2         |          30 |               1 |              |       | game/VGA_Disp/clk_25M_reg/Q | game/VGA_Disp/clk_25M |
+| 1     | FDRE/Q          | None       | SLICE_X74Y132/AFF | X1Y2         |           1 |               1 |              |       | game/VGA_Disp/clk_50M_reg/Q | game/VGA_Disp/clk_50M |
 +-------+-----------------+------------+-------------------+--------------+-------------+-----------------+--------------+-------+-----------------------------+-----------------------+
 * Note: Multiple constraint types applied to the driver. Please check for potential conflicts.
 
@@ -89,8 +89,8 @@ Table of Contents
 | X1Y0              |    0 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     5 |    0 |     0 |    0 |     0 |    0 |     0 |    0 | 12000 |    0 |  2200 |    0 |     0 |    0 |    20 |    0 |    40 |
 | X0Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 16000 |    0 |  2400 |    0 |     0 |    0 |    10 |    0 |    20 |
 | X1Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 15200 |    0 |  2600 |    0 |     0 |    0 |    30 |    0 |    40 |
-| X0Y2              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   32 | 16000 |    1 |  2400 |    0 |     0 |    0 |    10 |    0 |    20 |
-| X1Y2              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   62 | 15200 |    2 |  2600 |    0 |     0 |    0 |    30 |    0 |    40 |
+| X0Y2              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   25 | 16000 |    1 |  2400 |    0 |     0 |    0 |    10 |    0 |    20 |
+| X1Y2              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |   39 | 15200 |    2 |  2600 |    0 |     0 |    0 |    30 |    0 |    40 |
 | X0Y3              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 | 20800 |    0 |  2400 |    0 |     0 |    0 |    10 |    0 |    20 |
 | X1Y3              |    0 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     5 |    0 |     0 |    0 |     0 |    0 |     0 |    0 | 10800 |    0 |  2000 |    0 |     0 |    0 |    15 |    0 |    40 |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
@@ -119,7 +119,7 @@ Table of Contents
 | GlbID | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net              |
 +-------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+------------------+
 | g0    | n/a   | BUFG/O          | None       |           0 |               1 |  0 |      0 |    0 |   0 |  0 |    0 |   0 |       0 | oVSync_OBUF_BUFG |
-| g1    | n/a   | BUFG/O          | None       |           0 |              32 | 32 |      1 |    0 |   0 |  0 |    0 |   0 |       0 | iClk_IBUF_BUFG   |
+| g1    | n/a   | BUFG/O          | None       |           0 |              25 | 25 |      1 |    0 |   0 |  0 |    0 |   0 |       0 | iClk_IBUF_BUFG   |
 +-------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+------------------+
 * Note: Multiple constraint types applied to the driver. Please check for potential conflicts.
 
@@ -130,8 +130,8 @@ Table of Contents
 +-------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+------------------+
 | GlbID | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF | LUTRAM | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net              |
 +-------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+------------------+
-| g0    | n/a   | BUFG/O          | None       |           0 |              38 | 38 |      1 |    0 |   0 |  0 |    0 |   0 |       0 | oVSync_OBUF_BUFG |
-| g1    | n/a   | BUFG/O          | None       |           0 |               2 |  2 |      1 |    0 |   0 |  0 |    0 |   0 |       0 | iClk_IBUF_BUFG   |
+| g0    | n/a   | BUFG/O          | None       |           0 |              24 | 24 |      1 |    0 |   0 |  0 |    0 |   0 |       0 | oVSync_OBUF_BUFG |
+| g1    | n/a   | BUFG/O          | None       |           0 |               2 |  2 |      2 |    0 |   0 |  0 |    0 |   0 |       0 | iClk_IBUF_BUFG   |
 +-------+-------+-----------------+------------+-------------+-----------------+----+--------+------+-----+----+------+-----+---------+------------------+
 * Note: Multiple constraint types applied to the driver. Please check for potential conflicts.
 
@@ -142,7 +142,7 @@ Table of Contents
 +-------+-----------------+-------------------+-------+-------------+---------------+----------+-------------+----------+-------------+----+------------------+
 | GlbID | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Root (R) | Slice Loads | IO Loads | Clock Loads | GT | Net              |
 +-------+-----------------+-------------------+-------+-------------+---------------+----------+-------------+----------+-------------+----+------------------+
-| g0    | BUFG/O          | n/a               |       |             |               |          |          38 |        1 |           0 |  0 | oVSync_OBUF_BUFG |
+| g0    | BUFG/O          | n/a               |       |             |               |          |          24 |        1 |           0 |  0 | oVSync_OBUF_BUFG |
 +-------+-----------------+-------------------+-------+-------------+---------------+----------+-------------+----------+-------------+----+------------------+
 
 
@@ -150,7 +150,7 @@ Table of Contents
 |    | X0 | X1  |
 +----+----+-----+
 | Y3 |  0 |   0 |
-| Y2 |  1 |  38 |
+| Y2 |  1 |  24 |
 | Y1 |  0 |   0 |
 | Y0 |  0 |   0 |
 +----+----+-----+
@@ -162,7 +162,7 @@ Table of Contents
 +-------+-----------------+-------------------+-------+-------------+---------------+----------+-------------+----------+-------------+----+----------------+
 | GlbID | Driver Type/Pin | Driver Region (D) | Clock | Period (ns) | Waveform (ns) | Root (R) | Slice Loads | IO Loads | Clock Loads | GT | Net            |
 +-------+-----------------+-------------------+-------+-------------+---------------+----------+-------------+----------+-------------+----+----------------+
-| g1    | BUFG/O          | n/a               |       |             |               |          |          34 |        0 |           0 |  0 | iClk_IBUF_BUFG |
+| g1    | BUFG/O          | n/a               |       |             |               |          |          27 |        0 |           0 |  0 | iClk_IBUF_BUFG |
 +-------+-----------------+-------------------+-------+-------------+---------------+----------+-------------+----------+-------------+----+----------------+
 
 
@@ -170,7 +170,7 @@ Table of Contents
 |    | X0  | X1 |
 +----+-----+----+
 | Y3 |   0 |  0 |
-| Y2 |  32 |  2 |
+| Y2 |  25 |  2 |
 | Y1 |   0 |  0 |
 | Y0 |   0 |  0 |
 +----+-----+----+
@@ -198,5 +198,5 @@ resize_pblock [get_pblocks {CLKAG_oVSync_OBUF_BUFG}] -add {CLOCKREGION_X1Y2:CLOC
 #startgroup
 create_pblock {CLKAG_iClk_IBUF_BUFG}
 add_cells_to_pblock [get_pblocks  {CLKAG_iClk_IBUF_BUFG}] [get_cells -filter { PRIMITIVE_GROUP != I/O && IS_PRIMITIVE==1 && PRIMITIVE_LEVEL !=INTERNAL } -of_object [get_pins -filter {DIRECTION==IN} -of_objects [get_nets -hierarchical -filter {PARENT=="iClk_IBUF_BUFG"}]]]
-resize_pblock [get_pblocks {CLKAG_iClk_IBUF_BUFG}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2 CLOCKREGION_X1Y2:CLOCKREGION_X1Y2}
+resize_pblock [get_pblocks {CLKAG_iClk_IBUF_BUFG}] -add {CLOCKREGION_X0Y2:CLOCKREGION_X0Y2}
 #endgroup

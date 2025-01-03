@@ -74,7 +74,7 @@ module VGA_display(
     parameter ball_r = 10;
 	
 	
-	// 暂停状态寄存器,1表示正常运行,0表示暂停
+	// 暂停状态寄存器,1表示暂停,0表示不暂停
 	reg pau=1;
 	
 	/*寄存器定义*/
@@ -174,6 +174,7 @@ module VGA_display(
 		end  
 		else if(Vcnt<=BLOCK_DOWN_first&&Vcnt>BLOCK_DOWN_second)
 		begin
+			// 显示砖块
 			if(Hcnt<BLOCK_WIDTH&&blocks[0])
 			begin
 				oRed <= 3'b111;  
@@ -309,35 +310,35 @@ module VGA_display(
 	end
 	
 	reg flag;
-	//flush the image every zhen = =||
+	// 刷新图像
 	always @ (posedge oVSync)  
-   begin  		
-		// movement of the bar
+   	begin  		
+		// 挡板移动
 		if(oLose)
 		begin 
-			ball_x_pos = 330;
-			ball_y_pos = 390;
-			up_pos = 400;
-			down_pos = 430;
-			left_pos = 230;
-			right_pos = 430; 
-			flag=1;
+			ball_x_pos <= 330;
+			ball_y_pos <= 390;
+			up_pos <= 400;
+			down_pos <= 430;
+			left_pos <= 230;
+			right_pos <= 430; 
+			flag<=1;
 		end
 		else if(!pau)
 		begin
-		  flag=0;
-	 	  if (iToLeft && left_pos >= LEFT_BOUND) 
+			flag<=0;
+			if (iToLeft && left_pos >= LEFT_BOUND) 
 			begin  
 				left_pos <= left_pos - iBarMoveSpeed;  
 				right_pos <= right_pos - iBarMoveSpeed;  
-		  end  
-		  else if(iToRight && right_pos <= RIGHT_BOUND)
-			begin  		
+			end  
+			else if(iToRight && right_pos <= RIGHT_BOUND)
+			begin
 				left_pos <= left_pos + iBarMoveSpeed; 
 				right_pos <= right_pos + iBarMoveSpeed;  
-		  end  
+			end  
 		
-			//movement of the ball
+			// 小球移动
 			if (v_speed == `UP) // go up 
 				ball_y_pos <= ball_y_pos - iBarMoveSpeed;  
 			else //go down
@@ -350,95 +351,95 @@ module VGA_display(
 		end 	
    	end 
 	
-	//change directions when reach the edge or crush the bar
+	// 改变小球方向
 	always @ (negedge oVSync)  
 	begin
 		if(flag)
 		begin
-		   oLose<=0;
-		   blocks=10'b1111111111; 
+			oLose<=0;
+			blocks=10'b1111111111; 
 		end
-		if (ball_y_pos <= UP_BOUND)   // Here, all the jugement should use >= or <= instead of ==
+		if (ball_y_pos <= UP_BOUND)   // 这里，所有判断都应该使用>=或<=，而不是==
 		begin	
-			v_speed <= `DOWN;              // Because when the offset is more than 1, the axis may step over the line
+			v_speed <= `DOWN;              // 因为当偏移量大于1时，轴可能会跨过线
 			oLose <= 0;
 		end
-		else if(ball_y_pos <= BLOCK_DOWN_first&&ball_y_pos > BLOCK_DOWN_second)
+		else if(ball_y_pos <= BLOCK_DOWN_first&&ball_y_pos > BLOCK_DOWN_second) // 小球在砖块之间
 		begin
-			  if(ball_x_pos<BLOCK_WIDTH&&blocks[0])
-			  begin
-				  v_speed<=`DOWN;
-				  blocks[0]<=0;
-			  end
-			  else if(ball_x_pos<BLOCK_WIDTH*2&&blocks[1]&&ball_x_pos>BLOCK_WIDTH)
-				begin
-					 v_speed<=`DOWN;
-					 blocks[1]<=0;
-				end
-			 else if(ball_x_pos<BLOCK_WIDTH*3&&blocks[2]&&ball_x_pos>BLOCK_WIDTH*2)
-			   begin
-					  v_speed<=`DOWN;
-					   blocks[2]<=0;
-			   end
-			   else if(ball_x_pos<BLOCK_WIDTH*4&&blocks[3]&&ball_x_pos>BLOCK_WIDTH*3)
-				begin
-					  v_speed<=`DOWN;
-					  blocks[3]<=0;
-				end
-			  else if(blocks[4]&&ball_x_pos>4*BLOCK_WIDTH)
-			   begin
-					 v_speed<=`DOWN;
-					 blocks[4]<=0;
-			  end
+			if (ball_x_pos < BLOCK_WIDTH && blocks[0])
+			begin
+				v_speed<=`DOWN;
+				blocks[0]<=0;
+			end
+			else if (ball_x_pos < BLOCK_WIDTH * 2 && blocks[1] && ball_x_pos > BLOCK_WIDTH)
+			begin
+				v_speed<=`DOWN;
+				blocks[1]<=0;
+			end
+			else if (ball_x_pos < BLOCK_WIDTH * 3 && blocks[2] && ball_x_pos > BLOCK_WIDTH * 2)
+			begin
+				v_speed<=`DOWN;
+				blocks[2]<=0;
+			end
+			else if (ball_x_pos < BLOCK_WIDTH * 4 && blocks[3] && ball_x_pos > BLOCK_WIDTH * 3)
+			begin
+				v_speed<=`DOWN;
+				blocks[3]<=0;
+			end
+			else if (blocks[4] && ball_x_pos > BLOCK_WIDTH * 4)
+			begin
+				v_speed<=`DOWN;
+				blocks[4]<=0;
+			end
 		end
 		else if(ball_y_pos <= BLOCK_DOWN_second)
-				begin
-					  if(ball_x_pos<BLOCK_WIDTH&&blocks[5])
-					  begin
-						  v_speed<=`DOWN;
-						  blocks[5]<=0;
-					  end
-					  else if(ball_x_pos<BLOCK_WIDTH*2&&blocks[6]&&ball_x_pos>BLOCK_WIDTH)
-						begin
-							 v_speed<=`DOWN;
-							 blocks[6]<=0;
-						end
-					  else if(ball_x_pos<BLOCK_WIDTH*3&&blocks[7]&&ball_x_pos>BLOCK_WIDTH*2)
-					   begin
-							  v_speed<=`DOWN;
-							   blocks[7]<=0;
-					   end
-					   else if(ball_x_pos<BLOCK_WIDTH*4&&blocks[8]&&ball_x_pos>BLOCK_WIDTH*3)
-						begin
-							  v_speed<=`DOWN;
-							  blocks[8]<=0;
-						end
-					  else if(blocks[9]&&ball_x_pos>4*BLOCK_WIDTH)
-					   begin
-							 v_speed<=`DOWN;
-							 blocks[9]<=0;
-					  end
-				end
-		else if (ball_y_pos >= (up_pos - ball_r) && ball_x_pos <= right_pos && ball_x_pos >= left_pos)  
+		begin
+			if (ball_x_pos < BLOCK_WIDTH && blocks[5])
+			begin
+				v_speed<=`DOWN;
+				blocks[5]<=0;
+			end
+			else if (ball_x_pos < BLOCK_WIDTH * 2 && blocks[6] && ball_x_pos > BLOCK_WIDTH)
+			begin
+				v_speed<=`DOWN;
+				blocks[6]<=0;
+			end
+			else if (ball_x_pos < BLOCK_WIDTH * 3 && blocks[7] && ball_x_pos > BLOCK_WIDTH * 2)
+			begin
+				v_speed<=`DOWN;
+				blocks[7]<=0;
+			end
+			else if (ball_x_pos < BLOCK_WIDTH * 4 && blocks[8] && ball_x_pos > BLOCK_WIDTH * 3)
+			begin
+				v_speed<=`DOWN;
+				blocks[8]<=0;
+			end
+			else if (blocks[9] && ball_x_pos > BLOCK_WIDTH * 4)
+			begin
+				v_speed<=`DOWN;
+				blocks[9]<=0;
+			end
+		end
+		else if (ball_y_pos >= (up_pos - ball_r) && ball_x_pos <= right_pos && ball_x_pos >= left_pos)  // 小球碰到挡板
 			v_speed <= `UP;  
-		else if (ball_y_pos >= down_pos && ball_y_pos < (DOWN_BOUND - ball_r))
+		else if (ball_y_pos >= down_pos && ball_y_pos < (DOWN_BOUND - ball_r)) // 小球碰到下边界
 		begin
 			//Do what you want when lose
 			oLose <= 1;
 		end
-		else if(blocks==0)
-		  oLose<=0;
-		else if (ball_y_pos >= (DOWN_BOUND - ball_r + 1))
+		else if(blocks==0) // 所有砖块都被击碎
+			oLose<=0;
+		else if (ball_y_pos >= (DOWN_BOUND - ball_r + 1)) // 小球碰到下边界
 			v_speed <= 0; 
-	  else  
-		 v_speed <= v_speed;  
-			  
-	  if (ball_x_pos <= LEFT_BOUND)  
-		 h_speed <= `RIGHT;  
-	  else if (ball_x_pos >= RIGHT_BOUND)  
-		 h_speed <= `LEFT;  
-	  else  
-		 h_speed <= h_speed;  
+		else  
+			v_speed <= v_speed;  
+				
+		if (ball_x_pos <= LEFT_BOUND)  
+			h_speed <= `RIGHT;  
+		else if (ball_x_pos >= RIGHT_BOUND)  
+			h_speed <= `LEFT;  
+		else  
+			h_speed <= h_speed;  
   end 
   
 
