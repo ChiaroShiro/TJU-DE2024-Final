@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Fri Jan 03 22:39:35 2025
+| Date         : Fri Jan 03 23:09:42 2025
 | Host         : Chiaro running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Top_control_sets_placed.rpt
 | Design       : Top
@@ -35,10 +35,10 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | No           | No                    | No                     |              35 |           24 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              19 |            5 |
+| No           | Yes                   | No                     |              19 |            6 |
 | Yes          | No                    | No                     |              22 |            9 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              47 |           17 |
+| Yes          | Yes                   | No                     |              47 |           16 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
@@ -51,18 +51,18 @@ Table of Contents
 |  game/VGA_Disp/clk_25M        | game/VGA_Disp/oHSync          | game/VGA_Disp/oHSync_i_1_n_0   |                1 |              1 |
 |  game/VGA_Disp/clk_50M        |                               |                                |                1 |              1 |
 |  game/VGA_Disp/pe             |                               |                                |                1 |              1 |
-|  oVSync_OBUF_BUFG             |                               |                                |                3 |              3 |
+|  oVSync_OBUF_BUFG             |                               |                                |                2 |              3 |
 |  display/count_reg[3]_i_2_n_0 |                               | display/count0_inferred__1_n_0 |                1 |              4 |
 |  iClk_IBUF_BUFG               | bluetooth/clk_cnt[14]_i_1_n_0 |                                |                2 |              4 |
 |  iClk_IBUF_BUFG               |                               |                                |                5 |              6 |
-|  game/VGA_Disp/clk_25M        | game/VGA_Disp/oRed[2]_i_2_n_0 | game/VGA_Disp/oRed[2]_i_1_n_0  |                5 |              8 |
+|  game/VGA_Disp/clk_25M        | game/VGA_Disp/oRed[2]_i_2_n_0 | game/VGA_Disp/oRed[2]_i_1_n_0  |                4 |              8 |
 |  iClk_IBUF_BUFG               | bluetooth/data_flag_i_1_n_0   |                                |                2 |              8 |
 |  iClk_IBUF_BUFG               | bluetooth/rx_data[7]_i_2_n_0  | bluetooth/rx_data[7]_i_1_n_0   |                1 |              8 |
 |  game/VGA_Disp/clk_25M        | game/VGA_Disp/Vcnt[9]_i_1_n_0 |                                |                5 |             10 |
-|  game/VGA_Disp/clk_25M        |                               |                                |                5 |             11 |
+|  game/VGA_Disp/clk_25M        |                               |                                |                6 |             11 |
 | ~oVSync_OBUF_BUFG             |                               |                                |                9 |             13 |
 |  oVSync_OBUF_BUFG             | game/VGA_Disp/right_pos       | game/VGA_Disp/lose             |                6 |             14 |
-|  iClk_IBUF_BUFG               |                               | bluetooth/clk_cnt[14]_i_1_n_0  |                4 |             15 |
+|  iClk_IBUF_BUFG               |                               | bluetooth/clk_cnt[14]_i_1_n_0  |                5 |             15 |
 |  oVSync_OBUF_BUFG             | game/VGA_Disp/ball_y_pos_1    | game/VGA_Disp/lose             |                4 |             16 |
 +-------------------------------+-------------------------------+--------------------------------+------------------+----------------+
 

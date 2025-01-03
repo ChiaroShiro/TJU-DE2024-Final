@@ -25,62 +25,84 @@
 `define DOWN  1'b1
 
 module VGA_display(
-	input iClk,
-	input iPause,
-	input iToLeft,
-	input iToRight,
-	input [3:0] iBarMoveSpeed,
-	output reg oHSync,
-	output reg oVSync,
-	output reg [2:0] oRed,
-	output reg [2:0] oGreen,
-	output reg [1:0] oBlue,
-	output reg oLose
-	);
+    // 系统时钟输入
+    input iClk,
+    // 暂停游戏输入信号
+    input iPause,
+    // 控制挡板左移输入
+    input iToLeft,
+    // 控制挡板右移输入
+    input iToRight,
+    // 挡板移动速度控制(4位)
+    input [3:0] iBarMoveSpeed,
+    // VGA水平同步信号输出
+    output reg oHSync,
+    // VGA垂直同步信号输出
+    output reg oVSync,
+    // VGA红色分量输出(3位)
+    output reg [2:0] oRed,
+    // VGA绿色分量输出(3位)
+    output reg [2:0] oGreen,
+    // VGA蓝色分量输出(2位)
+    output reg [1:0] oBlue,
+    // 游戏失败信号输出
+    output reg oLose
+);
+    
+    // VGA显示参数定义
+    parameter PAL = 640;     // 水平有效显示像素数
+    parameter LAF = 480;     // 垂直有效显示行数
+    parameter PLD = 800;     // 水平总像素数(包含同步和消隐)
+    parameter LFD = 521;     // 垂直总行数(包含同步和消隐)
+    parameter HPW = 96;      // 水平同步脉冲宽度
+    parameter HFP = 16;      // 水平前肩
+    parameter VPW = 2;       // 垂直同步脉冲宽度
+    parameter VFP = 10;      // 垂直前肩
+    
+    // 游戏区域边界定义
+    parameter UP_BOUND = 10;         // 上边界
+    parameter DOWN_BOUND = 480;      // 下边界
+    parameter LEFT_BOUND = 20;       // 左边界
+    parameter RIGHT_BOUND = 630;     // 右边界
+    
+    // 砖块位置参数
+    parameter BLOCK_DOWN_first = 70;   // 第一行砖块底部位置
+    parameter BLOCK_DOWN_second = 35;  // 第二行砖块底部位置
+    parameter BLOCK_WIDTH = 125;       // 砖块宽度
+    
+    // 球的半径
+    parameter ball_r = 10;
 	
-	//parameter definition
-	parameter PAL = 640;		//Pixels/Active Line (pixels)
-	parameter LAF = 480;		//Lines/Active Frame (lines)
-	parameter PLD = 800;	    //Pixel/Line Divider
-	parameter LFD = 521;		//Line/Frame Divider
-	parameter HPW = 96;			//Horizontal synchro Pulse Width (pixels)
-	parameter HFP = 16;			//Horizontal synchro Front Porch (pixels)
-	parameter VPW = 2;			//Verical synchro Pulse Width (lines)
-	parameter VFP = 10;			//Verical synchro Front Porch (lines)
 	
-	parameter UP_BOUND = 10;
-	parameter DOWN_BOUND = 480;  
-	parameter LEFT_BOUND = 20;  
-	parameter RIGHT_BOUND = 630;
-	
-	parameter BLOCK_DOWN_first = 70;
-	parameter BLOCK_DOWN_second = 35;
-	parameter BLOCK_WIDTH = 125;
-	
-	// Radius of the ball
-	parameter ball_r = 10;
-	
-	
+	// 暂停状态寄存器,1表示正常运行,0表示暂停
 	reg pau=1;
 	
-	/*register definition*/
-	reg [9:0] Hcnt;      // horizontal counter  if = PLD-1 -> Hcnt <= 0
-	reg [9:0] Vcnt;      // verical counter  if = LFD-1 -> Vcnt <= 0
-	reg clk_25M = 0;     //25MHz frequency
-	reg clk_50M = 0;     //50MHz frequency
+	/*寄存器定义*/
+	// 水平计数器,用于生成水平同步信号
+	// 当计数到PLD-1时重置为0
+	reg [9:0] Hcnt;      
+	// 垂直计数器,用于生成垂直同步信号
+	// 当计数到LFD-1时重置为0
+	reg [9:0] Vcnt;      
+	// 25MHz时钟信号,用于VGA显示时序控制
+	reg clk_25M = 0;     
+	// 50MHz时钟信号,用于生成25MHz时钟
+	reg clk_50M = 0;     
 	
+	// 小球水平运动方向,RIGHT表示向右,LEFT表示向左
 	reg h_speed = `RIGHT;
+	// 小球垂直运动方向,UP表示向上,DOWN表示向下
 	reg v_speed = `UP; 
 	
-	// The position of the downside bar
-	reg [9:0] up_pos = 400;
-	reg [9:0] down_pos = 430;
-	reg [9:0] left_pos = 230;
-	reg [9:0] right_pos = 430;  
+	// 挡板位置参数定义
+	reg [9:0] up_pos = 400;    // 挡板上边缘Y坐标
+	reg [9:0] down_pos = 430;  // 挡板下边缘Y坐标
+	reg [9:0] left_pos = 230;  // 挡板左边缘X坐标
+	reg [9:0] right_pos = 430; // 挡板右边缘X坐标
 		
-	// The circle heart position of the ball
-	reg [9:0] ball_x_pos = 330;
-	reg [9:0] ball_y_pos = 390;
+	// 小球位置参数定义
+	reg [9:0] ball_x_pos = 330; // 小球中心X坐标,初始值330
+	reg [9:0] ball_y_pos = 390; // 小球中心Y坐标,初始值390
 	
 	
 	//The blocks
@@ -91,26 +113,26 @@ module VGA_display(
 	   pau=~pau;
 	end
 	
-	//generate a half frequency clock of 50MHz
+	// 生成50MHz时钟信号
 	always@(posedge(iClk))
 	begin
 		clk_50M <= ~clk_50M;
 	end
 	
-	//generate a half frequency clock of 25MHz
+	// 生成25MHz时钟信号
 	always@(posedge(clk_50M))
 	 begin
 		 clk_25M <= ~clk_25M;
 	 end
 	
-	/*generate the hs && vs timing*/
+	// 生成水平和垂直同步信号
 	always@(posedge(clk_25M)) 
 	begin
-		/*conditions of reseting Hcnter && Vcnter*/
-		if( Hcnt == PLD-1 ) //have reached the edge of one line
+		// 重置水平和垂直计数器
+		if( Hcnt == PLD-1 ) 
 		begin
-			Hcnt <= 0; //reset the horizontal counter
-			if( Vcnt == LFD-1 ) //only when horizontal pointer reach the edge can the vertical counter ++
+			Hcnt <= 0; 
+			if( Vcnt == LFD-1 ) 
 				Vcnt <=0;
 			else
 				Vcnt <= Vcnt + 1;
@@ -118,13 +140,13 @@ module VGA_display(
 		else
 			Hcnt <= Hcnt + 1;
 		
-		/*generate hs timing*/
+		// 生成水平同步信号
 		if( Hcnt == PAL - 1 + HFP)
 			oHSync <= 1'b0;
 		else if( Hcnt == PAL - 1 + HFP + HPW )
 			oHSync <= 1'b1;
 		
-		/*generate vs timing*/		
+		// 生成垂直同步信号
 		if( Vcnt == LAF - 1 + VFP ) 
 			oVSync <= 1'b0;
 		else if( Vcnt == LAF - 1 + VFP + VPW )
@@ -132,19 +154,18 @@ module VGA_display(
 	end
 	
 	
-	//Display the downside bar and the ball
+	// 显示挡板和小球
 	always @ (posedge clk_25M)   
 	begin  
-		// Display the downside bar
-		if (Vcnt>=up_pos && Vcnt<=down_pos  
-				&& Hcnt>=left_pos && Hcnt<=right_pos) 
+		// 显示挡板
+		if (Vcnt>=up_pos && Vcnt<=down_pos && Hcnt>=left_pos && Hcnt<=right_pos) 
 		begin  
 			oRed <= Hcnt[3:1];  
 			oGreen <= Hcnt[6:4];  
 			oBlue <= Hcnt[8:7]; 
 		end  
 		
-		// Display the ball
+		// 显示小球
 		else if ( (Hcnt - ball_x_pos)*(Hcnt - ball_x_pos) + (Vcnt - ball_y_pos)*(Vcnt - ball_y_pos) <= (ball_r * ball_r))  
 		begin  
 			oRed <= Hcnt[3:1];  
@@ -153,131 +174,130 @@ module VGA_display(
 		end  
 		else if(Vcnt<=BLOCK_DOWN_first&&Vcnt>BLOCK_DOWN_second)
 		begin
-			  if(Hcnt<BLOCK_WIDTH&&blocks[0])
-			  begin
-				  oRed <= 111;  
-				  oGreen <= 000;  
-				  oBlue <= 000; 
-			  end
-			  else if(Hcnt<BLOCK_WIDTH&&!blocks[0])
-							 begin
-								oRed <= 0;  
-								oGreen <= 0;  
-							   oBlue <= 0; 
-							end
-			   if(Hcnt<BLOCK_WIDTH*2&&blocks[1]&&Hcnt>BLOCK_WIDTH)
-				begin
-					 oRed <= 000;  
-					 oGreen <= 111;  
-					 oBlue <= 000; 
-			   end
-			  else if(Hcnt<BLOCK_WIDTH*2&&!blocks[1]&&Hcnt>BLOCK_WIDTH)
-							  begin
-								 oRed <= 0;  
-								 oGreen <= 0;  
-								oBlue <= 0; 
-							 end
-			   if(Hcnt<BLOCK_WIDTH*3&&blocks[2]&&Hcnt>BLOCK_WIDTH*2)
-			   begin
-				   oRed <= 000;  
-				   oGreen <= 000;  
-					oBlue <= 111; 
-			   end
-			  else if(Hcnt<BLOCK_WIDTH*3&&!blocks[2]&&Hcnt>BLOCK_WIDTH*2)
-							  begin
-								 oRed <= 0;  
-								 oGreen <= 0;  
-								oBlue <= 0; 
-							 end
-			   if(Hcnt<BLOCK_WIDTH*4&&blocks[3]&&Hcnt>BLOCK_WIDTH*3)
-			   begin
-					oRed <= 000;  
-					oGreen <= 111;  
-					oBlue <= 111; 
-			  end
-			  else if(Hcnt<BLOCK_WIDTH*4&&!blocks[3]&&Hcnt>BLOCK_WIDTH*3)
-							 begin
-								oRed <= 0;  
-								oGreen <= 0;  
-							   oBlue <= 0; 
-							end
-			  if(blocks[4]&&Hcnt>BLOCK_WIDTH*4)
-			  begin
-				   oRed <= 111;  
-				   oGreen <= 111;  
-				   oBlue <= 111; 
-			  end
-			  else if(!blocks[4]&&Hcnt>BLOCK_WIDTH*4)
-			   begin
-				  oRed <= 0;  
-				  oGreen <= 0;  
-				 oBlue <= 0; 
-			  end
+			if(Hcnt<BLOCK_WIDTH&&blocks[0])
+			begin
+				oRed <= 3'b111;  
+				oGreen <= 3'b000;  
+				oBlue <= 2'b00; 
+			end
+			else if(Hcnt<BLOCK_WIDTH&&!blocks[0])
+			begin
+				oRed <= 3'b000;  
+				oGreen <= 3'b000;  
+				oBlue <= 2'b00; 
+			end
+			if(Hcnt<BLOCK_WIDTH*2&&blocks[1]&&Hcnt>BLOCK_WIDTH)
+			begin
+				oRed <= 3'b000;  
+				oGreen <= 3'b111;  
+				oBlue <= 2'b00; 
+			end
+			else if(Hcnt<BLOCK_WIDTH*2&&!blocks[1]&&Hcnt>BLOCK_WIDTH)
+			begin
+				oRed <= 3'b000;  
+				oGreen <= 3'b000;  
+				oBlue <= 2'b00; 
+			end
+			if(Hcnt<BLOCK_WIDTH*3&&blocks[2]&&Hcnt>BLOCK_WIDTH*2)
+			begin
+				oRed <= 3'b000;  
+				oGreen <= 3'b000;  
+				oBlue <= 2'b11; 
+			end
+			else if(Hcnt<BLOCK_WIDTH*3&&!blocks[2]&&Hcnt>BLOCK_WIDTH*2)
+			begin
+				oRed <= 3'b000;  
+				oGreen <= 3'b000;  
+				oBlue <= 2'b00; 
+			end
+			if(Hcnt<BLOCK_WIDTH*4&&blocks[3]&&Hcnt>BLOCK_WIDTH*3)
+			begin
+				oRed <= 3'b000;  
+				oGreen <= 3'b111;  
+				oBlue <= 2'b11; 
+			end
+			else if(Hcnt<BLOCK_WIDTH*4&&!blocks[3]&&Hcnt>BLOCK_WIDTH*3)
+			begin
+				oRed <= 3'b000;  
+				oGreen <= 3'b000;  
+				oBlue <= 2'b00; 
+			end
+			if(blocks[4]&&Hcnt>BLOCK_WIDTH*4)
+			begin
+				oRed <= 3'b111;  
+				oGreen <= 3'b111;  
+				oBlue <= 2'b11; 
+			end
+			else if(!blocks[4]&&Hcnt>BLOCK_WIDTH*4)
+			begin
+				oRed <= 3'b000;  
+				oGreen <= 3'b000;  
+				oBlue <= 2'b00; 
+			end
 		end
 		else if(Vcnt<=BLOCK_DOWN_second)
-				begin
-					  if(Hcnt<BLOCK_WIDTH&&blocks[5])
-					  begin
-						  oRed <= 111;  
-						  oGreen <= 111;  
-						  oBlue <= 000; 
-					  end
-			  else if(Hcnt<BLOCK_WIDTH&&!blocks[5])
-					  begin
-						oRed <= 0;  
-						oGreen <= 0;  
-						oBlue <= 0; 
-					  end
-					   if(Hcnt<BLOCK_WIDTH*2&&blocks[6]&&Hcnt>BLOCK_WIDTH)
-						begin
-							 oRed <= 010;  
-							 oGreen <= 101;  
-							 oBlue <= 010; 
-					   end
-			  else if(Hcnt<BLOCK_WIDTH*2&&!blocks[6]&&Hcnt>BLOCK_WIDTH)
-						  begin
-						  oRed <= 0;  
-						  oGreen <= 0;  
-						  oBlue <= 0; 
-						end
-					   if(Hcnt<BLOCK_WIDTH*3&&blocks[7]&&Hcnt>BLOCK_WIDTH*2)
-					   begin
-						   oRed <= 100;  
-						   oGreen <= 011;  
-							oBlue <= 111; 
-					   end
-			  else if(Hcnt<BLOCK_WIDTH*3&&!blocks[7]&&Hcnt>BLOCK_WIDTH*2)
-						begin
-							oRed <= 0;  
-							oGreen <= 0;  
-							oBlue <=0; 
-						 end
-					   if(Hcnt<BLOCK_WIDTH*4&&blocks[8]&&Hcnt>BLOCK_WIDTH*3)
-					   begin
-							oRed <= 010;  
-							oGreen <= 101;  
-							oBlue <= 111; 
-					  end
-			  else if(Hcnt<BLOCK_WIDTH*4&&!blocks[8]&&Hcnt>BLOCK_WIDTH*3)
-						begin
-							  oRed <= 0;  
-							 oGreen <= 0;  
-							 oBlue <= 0; 
-					  end
-					  if(blocks[9]&&Hcnt>BLOCK_WIDTH*4)
-					  begin
-						   oRed <= 011;  
-						   oGreen <= 011;  
-						   oBlue <= 011; 
-					  end
-			  else if(!blocks[9]&&Hcnt>BLOCK_WIDTH*4)
-						 begin
-							 oRed <= 0;  
-							  oGreen <= 0;  
-							  oBlue <= 0; 
-						end
-				end
-		
+		begin
+			if(Hcnt<BLOCK_WIDTH&&blocks[5])
+			begin
+				oRed <= 3'b111;  
+				oGreen <= 3'b111;  
+				oBlue <= 2'b00; 
+			end
+			else if(Hcnt<BLOCK_WIDTH&&!blocks[5])
+			begin
+				oRed <= 3'b000;  
+				oGreen <= 3'b000;  
+				oBlue <= 2'b00; 
+			end
+			if(Hcnt<BLOCK_WIDTH*2&&blocks[6]&&Hcnt>BLOCK_WIDTH)
+			begin
+				oRed <= 3'b010;  
+				oGreen <= 3'b101;  
+				oBlue <= 2'b01; 
+			end
+			else if(Hcnt<BLOCK_WIDTH*2&&!blocks[6]&&Hcnt>BLOCK_WIDTH)
+			begin
+				oRed <= 3'b000;  
+				oGreen <= 3'b000;  
+				oBlue <= 2'b00; 
+			end
+			if(Hcnt<BLOCK_WIDTH*3&&blocks[7]&&Hcnt>BLOCK_WIDTH*2)
+			begin
+				oRed <= 3'b100;  
+				oGreen <= 3'b011;  
+				oBlue <= 2'b11; 
+			end
+			else if(Hcnt<BLOCK_WIDTH*3&&!blocks[7]&&Hcnt>BLOCK_WIDTH*2)
+			begin
+				oRed <= 3'b000;  
+				oGreen <= 3'b000;  
+				oBlue <= 2'b00; 
+			end
+			if(Hcnt<BLOCK_WIDTH*4&&blocks[8]&&Hcnt>BLOCK_WIDTH*3)
+			begin
+				oRed <= 3'b010;  
+				oGreen <= 3'b101;  
+				oBlue <= 2'b11; 
+			end
+			else if(Hcnt<BLOCK_WIDTH*4&&!blocks[8]&&Hcnt>BLOCK_WIDTH*3)
+			begin
+				oRed <= 3'b000;  
+				oGreen <= 3'b000;  
+				oBlue <= 2'b00; 
+			end
+			if(blocks[9]&&Hcnt>BLOCK_WIDTH*4)
+			begin
+				oRed <= 3'b011;  
+				oGreen <= 3'b011;  
+				oBlue <= 2'b11; 
+			end
+			else if(!blocks[9]&&Hcnt>BLOCK_WIDTH*4)
+			begin
+				oRed <= 3'b000;  
+				oGreen <= 3'b000;  
+				oBlue <= 2'b00; 
+			end
+		end
 		else 
 		begin  
 			oRed <= 3'b000;  
