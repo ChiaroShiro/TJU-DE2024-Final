@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1735919105">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1735921498">
+  <File Type="OPT-TIMING" Name="Top_timing_summary_opted.rpt"/>
+  <File Type="PHYSOPT-DCP" Name="Top_physopt.dcp"/>
+  <File Type="PA-DCP" Name="Top.dcp"/>
   <File Type="OPT-DCP" Name="Top_opt.dcp"/>
   <File Type="ROUTE-STATUS-PB" Name="Top_route_status.pb"/>
   <File Type="PA-TCL" Name="Top.tcl"/>
-  <File Type="RDI-RDI" Name="Top.vdi"/>
-  <File Type="PWROPT-DRC" Name="Top_drc_pwropted.rpt"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="Top_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="Top_timing_summary_init.rpt"/>
   <File Type="OPT-DRC" Name="Top_drc_opted.rpt"/>
   <File Type="PWROPT-DCP" Name="Top_pwropt.dcp"/>
   <File Type="OPT-HWDEF" Name="Top.hwdef"/>
-  <File Type="OPT-TIMING" Name="Top_timing_summary_opted.rpt"/>
+  <File Type="RDI-RDI" Name="Top.vdi"/>
+  <File Type="PWROPT-DRC" Name="Top_drc_pwropted.rpt"/>
   <File Type="PWROPT-TIMING" Name="Top_timing_summary_pwropted.rpt"/>
   <File Type="PLACE-DCP" Name="Top_placed.dcp"/>
   <File Type="PLACE-IO" Name="Top_io_placed.rpt"/>
@@ -23,7 +25,6 @@
   <File Type="PLACE-TIMING" Name="Top_timing_summary_placed.rpt"/>
   <File Type="POSTPLACE-PWROPT-DCP" Name="Top_postplace_pwropt.dcp"/>
   <File Type="POSTPLACE-PWROPT-TIMING" Name="Top_timing_summary_postplace_pwropted.rpt"/>
-  <File Type="PHYSOPT-DCP" Name="Top_physopt.dcp"/>
   <File Type="PHYSOPT-DRC" Name="Top_drc_physopted.rpt"/>
   <File Type="PHYSOPT-TIMING" Name="Top_timing_summary_physopted.rpt"/>
   <File Type="ROUTE-DCP" Name="Top_routed.dcp"/>

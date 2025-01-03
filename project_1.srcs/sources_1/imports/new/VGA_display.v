@@ -66,8 +66,8 @@ module VGA_display(
     parameter RIGHT_BOUND = 630;     // 右边界
     
     // 砖块位置参数
-    parameter BLOCK_DOWN_first = 70;   // 第一行砖块底部位置
-    parameter BLOCK_DOWN_second = 35;  // 第二行砖块底部位置
+    parameter BLOCK_DOWN_first = 80;   // 第一行砖块底部位置
+    parameter BLOCK_DOWN_second = 40;  // 第二行砖块底部位置
     parameter BLOCK_WIDTH = 125;       // 砖块宽度
     
     // 球的半径
@@ -364,62 +364,94 @@ module VGA_display(
 			v_speed <= `DOWN;              // 因为当偏移量大于1时，轴可能会跨过线
 			oLose <= 0;
 		end
-		else if(ball_y_pos <= BLOCK_DOWN_first&&ball_y_pos > BLOCK_DOWN_second) // 小球在砖块之间
+		else if(ball_y_pos <= BLOCK_DOWN_first && ball_y_pos > BLOCK_DOWN_second) // 小球在砖块之间
 		begin
 			if (ball_x_pos < BLOCK_WIDTH && blocks[0])
 			begin
-				v_speed<=`DOWN;
+				if(ball_y_pos > BLOCK_DOWN_first - iBarMoveSpeed) // 碰到下面
+					v_speed<=`DOWN;
+				else // 碰到左边
+					h_speed <= ~h_speed;
 				blocks[0]<=0;
 			end
 			else if (ball_x_pos < BLOCK_WIDTH * 2 && blocks[1] && ball_x_pos > BLOCK_WIDTH)
 			begin
-				v_speed<=`DOWN;
+				if(ball_y_pos > BLOCK_DOWN_first - iBarMoveSpeed) // 碰到下面
+					v_speed<=`DOWN;
+				else
+					h_speed <= ~h_speed;
 				blocks[1]<=0;
 			end
 			else if (ball_x_pos < BLOCK_WIDTH * 3 && blocks[2] && ball_x_pos > BLOCK_WIDTH * 2)
 			begin
-				v_speed<=`DOWN;
+				if(ball_y_pos > BLOCK_DOWN_first - iBarMoveSpeed) // 碰到下面
+					v_speed<=`DOWN;
+				else
+					h_speed <= ~h_speed;
 				blocks[2]<=0;
 			end
 			else if (ball_x_pos < BLOCK_WIDTH * 4 && blocks[3] && ball_x_pos > BLOCK_WIDTH * 3)
 			begin
-				v_speed<=`DOWN;
+				if(ball_y_pos > BLOCK_DOWN_first - iBarMoveSpeed) // 碰到下面
+					v_speed<=`DOWN;
+				else
+					h_speed <= ~h_speed;
 				blocks[3]<=0;
 			end
 			else if (blocks[4] && ball_x_pos > BLOCK_WIDTH * 4)
 			begin
-				v_speed<=`DOWN;
+				if(ball_y_pos > BLOCK_DOWN_first - iBarMoveSpeed) // 碰到下面
+					v_speed<=`DOWN;
+				else // 碰到右边
+					h_speed <= ~h_speed;
 				blocks[4]<=0;
 			end
 		end
-		else if(ball_y_pos <= BLOCK_DOWN_second)
+		else if(ball_y_pos <= BLOCK_DOWN_second) // 小球在第二行砖块
 		begin
 			if (ball_x_pos < BLOCK_WIDTH && blocks[5])
 			begin
-				v_speed<=`DOWN;
+				if(ball_y_pos > BLOCK_DOWN_second - iBarMoveSpeed) // 碰到下面
+					v_speed<=`DOWN;
+				else // 碰到左边
+					h_speed <= `RIGHT;
 				blocks[5]<=0;
 			end
 			else if (ball_x_pos < BLOCK_WIDTH * 2 && blocks[6] && ball_x_pos > BLOCK_WIDTH)
 			begin
-				v_speed<=`DOWN;
+				if(ball_y_pos > BLOCK_DOWN_second - iBarMoveSpeed) // 碰到下面
+					v_speed<=`DOWN;
+				else
+					h_speed <= ~h_speed;
 				blocks[6]<=0;
 			end
 			else if (ball_x_pos < BLOCK_WIDTH * 3 && blocks[7] && ball_x_pos > BLOCK_WIDTH * 2)
 			begin
-				v_speed<=`DOWN;
+				if(ball_y_pos > BLOCK_DOWN_second - iBarMoveSpeed) // 碰到下面
+					v_speed<=`DOWN;
+				else
+					h_speed <= ~h_speed;
 				blocks[7]<=0;
 			end
 			else if (ball_x_pos < BLOCK_WIDTH * 4 && blocks[8] && ball_x_pos > BLOCK_WIDTH * 3)
 			begin
-				v_speed<=`DOWN;
+				if(ball_y_pos > BLOCK_DOWN_second - iBarMoveSpeed) // 碰到下面
+					v_speed<=`DOWN;
+				else
+					h_speed <= ~h_speed;
 				blocks[8]<=0;
 			end
 			else if (blocks[9] && ball_x_pos > BLOCK_WIDTH * 4)
 			begin
-				v_speed<=`DOWN;
+				if(ball_y_pos > BLOCK_DOWN_second - iBarMoveSpeed) // 碰到下面
+					v_speed<=`DOWN;
+				else // 碰到右边
+					h_speed <= ~h_speed;
 				blocks[9]<=0;
 			end
 		end
+
+
 		else if (ball_y_pos >= (up_pos - ball_r) && ball_x_pos <= right_pos && ball_x_pos >= left_pos)  // 小球碰到挡板
 			v_speed <= `UP;  
 		else if (ball_y_pos >= down_pos && ball_y_pos < (DOWN_BOUND - ball_r)) // 小球碰到下边界

@@ -33,11 +33,6 @@ module Top_module_of_game(
 	output oVSync
 );
 	reg pe;
-	reg [3:0] bar_move_speed;
-	always@(*)
-	begin
-		bar_move_speed=4;
-	end
 
 	always@(*)
 	begin
@@ -52,7 +47,7 @@ module Top_module_of_game(
 		.iPause(pe),
 		.iToLeft(iToLeft),
 		.iToRight(iToRight),
-		.iBarMoveSpeed(bar_move_speed),
+		.iBarMoveSpeed(2),
 		.oHSync(oHSync),
 		.oBlue(oBlue),
 		.oGreen(oGreen),
