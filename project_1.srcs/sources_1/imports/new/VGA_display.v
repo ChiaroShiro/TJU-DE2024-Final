@@ -1,302 +1,425 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// 公司: 
-// 工程师: 
+// Company: 
+// Engineer: 
 // 
-// 创建日期: 2018/12/08 16:59:56
-// 设计名称: 
-// 模块名称: VGA_display
-// 项目名称: 
-// 目标设备: 
-// 工具版本: 
-// 描述: 这是一个打砖块游戏的VGA显示模块
+// Create Date: 2018/12/08 16:59:56
+// Design Name: 
+// Module Name: VGA_display
+// Project Name: 
+// Target Devices: 
+// Tool Versions: 
+// Description: 
 // 
-// 依赖关系: 
+// Dependencies: 
 // 
-// 修订:
-// 修订 0.01 - 文件创建
-// 附加说明:
+// Revision:
+// Revision 0.01 - File Created
+// Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-// 定义方向常量
-`define RIGHT 1'b1  // 向右移动
-`define LEFT  1'b0  // 向左移动
-`define UP    1'b0  // 向上移动
-`define DOWN  1'b1  // 向下移动
+`define RIGHT 1'b1
+`define LEFT  1'b0
+`define UP    1'b0
+`define DOWN  1'b1
 
 module VGA_display(
-    input iClk,          // 系统时钟输入
-    input iPause,        // 暂停信号输入
-    input iToLeft,       // 向左移动输入
-    input iToRight,      // 向右移动输入
-    input [3:0] iBarMoveSpeed,  // 挡板移动速度
-    output reg oHSync,   // 水平同步信号输出
-    output reg oVSync,   // 垂直同步信号输出
-    output reg [2:0] oRed,    // 红色分量输出
-    output reg [2:0] oGreen,  // 绿色分量输出
-    output reg [1:0] oBlue,   // 蓝色分量输出
-    output reg oLose     // 游戏失败信号输出
-);
-    
-    // VGA时序参数定义
-    parameter PAL = 640;     // 每行有效像素数
-    parameter LAF = 480;     // 每帧有效行数
-    parameter PLD = 800;     // 每行总像素数
-    parameter LFD = 521;     // 每帧总行数
-    parameter HPW = 96;      // 水平同步脉冲宽度
-    parameter HFP = 16;      // 水平前肩
-    parameter VPW = 2;       // 垂直同步脉冲宽度
-    parameter VFP = 10;      // 垂直前肩
-    
-    // 游戏区域边界定义
-    parameter UP_BOUND = 10;      // 上边界
-    parameter DOWN_BOUND = 480;   // 下边界
-    parameter LEFT_BOUND = 20;    // 左边界
-    parameter RIGHT_BOUND = 630;  // 右边界
-    
-    // 砖块区域参数定义
-    parameter BLOCK_DOWN_first = 70;   // 第一行砖块底部位置
-    parameter BLOCK_DOWN_second = 35;  // 第二行砖块底部位置
-    parameter BLOCK_WIDTH = 125;       // 砖块宽度
-    
-    // 小球参数定义
-    parameter ball_r = 10;  // 小球半径
-    
-    // 暂停状态寄存器,初始为暂停状态
-    reg pau=1;
-    
-    // 计数器和时钟信号定义
-    reg [9:0] Hcnt;      // 水平计数器
-    reg [9:0] Vcnt;      // 垂直计数器
-    reg clk_25M = 0;     // 25MHz时钟
-    reg clk_50M = 0;     // 50MHz时钟
-    
-    // 小球运动方向控制
-    reg h_speed = `RIGHT;  // 水平方向速度
-    reg v_speed = `UP;     // 垂直方向速度
-    
-    // 挡板位置参数定义
-    reg [9:0] up_pos = 400;     // 挡板上边缘位置
-    reg [9:0] down_pos = 430;   // 挡板下边缘位置
-    reg [9:0] left_pos = 230;   // 挡板左边缘位置
-    reg [9:0] right_pos = 430;  // 挡板右边缘位置
-        
-    // 小球位置参数定义
-    reg [9:0] ball_x_pos = 330;  // 小球x坐标
-    reg [9:0] ball_y_pos = 390;  // 小球y坐标
-    
-    // 砖块状态寄存器,10个砖块,1表示存在,0表示被击碎
-    reg [9:0] blocks=10'b1111111111;
-    
-    // 暂停控制逻辑
-    always@(posedge iPause)
-    begin
-        pau=~pau;  // 暂停信号翻转
-    end
-    
-    // 50MHz时钟分频
-    always@(posedge(iClk))
-    begin
-        clk_50M <= ~clk_50M;
-    end
-    
-    // 25MHz时钟分频
-    always@(posedge(clk_50M))
-    begin
-        clk_25M <= ~clk_25M;
-    end
-    
-    // VGA同步信号产生逻辑
-    always@(posedge(clk_25M)) 
-    begin
-        // 水平和垂直计数器控制
-        if( Hcnt == PLD-1 ) // 到达行末
-        begin
-            Hcnt <= 0;  // 水平计数器复位
-            if( Vcnt == LFD-1 ) // 到达帧末
-                Vcnt <=0;  // 垂直计数器复位
-            else
-                Vcnt <= Vcnt + 1;  // 垂直计数器加1
-        end
-        else
-            Hcnt <= Hcnt + 1;  // 水平计数器加1
-        
-        // 产生水平同步信号
-        if( Hcnt == PAL - 1 + HFP)
-            oHSync <= 1'b0;  // 水平同步脉冲开始
-        else if( Hcnt == PAL - 1 + HFP + HPW )
-            oHSync <= 1'b1;  // 水平同步脉冲结束
-        
-        // 产生垂直同步信号
-        if( Vcnt == LAF - 1 + VFP ) 
-            oVSync <= 1'b0;  // 垂直同步脉冲开始
-        else if( Vcnt == LAF - 1 + VFP + VPW )
-            oVSync <= 1'b1;  // 垂直同步脉冲结束
-    end
-    
-    // 显示控制逻辑
-    always @ (posedge clk_25M)   
-    begin  
-        // 显示挡板
-        if (Vcnt>=up_pos && Vcnt<=down_pos && Hcnt>=left_pos && Hcnt<=right_pos) 
-        begin  
-            oRed <= Hcnt[3:1];    // 根据水平位置生成颜色
-            oGreen <= Hcnt[6:4];  
-            oBlue <= Hcnt[8:7]; 
-        end  
-        
-        // 显示小球
-        else if ( (Hcnt - ball_x_pos)*(Hcnt - ball_x_pos) + (Vcnt - ball_y_pos)*(Vcnt - ball_y_pos) <= (ball_r * ball_r))  
-        begin  
-            oRed <= Hcnt[3:1];    // 根据水平位置生成颜色
-            oGreen <= Hcnt[6:4];  
-            oBlue <= Hcnt[8:7];  
-        end  
-        
-        // 显示第一行砖块
-        else if(Vcnt<=BLOCK_DOWN_first&&Vcnt>BLOCK_DOWN_second)
-        begin
-            // 显示每个砖块,根据blocks寄存器状态决定是否显示
-            // 每个砖块使用不同的颜色
-            if(Hcnt<BLOCK_WIDTH&&blocks[0])
-            begin
-                oRed <= 111;   // 红色砖块
-                oGreen <= 000;  
-                oBlue <= 000; 
-            end
-            else if(Hcnt<BLOCK_WIDTH&&!blocks[0])
-            begin
-                oRed <= 0;     // 砖块被击碎显示黑色
-                oGreen <= 0;  
-                oBlue <= 0; 
-            end
-            
-            // 以下类似,显示其他砖块
-            // ... (后续代码逻辑相似)
-        end
-        
-        // 显示第二行砖块
-        else if(Vcnt<=BLOCK_DOWN_second)
-        begin
-            // 显示逻辑与第一行类似
-            // ... (后续代码逻辑相似)
-        end
-        
-        // 显示背景
-        else 
-        begin  
-            oRed <= 3'b000;    // 背景为黑色
-            oGreen <= 3'b000;  
-            oBlue <= 2'b00;  
-        end         
-    end
-    
-    reg flag;  // 重置标志
-    // 游戏状态更新逻辑
-    always @ (posedge oVSync)  
-    begin          
-        // 游戏失败时重置位置
-        if(oLose)
-        begin 
-            ball_x_pos = 330;    // 重置小球位置
-            ball_y_pos = 390;
-            up_pos = 400;        // 重置挡板位置
-            down_pos = 430;
-            left_pos = 230;
-            right_pos = 430; 
-            flag=1;              // 设置重置标志
-        end
-        else if(!pau)  // 非暂停状态
-        begin
-            flag=0;
-            // 控制挡板左右移动
-            if (iToLeft && left_pos >= LEFT_BOUND) 
-            begin  
-                left_pos <= left_pos - iBarMoveSpeed;  
-                right_pos <= right_pos - iBarMoveSpeed;  
-            end  
-            else if(iToRight && right_pos <= RIGHT_BOUND)
-            begin          
-                left_pos <= left_pos + iBarMoveSpeed; 
-                right_pos <= right_pos + iBarMoveSpeed;  
-            end  
-        
-            // 控制小球移动
-            if (v_speed == `UP)     // 向上移动
-                ball_y_pos <= ball_y_pos - iBarMoveSpeed;  
-            else                    // 向下移动
-                ball_y_pos <= ball_y_pos + iBarMoveSpeed;  
-            if (h_speed == `RIGHT)  // 向右移动
-                ball_x_pos <= ball_x_pos + iBarMoveSpeed;  
-            else                    // 向左移动
-                ball_x_pos <= ball_x_pos - iBarMoveSpeed; 
-        end     
-    end 
-    
-    // 碰撞检测和方向改变逻辑
-    always @ (negedge oVSync)  
-    begin
-        // 游戏重置
-        if(flag)
-        begin
-            oLose<=0;
-            blocks=10'b1111111111;  // 重置所有砖块
-        end
-        
-        // 碰到上边界反弹
-        if (ball_y_pos <= UP_BOUND)   
-        begin    
-            v_speed <= `DOWN;              
-            oLose <= 0;
-        end
-        
-        // 检测与第一行砖块的碰撞
-        else if(ball_y_pos <= BLOCK_DOWN_first&&ball_y_pos > BLOCK_DOWN_second)
-        begin
-            // 检测每个砖块的碰撞
-            if(ball_x_pos<BLOCK_WIDTH&&blocks[0])
-            begin
-                v_speed<=`DOWN;  // 改变小球方向
-                blocks[0]<=0;    // 消除砖块
-            end
-            // ... (后续砖块碰撞检测逻辑相似)
-        end
-        
-        // 检测与第二行砖块的碰撞
-        else if(ball_y_pos <= BLOCK_DOWN_second)
-        begin
-            // 检测逻辑与第一行类似
-            // ... (后续代码逻辑相似)
-        end
-        
-        // 检测与挡板的碰撞
-        else if (ball_y_pos >= (up_pos - ball_r) && ball_x_pos <= right_pos && ball_x_pos >= left_pos)  
-            v_speed <= `UP;  // 碰到挡板反弹
-            
-        // 检测游戏失败条件
-        else if (ball_y_pos >= down_pos && ball_y_pos < (DOWN_BOUND - ball_r))
-        begin
-            oLose <= 1;  // 设置失败标志
-        end
-        
-        // 所有砖块都被击碎
-        else if(blocks==0)
-            oLose<=0;
-            
-        // 碰到底部边界
-        else if (ball_y_pos >= (DOWN_BOUND - ball_r + 1))
-            v_speed <= 0; 
-        else  
-            v_speed <= v_speed;  
-                  
-        // 检测左右边界碰撞
-        if (ball_x_pos <= LEFT_BOUND)  
-            h_speed <= `RIGHT;  
-        else if (ball_x_pos >= RIGHT_BOUND)  
-            h_speed <= `LEFT;  
-        else  
-            h_speed <= h_speed;  
-    end 
+	input iClk,
+	input iPause,
+	input iToLeft,
+	input iToRight,
+	input [3:0] iBarMoveSpeed,
+	output reg oHSync,
+	output reg oVSync,
+	output reg [2:0] oRed,
+	output reg [2:0] oGreen,
+	output reg [1:0] oBlue,
+	output reg oLose
+	);
+	
+	//parameter definition
+	parameter PAL = 640;		//Pixels/Active Line (pixels)
+	parameter LAF = 480;		//Lines/Active Frame (lines)
+	parameter PLD = 800;	    //Pixel/Line Divider
+	parameter LFD = 521;		//Line/Frame Divider
+	parameter HPW = 96;			//Horizontal synchro Pulse Width (pixels)
+	parameter HFP = 16;			//Horizontal synchro Front Porch (pixels)
+	parameter VPW = 2;			//Verical synchro Pulse Width (lines)
+	parameter VFP = 10;			//Verical synchro Front Porch (lines)
+	
+	parameter UP_BOUND = 10;
+	parameter DOWN_BOUND = 480;  
+	parameter LEFT_BOUND = 20;  
+	parameter RIGHT_BOUND = 630;
+	
+	parameter BLOCK_DOWN_first = 70;
+	parameter BLOCK_DOWN_second = 35;
+	parameter BLOCK_WIDTH = 125;
+	
+	// Radius of the ball
+	parameter ball_r = 10;
+	
+	
+	reg pau=1;
+	
+	/*register definition*/
+	reg [9:0] Hcnt;      // horizontal counter  if = PLD-1 -> Hcnt <= 0
+	reg [9:0] Vcnt;      // verical counter  if = LFD-1 -> Vcnt <= 0
+	reg clk_25M = 0;     //25MHz frequency
+	reg clk_50M = 0;     //50MHz frequency
+	
+	reg h_speed = `RIGHT;
+	reg v_speed = `UP; 
+	
+	// The position of the downside bar
+	reg [9:0] up_pos = 400;
+	reg [9:0] down_pos = 430;
+	reg [9:0] left_pos = 230;
+	reg [9:0] right_pos = 430;  
+		
+	// The circle heart position of the ball
+	reg [9:0] ball_x_pos = 330;
+	reg [9:0] ball_y_pos = 390;
+	
+	
+	//The blocks
+	reg [9:0] blocks=10'b1111111111;
+	
+	always@(posedge iPause)
+	begin
+	   pau=~pau;
+	end
+	
+	//generate a half frequency clock of 50MHz
+	always@(posedge(iClk))
+	begin
+		clk_50M <= ~clk_50M;
+	end
+	
+	//generate a half frequency clock of 25MHz
+	always@(posedge(clk_50M))
+	 begin
+		 clk_25M <= ~clk_25M;
+	 end
+	
+	/*generate the hs && vs timing*/
+	always@(posedge(clk_25M)) 
+	begin
+		/*conditions of reseting Hcnter && Vcnter*/
+		if( Hcnt == PLD-1 ) //have reached the edge of one line
+		begin
+			Hcnt <= 0; //reset the horizontal counter
+			if( Vcnt == LFD-1 ) //only when horizontal pointer reach the edge can the vertical counter ++
+				Vcnt <=0;
+			else
+				Vcnt <= Vcnt + 1;
+		end
+		else
+			Hcnt <= Hcnt + 1;
+		
+		/*generate hs timing*/
+		if( Hcnt == PAL - 1 + HFP)
+			oHSync <= 1'b0;
+		else if( Hcnt == PAL - 1 + HFP + HPW )
+			oHSync <= 1'b1;
+		
+		/*generate vs timing*/		
+		if( Vcnt == LAF - 1 + VFP ) 
+			oVSync <= 1'b0;
+		else if( Vcnt == LAF - 1 + VFP + VPW )
+			oVSync <= 1'b1;					
+	end
+	
+	
+	//Display the downside bar and the ball
+	always @ (posedge clk_25M)   
+	begin  
+		// Display the downside bar
+		if (Vcnt>=up_pos && Vcnt<=down_pos  
+				&& Hcnt>=left_pos && Hcnt<=right_pos) 
+		begin  
+			oRed <= Hcnt[3:1];  
+			oGreen <= Hcnt[6:4];  
+			oBlue <= Hcnt[8:7]; 
+		end  
+		
+		// Display the ball
+		else if ( (Hcnt - ball_x_pos)*(Hcnt - ball_x_pos) + (Vcnt - ball_y_pos)*(Vcnt - ball_y_pos) <= (ball_r * ball_r))  
+		begin  
+			oRed <= Hcnt[3:1];  
+			oGreen <= Hcnt[6:4];  
+			oBlue <= Hcnt[8:7];  
+		end  
+		else if(Vcnt<=BLOCK_DOWN_first&&Vcnt>BLOCK_DOWN_second)
+		begin
+			  if(Hcnt<BLOCK_WIDTH&&blocks[0])
+			  begin
+				  oRed <= 111;  
+				  oGreen <= 000;  
+				  oBlue <= 000; 
+			  end
+			  else if(Hcnt<BLOCK_WIDTH&&!blocks[0])
+							 begin
+								oRed <= 0;  
+								oGreen <= 0;  
+							   oBlue <= 0; 
+							end
+			   if(Hcnt<BLOCK_WIDTH*2&&blocks[1]&&Hcnt>BLOCK_WIDTH)
+				begin
+					 oRed <= 000;  
+					 oGreen <= 111;  
+					 oBlue <= 000; 
+			   end
+			  else if(Hcnt<BLOCK_WIDTH*2&&!blocks[1]&&Hcnt>BLOCK_WIDTH)
+							  begin
+								 oRed <= 0;  
+								 oGreen <= 0;  
+								oBlue <= 0; 
+							 end
+			   if(Hcnt<BLOCK_WIDTH*3&&blocks[2]&&Hcnt>BLOCK_WIDTH*2)
+			   begin
+				   oRed <= 000;  
+				   oGreen <= 000;  
+					oBlue <= 111; 
+			   end
+			  else if(Hcnt<BLOCK_WIDTH*3&&!blocks[2]&&Hcnt>BLOCK_WIDTH*2)
+							  begin
+								 oRed <= 0;  
+								 oGreen <= 0;  
+								oBlue <= 0; 
+							 end
+			   if(Hcnt<BLOCK_WIDTH*4&&blocks[3]&&Hcnt>BLOCK_WIDTH*3)
+			   begin
+					oRed <= 000;  
+					oGreen <= 111;  
+					oBlue <= 111; 
+			  end
+			  else if(Hcnt<BLOCK_WIDTH*4&&!blocks[3]&&Hcnt>BLOCK_WIDTH*3)
+							 begin
+								oRed <= 0;  
+								oGreen <= 0;  
+							   oBlue <= 0; 
+							end
+			  if(blocks[4]&&Hcnt>BLOCK_WIDTH*4)
+			  begin
+				   oRed <= 111;  
+				   oGreen <= 111;  
+				   oBlue <= 111; 
+			  end
+			  else if(!blocks[4]&&Hcnt>BLOCK_WIDTH*4)
+			   begin
+				  oRed <= 0;  
+				  oGreen <= 0;  
+				 oBlue <= 0; 
+			  end
+		end
+		else if(Vcnt<=BLOCK_DOWN_second)
+				begin
+					  if(Hcnt<BLOCK_WIDTH&&blocks[5])
+					  begin
+						  oRed <= 111;  
+						  oGreen <= 111;  
+						  oBlue <= 000; 
+					  end
+			  else if(Hcnt<BLOCK_WIDTH&&!blocks[5])
+					  begin
+						oRed <= 0;  
+						oGreen <= 0;  
+						oBlue <= 0; 
+					  end
+					   if(Hcnt<BLOCK_WIDTH*2&&blocks[6]&&Hcnt>BLOCK_WIDTH)
+						begin
+							 oRed <= 010;  
+							 oGreen <= 101;  
+							 oBlue <= 010; 
+					   end
+			  else if(Hcnt<BLOCK_WIDTH*2&&!blocks[6]&&Hcnt>BLOCK_WIDTH)
+						  begin
+						  oRed <= 0;  
+						  oGreen <= 0;  
+						  oBlue <= 0; 
+						end
+					   if(Hcnt<BLOCK_WIDTH*3&&blocks[7]&&Hcnt>BLOCK_WIDTH*2)
+					   begin
+						   oRed <= 100;  
+						   oGreen <= 011;  
+							oBlue <= 111; 
+					   end
+			  else if(Hcnt<BLOCK_WIDTH*3&&!blocks[7]&&Hcnt>BLOCK_WIDTH*2)
+						begin
+							oRed <= 0;  
+							oGreen <= 0;  
+							oBlue <=0; 
+						 end
+					   if(Hcnt<BLOCK_WIDTH*4&&blocks[8]&&Hcnt>BLOCK_WIDTH*3)
+					   begin
+							oRed <= 010;  
+							oGreen <= 101;  
+							oBlue <= 111; 
+					  end
+			  else if(Hcnt<BLOCK_WIDTH*4&&!blocks[8]&&Hcnt>BLOCK_WIDTH*3)
+						begin
+							  oRed <= 0;  
+							 oGreen <= 0;  
+							 oBlue <= 0; 
+					  end
+					  if(blocks[9]&&Hcnt>BLOCK_WIDTH*4)
+					  begin
+						   oRed <= 011;  
+						   oGreen <= 011;  
+						   oBlue <= 011; 
+					  end
+			  else if(!blocks[9]&&Hcnt>BLOCK_WIDTH*4)
+						 begin
+							 oRed <= 0;  
+							  oGreen <= 0;  
+							  oBlue <= 0; 
+						end
+				end
+		
+		else 
+		begin  
+			oRed <= 3'b000;  
+			oGreen <= 3'b000;  
+			oBlue <= 2'b00;  
+		end		 
+		
+		
+	end
+	
+	reg flag;
+	//flush the image every zhen = =||
+	always @ (posedge oVSync)  
+   begin  		
+		// movement of the bar
+		if(oLose)
+		begin 
+			ball_x_pos = 330;
+			ball_y_pos = 390;
+			up_pos = 400;
+			down_pos = 430;
+			left_pos = 230;
+			right_pos = 430; 
+			flag=1;
+		end
+		else if(!pau)
+		begin
+		  flag=0;
+	 	  if (iToLeft && left_pos >= LEFT_BOUND) 
+			begin  
+				left_pos <= left_pos - iBarMoveSpeed;  
+				right_pos <= right_pos - iBarMoveSpeed;  
+		  end  
+		  else if(iToRight && right_pos <= RIGHT_BOUND)
+			begin  		
+				left_pos <= left_pos + iBarMoveSpeed; 
+				right_pos <= right_pos + iBarMoveSpeed;  
+		  end  
+		
+			//movement of the ball
+			if (v_speed == `UP) // go up 
+				ball_y_pos <= ball_y_pos - iBarMoveSpeed;  
+			else //go down
+				ball_y_pos <= ball_y_pos + iBarMoveSpeed;  
+			if (h_speed == `RIGHT) // go right 
+				ball_x_pos <= ball_x_pos + iBarMoveSpeed;  
+			else //go down
+				ball_x_pos <= ball_x_pos - iBarMoveSpeed; 
+
+		end 	
+   	end 
+	
+	//change directions when reach the edge or crush the bar
+	always @ (negedge oVSync)  
+	begin
+		if(flag)
+		begin
+		   oLose<=0;
+		   blocks=10'b1111111111; 
+		end
+		if (ball_y_pos <= UP_BOUND)   // Here, all the jugement should use >= or <= instead of ==
+		begin	
+			v_speed <= `DOWN;              // Because when the offset is more than 1, the axis may step over the line
+			oLose <= 0;
+		end
+		else if(ball_y_pos <= BLOCK_DOWN_first&&ball_y_pos > BLOCK_DOWN_second)
+		begin
+			  if(ball_x_pos<BLOCK_WIDTH&&blocks[0])
+			  begin
+				  v_speed<=`DOWN;
+				  blocks[0]<=0;
+			  end
+			  else if(ball_x_pos<BLOCK_WIDTH*2&&blocks[1]&&ball_x_pos>BLOCK_WIDTH)
+				begin
+					 v_speed<=`DOWN;
+					 blocks[1]<=0;
+				end
+			 else if(ball_x_pos<BLOCK_WIDTH*3&&blocks[2]&&ball_x_pos>BLOCK_WIDTH*2)
+			   begin
+					  v_speed<=`DOWN;
+					   blocks[2]<=0;
+			   end
+			   else if(ball_x_pos<BLOCK_WIDTH*4&&blocks[3]&&ball_x_pos>BLOCK_WIDTH*3)
+				begin
+					  v_speed<=`DOWN;
+					  blocks[3]<=0;
+				end
+			  else if(blocks[4]&&ball_x_pos>4*BLOCK_WIDTH)
+			   begin
+					 v_speed<=`DOWN;
+					 blocks[4]<=0;
+			  end
+		end
+		else if(ball_y_pos <= BLOCK_DOWN_second)
+				begin
+					  if(ball_x_pos<BLOCK_WIDTH&&blocks[5])
+					  begin
+						  v_speed<=`DOWN;
+						  blocks[5]<=0;
+					  end
+					  else if(ball_x_pos<BLOCK_WIDTH*2&&blocks[6]&&ball_x_pos>BLOCK_WIDTH)
+						begin
+							 v_speed<=`DOWN;
+							 blocks[6]<=0;
+						end
+					  else if(ball_x_pos<BLOCK_WIDTH*3&&blocks[7]&&ball_x_pos>BLOCK_WIDTH*2)
+					   begin
+							  v_speed<=`DOWN;
+							   blocks[7]<=0;
+					   end
+					   else if(ball_x_pos<BLOCK_WIDTH*4&&blocks[8]&&ball_x_pos>BLOCK_WIDTH*3)
+						begin
+							  v_speed<=`DOWN;
+							  blocks[8]<=0;
+						end
+					  else if(blocks[9]&&ball_x_pos>4*BLOCK_WIDTH)
+					   begin
+							 v_speed<=`DOWN;
+							 blocks[9]<=0;
+					  end
+				end
+		else if (ball_y_pos >= (up_pos - ball_r) && ball_x_pos <= right_pos && ball_x_pos >= left_pos)  
+			v_speed <= `UP;  
+		else if (ball_y_pos >= down_pos && ball_y_pos < (DOWN_BOUND - ball_r))
+		begin
+			//Do what you want when lose
+			oLose <= 1;
+		end
+		else if(blocks==0)
+		  oLose<=0;
+		else if (ball_y_pos >= (DOWN_BOUND - ball_r + 1))
+			v_speed <= 0; 
+	  else  
+		 v_speed <= v_speed;  
+			  
+	  if (ball_x_pos <= LEFT_BOUND)  
+		 h_speed <= `RIGHT;  
+	  else if (ball_x_pos >= RIGHT_BOUND)  
+		 h_speed <= `LEFT;  
+	  else  
+		 h_speed <= h_speed;  
+  end 
   
+
 endmodule
