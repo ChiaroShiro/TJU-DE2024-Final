@@ -1,0 +1,1726 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Fri Jan 03 11:35:10 2025
+# Process ID: 34744
+# Current directory: E:/work/tju/DE/Final/ball/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent27988 E:\work\tju\DE\Final\ball\project_1\project_1.xpr
+# Log file: E:/work/tju/DE/Final/ball/project_1/vivado.log
+# Journal file: E:/work/tju/DE/Final/ball/project_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/work/tju/DE/Final/ball/project_1/project_1.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'F:/Program/Xilinx/Vivado/2016.2/data/ip'.
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'Top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj Top_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/white_balance.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module white_balance
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/identify_color.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module identify_color
+INFO: [VRFC 10-2458] undeclared symbol cout, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/identify_color.v:38]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/conbine_wire.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module conbine_wire
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_display
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_game
+INFO: [VRFC 10-2458] undeclared symbol lose, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v:61]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top_module.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_color
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: F:/Program/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 0c5eb91dbf404fd7b2e8b8427935b3e0 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Top_tb_behav xil_defaultlib.Top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-426] cannot find port VSync on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:21]
+WARNING: [VRFC 10-426] cannot find port b on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:39]
+WARNING: [VRFC 10-426] cannot find port oFilterSelect on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top_module.v:72]
+WARNING: [VRFC 10-426] cannot find port VSync on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:53]
+ERROR: [VRFC 10-426] cannot find port clk on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:22]
+ERROR: [VRFC 10-426] cannot find port color_frequncy on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:23]
+ERROR: [VRFC 10-426] cannot find port pause on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:24]
+ERROR: [VRFC 10-426] cannot find port filter_select on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:25]
+ERROR: [VRFC 10-426] cannot find port frequncy_rate on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:26]
+ERROR: [VRFC 10-426] cannot find port led on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:27]
+ERROR: [VRFC 10-426] cannot find port HSync on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:28]
+ERROR: [VRFC 10-426] cannot find port OutBlue on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:29]
+ERROR: [VRFC 10-426] cannot find port OutGreen on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:30]
+ERROR: [VRFC 10-426] cannot find port OutRed on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:31]
+ERROR: [VRFC 10-426] cannot find port VSync on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:32]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'Top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj Top_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/white_balance.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module white_balance
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/identify_color.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module identify_color
+INFO: [VRFC 10-2458] undeclared symbol cout, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/identify_color.v:38]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/conbine_wire.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module conbine_wire
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_display
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_game
+INFO: [VRFC 10-2458] undeclared symbol lose, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v:61]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top_module.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_color
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: F:/Program/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 0c5eb91dbf404fd7b2e8b8427935b3e0 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Top_tb_behav xil_defaultlib.Top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-426] cannot find port VSync on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:21]
+WARNING: [VRFC 10-426] cannot find port b on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:39]
+WARNING: [VRFC 10-426] cannot find port oFilterSelect on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top_module.v:72]
+WARNING: [VRFC 10-426] cannot find port VSync on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:53]
+ERROR: [VRFC 10-426] cannot find port clk on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:22]
+ERROR: [VRFC 10-426] cannot find port color_frequncy on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:23]
+ERROR: [VRFC 10-426] cannot find port pause on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:24]
+ERROR: [VRFC 10-426] cannot find port filter_select on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:25]
+ERROR: [VRFC 10-426] cannot find port frequncy_rate on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:26]
+ERROR: [VRFC 10-426] cannot find port led on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:27]
+ERROR: [VRFC 10-426] cannot find port HSync on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:28]
+ERROR: [VRFC 10-426] cannot find port OutBlue on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:29]
+ERROR: [VRFC 10-426] cannot find port OutGreen on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:30]
+ERROR: [VRFC 10-426] cannot find port OutRed on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:31]
+ERROR: [VRFC 10-426] cannot find port VSync on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:32]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'Top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj Top_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/white_balance.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module white_balance
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/identify_color.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module identify_color
+INFO: [VRFC 10-2458] undeclared symbol cout, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/identify_color.v:38]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/conbine_wire.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module conbine_wire
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_display
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_game
+INFO: [VRFC 10-2458] undeclared symbol lose, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v:61]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top_module.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_color
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: F:/Program/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 0c5eb91dbf404fd7b2e8b8427935b3e0 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Top_tb_behav xil_defaultlib.Top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-426] cannot find port VSync on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:21]
+WARNING: [VRFC 10-426] cannot find port b on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:39]
+WARNING: [VRFC 10-426] cannot find port oFilterSelect on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top_module.v:72]
+WARNING: [VRFC 10-426] cannot find port VSync on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:53]
+ERROR: [VRFC 10-426] cannot find port clk on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:22]
+ERROR: [VRFC 10-426] cannot find port color_frequncy on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:23]
+ERROR: [VRFC 10-426] cannot find port pause on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:24]
+ERROR: [VRFC 10-426] cannot find port filter_select on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:25]
+ERROR: [VRFC 10-426] cannot find port frequncy_rate on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:26]
+ERROR: [VRFC 10-426] cannot find port led on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:27]
+ERROR: [VRFC 10-426] cannot find port HSync on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:28]
+ERROR: [VRFC 10-426] cannot find port OutBlue on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:29]
+ERROR: [VRFC 10-426] cannot find port OutGreen on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:30]
+ERROR: [VRFC 10-426] cannot find port OutRed on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:31]
+ERROR: [VRFC 10-426] cannot find port VSync on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:32]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'Top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj Top_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/white_balance.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module white_balance
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/identify_color.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module identify_color
+INFO: [VRFC 10-2458] undeclared symbol cout, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/identify_color.v:38]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/conbine_wire.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module conbine_wire
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_display
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_game
+INFO: [VRFC 10-2458] undeclared symbol lose, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v:61]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top_module.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_color
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: F:/Program/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 0c5eb91dbf404fd7b2e8b8427935b3e0 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Top_tb_behav xil_defaultlib.Top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-426] cannot find port b on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:39]
+WARNING: [VRFC 10-426] cannot find port oFilterSelect on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top_module.v:72]
+WARNING: [VRFC 10-426] cannot find port VSync on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:53]
+ERROR: [VRFC 10-426] cannot find port clk on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:40]
+ERROR: [VRFC 10-426] cannot find port frequncy on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:41]
+ERROR: [VRFC 10-426] cannot find port filter_select on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:42]
+ERROR: [VRFC 10-426] cannot find port frequncy_rate on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:43]
+ERROR: [VRFC 10-426] cannot find port led on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:44]
+ERROR: [VRFC 10-426] cannot find port r on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:45]
+ERROR: [VRFC 10-426] cannot find port g on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:46]
+ERROR: [VRFC 10-426] cannot find port b on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:47]
+ERROR: [VRFC 10-426] cannot find port mclk on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:54]
+ERROR: [VRFC 10-426] cannot find port pause on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:55]
+ERROR: [VRFC 10-426] cannot find port to_left on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:56]
+ERROR: [VRFC 10-426] cannot find port to_right on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:57]
+ERROR: [VRFC 10-426] cannot find port HSync on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:58]
+ERROR: [VRFC 10-426] cannot find port OutBlue on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:59]
+ERROR: [VRFC 10-426] cannot find port OutGreen on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:60]
+ERROR: [VRFC 10-426] cannot find port OutRed on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:61]
+ERROR: [VRFC 10-426] cannot find port VSync on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:62]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'Top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj Top_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/white_balance.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module white_balance
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/identify_color.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module identify_color
+INFO: [VRFC 10-2458] undeclared symbol cout, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/identify_color.v:38]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/conbine_wire.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module conbine_wire
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_display
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_game
+INFO: [VRFC 10-2458] undeclared symbol lose, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v:61]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top_module.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_color
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: F:/Program/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 0c5eb91dbf404fd7b2e8b8427935b3e0 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Top_tb_behav xil_defaultlib.Top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-426] cannot find port oFilterSelect on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top_module.v:72]
+ERROR: [VRFC 10-426] cannot find port oFilterSelect on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top_module.v:76]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'Top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj Top_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/white_balance.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module white_balance
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/identify_color.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module identify_color
+INFO: [VRFC 10-2458] undeclared symbol cout, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/identify_color.v:38]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/conbine_wire.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module conbine_wire
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_display
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_game
+INFO: [VRFC 10-2458] undeclared symbol lose, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v:61]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top_module.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_color
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: F:/Program/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 0c5eb91dbf404fd7b2e8b8427935b3e0 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Top_tb_behav xil_defaultlib.Top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.white_balance
+Compiling module xil_defaultlib.identify_color
+Compiling module xil_defaultlib.conbine_wire
+Compiling module xil_defaultlib.Top_module_of_color
+Compiling module xil_defaultlib.VGA_display
+Compiling module xil_defaultlib.Top_module_of_game
+Compiling module xil_defaultlib.Top
+Compiling module xil_defaultlib.Top_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Top_tb_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/xsim.dir/Top_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Fri Jan 03 11:57:33 2025...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Top_tb_behav -key {Behavioral:sim_1:Functional:Top_tb} -tclbatch {Top_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+source Top_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Time=0 pause=0 filter_select=xx led=1
+Time=100000 pause=1 filter_select=xx led=1
+Time=150000 pause=0 filter_select=xx led=1
+Time=170000 pause=0 filter_select=00 led=1
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Top_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:07 . Memory (MB): peak = 979.582 ; gain = 0.000
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top_module.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top_module.v:1]
+[Fri Jan 03 11:58:44 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 334 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+open_run: Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 1296.633 ; gain = 317.051
+launch_runs impl_1
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1641.320 ; gain = 0.000
+[Fri Jan 03 12:00:51 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Fri Jan 03 12:01:54 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+open_hw
+connect_hw_server
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-2222] Launching hw_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+****** Xilinx hw_server v2016.2
+  **** Build date : Jun  2 2016-16:57:03
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+
+open_hw_target
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292709814A
+set_property PROGRAM.FILE {E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+current_hw_device [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+ERROR: [Common 17-180] Spawn failed: No error
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'Top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj Top_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/white_balance.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module white_balance
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/identify_color.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module identify_color
+INFO: [VRFC 10-2458] undeclared symbol cout, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/identify_color.v:38]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/conbine_wire.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module conbine_wire
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_display
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_game
+INFO: [VRFC 10-2458] undeclared symbol lose, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v:61]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top_module.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_color
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: F:/Program/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 0c5eb91dbf404fd7b2e8b8427935b3e0 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Top_tb_behav xil_defaultlib.Top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.white_balance
+Compiling module xil_defaultlib.identify_color
+Compiling module xil_defaultlib.conbine_wire
+Compiling module xil_defaultlib.Top_module_of_color
+Compiling module xil_defaultlib.VGA_display
+Compiling module xil_defaultlib.Top_module_of_game
+Compiling module xil_defaultlib.Top
+Compiling module xil_defaultlib.Top_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Top_tb_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/xsim.dir/Top_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Fri Jan 03 12:10:15 2025...
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Top_tb_behav -key {Behavioral:sim_1:Functional:Top_tb} -tclbatch {Top_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+source Top_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Time=0 pause=0 filter_select=xx led=1
+Time=100000 pause=1 filter_select=xx led=1
+Time=150000 pause=0 filter_select=xx led=1
+Time=170000 pause=0 filter_select=00 led=1
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Top_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:00 ; elapsed = 00:00:05 . Memory (MB): peak = 1778.027 ; gain = 0.000
+update_compile_order -fileset sources_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'Top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj Top_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_display
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_game
+INFO: [VRFC 10-2458] undeclared symbol lose, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v:61]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top
+INFO: [VRFC 10-2458] undeclared symbol to_left, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:56]
+INFO: [VRFC 10-2458] undeclared symbol to_right, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:57]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: F:/Program/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 0c5eb91dbf404fd7b2e8b8427935b3e0 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Top_tb_behav xil_defaultlib.Top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-426] cannot find port oLed on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:21]
+ERROR: [VRFC 10-426] cannot find port iColorFrequncy on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:23]
+ERROR: [VRFC 10-426] cannot find port oFilterSelect on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:25]
+ERROR: [VRFC 10-426] cannot find port oFrequncyRate on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:26]
+ERROR: [VRFC 10-426] cannot find port oLed on this module [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v:27]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'Top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj Top_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_display
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_game
+INFO: [VRFC 10-2458] undeclared symbol lose, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v:61]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top
+INFO: [VRFC 10-2458] undeclared symbol to_left, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:56]
+INFO: [VRFC 10-2458] undeclared symbol to_right, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:57]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: F:/Program/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 0c5eb91dbf404fd7b2e8b8427935b3e0 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Top_tb_behav xil_defaultlib.Top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.VGA_display
+Compiling module xil_defaultlib.Top_module_of_game
+Compiling module xil_defaultlib.Top
+Compiling module xil_defaultlib.Top_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Top_tb_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/xsim.dir/Top_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Fri Jan 03 12:13:52 2025...
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Top_tb_behav -key {Behavioral:sim_1:Functional:Top_tb} -tclbatch {Top_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+source Top_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Time=0 pause=0
+Time=100000 pause=1
+Time=150000 pause=0
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Top_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'Top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj Top_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_display
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_game
+INFO: [VRFC 10-2458] undeclared symbol lose, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v:61]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: F:/Program/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 0c5eb91dbf404fd7b2e8b8427935b3e0 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Top_tb_behav xil_defaultlib.Top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.VGA_display
+Compiling module xil_defaultlib.Top_module_of_game
+Compiling module xil_defaultlib.Top
+Compiling module xil_defaultlib.Top_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Top_tb_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/xsim.dir/Top_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Fri Jan 03 12:17:34 2025...
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Top_tb_behav -key {Behavioral:sim_1:Functional:Top_tb} -tclbatch {Top_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+source Top_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Time=0 pause=0
+Time=100000 pause=1
+Time=150000 pause=0
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Top_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1827.156 ; gain = 27.332
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:1]
+[Fri Jan 03 12:17:48 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 52 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+launch_runs impl_1
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 1884.699 ; gain = 0.000
+[Fri Jan 03 12:20:35 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Fri Jan 03 12:21:47 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292709814A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292709814A
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292709814A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292709814A
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292709814A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292709814A
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+add_files -norecurse {E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/bluetooth.v}
+update_compile_order -fileset sources_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'Top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj Top_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_display
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_game
+INFO: [VRFC 10-2458] undeclared symbol lose, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v:61]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module display7
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: F:/Program/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 0c5eb91dbf404fd7b2e8b8427935b3e0 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Top_tb_behav xil_defaultlib.Top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-2063] Module <bluetooth_uart_receive> not found while processing module instance <bluetooth> [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:45]
+ERROR: [VRFC 10-2063] Module <display7> not found while processing module instance <display> [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:53]
+ERROR: [VRFC 10-2063] Module <Top_module_of_game> not found while processing module instance <game> [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:74]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'Top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj Top_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_display
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_game
+INFO: [VRFC 10-2458] undeclared symbol lose, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v:61]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module display7
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/bluetooth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bluetooth_uart_receive
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: F:/Program/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 0c5eb91dbf404fd7b2e8b8427935b3e0 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Top_tb_behav xil_defaultlib.Top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 8 differs from formal bit length 9 for port iData [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:54]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v" Line 1. Module display7 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v" Line 1. Module display7 doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bluetooth_uart_receive_default
+Compiling module xil_defaultlib.display7
+Compiling module xil_defaultlib.VGA_display
+Compiling module xil_defaultlib.Top_module_of_game
+Compiling module xil_defaultlib.Top
+Compiling module xil_defaultlib.Top_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Top_tb_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/xsim.dir/Top_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Fri Jan 03 16:15:06 2025...
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Top_tb_behav -key {Behavioral:sim_1:Functional:Top_tb} -tclbatch {Top_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+source Top_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Time=0 pause=0
+Time=100000 pause=1
+Time=150000 pause=0
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Top_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'Top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj Top_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_display
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_game
+INFO: [VRFC 10-2458] undeclared symbol lose, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v:61]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module display7
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/bluetooth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bluetooth_uart_receive
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '2' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: F:/Program/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 0c5eb91dbf404fd7b2e8b8427935b3e0 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Top_tb_behav xil_defaultlib.Top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 8 differs from formal bit length 9 for port iData [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:54]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bluetooth_uart_receive_default
+Compiling module xil_defaultlib.display7
+Compiling module xil_defaultlib.VGA_display
+Compiling module xil_defaultlib.Top_module_of_game
+Compiling module xil_defaultlib.Top
+Compiling module xil_defaultlib.Top_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Top_tb_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/xsim.dir/Top_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Fri Jan 03 16:15:40 2025...
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Top_tb_behav -key {Behavioral:sim_1:Functional:Top_tb} -tclbatch {Top_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+source Top_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Time=0 pause=0
+Time=100000 pause=1
+Time=150000 pause=0
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Top_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:06 . Memory (MB): peak = 1905.059 ; gain = 0.000
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v:1]
+[Fri Jan 03 16:16:02 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 285 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+WARNING: [Vivado 12-584] No ports matched 'oOutBlue[2]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:1]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:1]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutBlue[1]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:2]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:2]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutGreen[1]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:3]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:3]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutGreen[0]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:4]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:4]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutGreen[2]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:5]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:5]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutRed[2]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:6]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:6]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutRed[1]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutRed[0]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oHSync'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:10]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'iPause'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:11]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oVSync'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'to_left'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'to_right'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'iPause'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'to_left'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'to_right'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oHSync'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oVSync'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutRed[2]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutRed[1]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutRed[0]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:24]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:24]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutGreen[2]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutGreen[1]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:26]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:26]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutGreen[0]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:27]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:27]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutBlue[2]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:28]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:28]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutBlue[1]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:29]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:29]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'iPause_IBUF'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:31]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:31]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[6]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[5]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[4]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[3]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[2]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:39]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[1]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[0]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:41]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:41]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[6]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:42]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[5]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:43]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:43]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[4]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:44]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:44]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[3]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:45]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:45]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[2]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[1]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[0]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dataled'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dataled'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v:1]
+[Fri Jan 03 16:18:29 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 285 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+WARNING: [Vivado 12-584] No ports matched 'oOutBlue[2]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:1]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:1]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutBlue[1]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:2]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:2]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutGreen[1]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:3]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:3]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutGreen[0]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:4]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:4]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutGreen[2]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:5]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:5]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutRed[2]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:6]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:6]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutRed[1]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutRed[0]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oHSync'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:10]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'iPause'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:11]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oVSync'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'to_left'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'to_right'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[6]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[5]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:18]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:18]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[4]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:19]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:19]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[3]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:20]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:20]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[2]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:21]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:21]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[1]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:22]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:22]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[0]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:23]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:23]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dataled'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:25]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:25]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'iPause'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:28]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:28]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'to_left'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:29]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:29]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'to_right'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:30]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:30]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oHSync'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:31]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:31]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oVSync'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:32]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:32]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutRed[2]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:33]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:33]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutRed[1]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:34]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:34]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutRed[0]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:35]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:35]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutGreen[2]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:36]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:36]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutGreen[1]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:37]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:37]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutGreen[0]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:38]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:38]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutBlue[2]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:39]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:39]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutBlue[1]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:40]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:40]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-507] No nets matched 'iPause_IBUF'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:42]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:42]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[6]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:46]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:46]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[5]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:47]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:47]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[4]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:48]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:48]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[3]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:49]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:49]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[2]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:50]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:50]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[1]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:51]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:51]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[0]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:52]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:52]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'dataled'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:54]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:54]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v:1]
+[Fri Jan 03 16:21:02 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 285 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+WARNING: [Vivado 12-584] No ports matched 'oOutBlue[2]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:1]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:1]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutBlue[1]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:2]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:2]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutGreen[1]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:3]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:3]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutGreen[0]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:4]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:4]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutGreen[2]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:5]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:5]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutRed[2]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:6]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:6]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutRed[1]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:7]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:7]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oOutRed[0]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:8]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:8]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oHSync'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:10]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:10]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'iPause'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:11]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:11]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oVSync'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:12]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:12]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'to_left'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:13]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:13]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'to_right'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:14]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:14]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[6]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:17]
+CRITICAL WARNING: [Common 17-55] 'set_property' expects at least one object. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:17]
+Resolution: If [get_<value>] was used to populate the object, check to make sure this command returns at least one valid object.
+INFO: [Common 17-14] Message 'Common 17-55' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:17]
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[5]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:18]
+WARNING: [Vivado 12-584] No ports matched 'oDisplay[4]'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:19]
+INFO: [Common 17-14] Message 'Vivado 12-584' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:19]
+WARNING: [Vivado 12-507] No nets matched 'iPause_IBUF'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc:42]
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+set_property top Top [current_fileset]
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v:1]
+[Fri Jan 03 16:22:32 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 57 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v:1]
+[Fri Jan 03 16:25:09 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 57 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+launch_runs impl_1
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 1958.828 ; gain = 0.000
+[Fri Jan 03 16:26:17 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Fri Jan 03 16:27:03 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:1]
+[Fri Jan 03 16:31:22 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 57 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+launch_runs impl_1
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 1961.383 ; gain = 0.000
+[Fri Jan 03 16:32:05 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Fri Jan 03 16:32:47 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Fri Jan 03 16:35:05 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+[Fri Jan 03 16:35:05 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+open_run impl_1
+INFO: [Netlist 29-17] Analyzing 57 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/.Xil/Vivado-34744-Chiaro/dcp/Top.xdc]
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/.Xil/Vivado-34744-Chiaro/dcp/Top.xdc]
+Reading XDEF placement.
+Reading placer database...
+Reading XDEF routing.
+Read XDEF File: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.102 . Memory (MB): peak = 1993.484 ; gain = 0.051
+Restored from archive | CPU: 0.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.102 . Memory (MB): peak = 1993.484 ; gain = 0.051
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+WARNING: [Timing 38-313] There are no user specified timing constraints. Timing constraints are needed for proper timing analysis.
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+ERROR: [Labtoolstcl 44-513] HW Target shutdown. Closing target: localhost:3121/xilinx_tcf/Digilent/210292709814A
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210292709814A
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Fri Jan 03 16:51:52 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+[Fri Jan 03 16:51:52 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:1]
+[Fri Jan 03 16:53:30 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+current_design synth_1
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 57 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+launch_runs impl_1
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 2111.008 ; gain = 0.000
+[Fri Jan 03 16:55:25 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:1]
+[Fri Jan 03 16:58:27 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 57 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+launch_runs impl_1
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 2111.008 ; gain = 0.000
+[Fri Jan 03 16:59:06 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [USF-XSim-27] Simulation object is 'sim_1'
+INFO: [USF-XSim-37] Inspecting design source files for 'Top_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+"xvlog -m64 --relax -prj Top_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module VGA_display
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/bluetooth.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module bluetooth_uart_receive
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_module_of_game
+INFO: [VRFC 10-2458] undeclared symbol lose, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v:61]
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module display7
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/top_tb.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Top_tb
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+Vivado Simulator 2016.2
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: F:/Program/Xilinx/Vivado/2016.2/bin/unwrapped/win64.o/xelab.exe -wto 0c5eb91dbf404fd7b2e8b8427935b3e0 --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Top_tb_behav xil_defaultlib.Top_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 8 for port iData [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:57]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.bluetooth_uart_receive_default
+Compiling module xil_defaultlib.display7
+Compiling module xil_defaultlib.VGA_display
+Compiling module xil_defaultlib.Top_module_of_game
+Compiling module xil_defaultlib.Top
+Compiling module xil_defaultlib.Top_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Top_tb_behav
+
+****** Webtalk v2016.2 (64-bit)
+  **** SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+  **** IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+    ** Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
+
+source E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav/xsim.dir/Top_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Fri Jan 03 17:00:23 2025...
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'E:/work/tju/DE/Final/ball/project_1/project_1.sim/sim_1/behav'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "Top_tb_behav -key {Behavioral:sim_1:Functional:Top_tb} -tclbatch {Top_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+source Top_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+Time=0 pause=0
+Time=100000 pause=1
+Time=150000 pause=0
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'Top_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:01 ; elapsed = 00:00:07 . Memory (MB): peak = 2111.008 ; gain = 0.000
+reset_run impl_1
+launch_runs impl_1
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 2111.008 ; gain = 0.000
+[Fri Jan 03 17:00:33 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:1]
+[Fri Jan 03 17:02:52 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 57 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+launch_runs impl_1
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.020 . Memory (MB): peak = 2111.008 ; gain = 0.000
+[Fri Jan 03 17:03:31 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Fri Jan 03 17:04:16 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:1]
+[Fri Jan 03 17:04:47 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:1]
+[Fri Jan 03 17:05:51 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+launch_runs impl_1
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Fri Jan 03 17:07:12 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+refresh_design
+INFO: [Netlist 29-17] Analyzing 57 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 2111.008 ; gain = 0.000
+ERROR: [Common 17-180] Spawn failed: No error
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:1]
+[Fri Jan 03 17:08:09 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+launch_runs impl_1
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Fri Jan 03 17:08:37 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Fri Jan 03 17:09:20 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+ERROR: [Vivado 12-106] *** Exception: java.lang.NullPointerException (See E:/work/tju/DE/Final/ball/project_1/vivado_pid34744.debug)
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Jan 03 22:30:15 2025...
