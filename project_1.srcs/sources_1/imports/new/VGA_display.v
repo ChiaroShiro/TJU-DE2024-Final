@@ -1,23 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 2018/12/08 16:59:56
-// Design Name: 
-// Module Name: VGA_display
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
 `define RIGHT 1'b1
 `define LEFT  1'b0
@@ -66,12 +47,13 @@ module VGA_display(
     parameter RIGHT_BOUND = 630;     // 右边界
     
     // 砖块位置参数
-    parameter BLOCK_DOWN_first = 80;   // 第一行砖块底部位置
-    parameter BLOCK_DOWN_second = 40;  // 第二行砖块底部位置
+    parameter BLOCK_DOWN_first = 70;   // 第一行砖块底部位置
+    parameter BLOCK_DOWN_second = 35;  // 第二行砖块底部位置
     parameter BLOCK_WIDTH = 125;       // 砖块宽度
     
     // 球的半径
     parameter ball_r = 10;
+    parameter ball_num = 5;      // 一层的球个数
 	
 	
 	// 暂停状态寄存器,1表示暂停,0表示不暂停
@@ -153,150 +135,75 @@ module VGA_display(
 			oVSync <= 1'b1;					
 	end
 	
+	// 砖块颜色定义
+	function [7:0] get_block_color;
+		input [5:0] block_idx; // 增加到6位输入,支持更多颜色
+		begin
+			case(block_idx % 16) // 对16取模
+				0: 	get_block_color = {3'b111, 3'b000, 2'b00}; // 红色
+				1: 	get_block_color = {3'b000, 3'b111, 2'b00}; // 绿色 
+				2: 	get_block_color = {3'b000, 3'b000, 2'b11}; // 蓝色
+				3: 	get_block_color = {3'b000, 3'b111, 2'b11}; // 青色
+				4: 	get_block_color = {3'b111, 3'b111, 2'b11}; // 白色
+				5: 	get_block_color = {3'b111, 3'b111, 2'b00}; // 黄色
+				6: 	get_block_color = {3'b111, 3'b000, 2'b11}; // 紫色
+				7: 	get_block_color = {3'b000, 3'b111, 2'b01}; // 浅绿色
+				8: 	get_block_color = {3'b011, 3'b011, 2'b11}; // 灰色
+				9: 	get_block_color = {3'b111, 3'b011, 2'b00}; // 橙色
+				10: get_block_color = {3'b011, 3'b000, 2'b11}; // 深紫色
+				11: get_block_color = {3'b000, 3'b011, 2'b11}; // 深青色
+				12: get_block_color = {3'b011, 3'b111, 2'b00}; // 黄绿色
+				13: get_block_color = {3'b111, 3'b001, 2'b01}; // 粉色
+				14: get_block_color = {3'b001, 3'b001, 2'b11}; // 深灰色
+				15: get_block_color = {3'b101, 3'b101, 2'b01}; // 浅灰色
+				default: get_block_color = {3'b000, 3'b000, 2'b00}; // 黑色
+			endcase
+		end
+	endfunction
 	
+	reg [5:0] block_idx1;
+	reg [5:0] block_idx2;
+
 	// 显示挡板和小球
 	always @ (posedge clk_25M)   
 	begin  
 		// 显示挡板
 		if (Vcnt>=up_pos && Vcnt<=down_pos && Hcnt>=left_pos && Hcnt<=right_pos) 
 		begin  
-			oRed <= Hcnt[3:1];  
-			oGreen <= Hcnt[6:4];  
-			oBlue <= Hcnt[8:7]; 
+			oRed <= 3'b111;  
+			oGreen <= 3'b111;  
+			oBlue <= 2'b11; 
 		end  
 		
 		// 显示小球
 		else if ( (Hcnt - ball_x_pos)*(Hcnt - ball_x_pos) + (Vcnt - ball_y_pos)*(Vcnt - ball_y_pos) <= (ball_r * ball_r))  
 		begin  
-			oRed <= Hcnt[3:1];  
-			oGreen <= Hcnt[6:4];  
-			oBlue <= Hcnt[8:7];  
+			oRed <= Hcnt[3:1];
+			oGreen <= Hcnt[6:4];
+			oBlue <= Hcnt[8:7];
 		end  
 		else if(Vcnt<=BLOCK_DOWN_first&&Vcnt>BLOCK_DOWN_second)
 		begin
-			// 显示砖块
-			if(Hcnt<BLOCK_WIDTH&&blocks[0])
-			begin
-				oRed <= 3'b111;  
-				oGreen <= 3'b000;  
-				oBlue <= 2'b00; 
-			end
-			else if(Hcnt<BLOCK_WIDTH&&!blocks[0])
-			begin
-				oRed <= 3'b000;  
-				oGreen <= 3'b000;  
-				oBlue <= 2'b00; 
-			end
-			if(Hcnt<BLOCK_WIDTH*2&&blocks[1]&&Hcnt>BLOCK_WIDTH)
-			begin
-				oRed <= 3'b000;  
-				oGreen <= 3'b111;  
-				oBlue <= 2'b00; 
-			end
-			else if(Hcnt<BLOCK_WIDTH*2&&!blocks[1]&&Hcnt>BLOCK_WIDTH)
-			begin
-				oRed <= 3'b000;  
-				oGreen <= 3'b000;  
-				oBlue <= 2'b00; 
-			end
-			if(Hcnt<BLOCK_WIDTH*3&&blocks[2]&&Hcnt>BLOCK_WIDTH*2)
-			begin
-				oRed <= 3'b000;  
-				oGreen <= 3'b000;  
-				oBlue <= 2'b11; 
-			end
-			else if(Hcnt<BLOCK_WIDTH*3&&!blocks[2]&&Hcnt>BLOCK_WIDTH*2)
-			begin
-				oRed <= 3'b000;  
-				oGreen <= 3'b000;  
-				oBlue <= 2'b00; 
-			end
-			if(Hcnt<BLOCK_WIDTH*4&&blocks[3]&&Hcnt>BLOCK_WIDTH*3)
-			begin
-				oRed <= 3'b000;  
-				oGreen <= 3'b111;  
-				oBlue <= 2'b11; 
-			end
-			else if(Hcnt<BLOCK_WIDTH*4&&!blocks[3]&&Hcnt>BLOCK_WIDTH*3)
-			begin
-				oRed <= 3'b000;  
-				oGreen <= 3'b000;  
-				oBlue <= 2'b00; 
-			end
-			if(blocks[4]&&Hcnt>BLOCK_WIDTH*4)
-			begin
-				oRed <= 3'b111;  
-				oGreen <= 3'b111;  
-				oBlue <= 2'b11; 
-			end
-			else if(!blocks[4]&&Hcnt>BLOCK_WIDTH*4)
-			begin
-				oRed <= 3'b000;  
-				oGreen <= 3'b000;  
-				oBlue <= 2'b00; 
+			// 显示第一行砖块
+			if(Hcnt < BLOCK_WIDTH * ball_num) begin
+				block_idx1 = Hcnt / BLOCK_WIDTH;
+				if(blocks[block_idx1]) begin
+					{oRed, oGreen, oBlue} = get_block_color(block_idx1);
+				end else begin
+					{oRed, oGreen, oBlue} = 8'b0;
+				end
 			end
 		end
 		else if(Vcnt<=BLOCK_DOWN_second)
 		begin
-			if(Hcnt<BLOCK_WIDTH&&blocks[5])
-			begin
-				oRed <= 3'b111;  
-				oGreen <= 3'b111;  
-				oBlue <= 2'b00; 
-			end
-			else if(Hcnt<BLOCK_WIDTH&&!blocks[5])
-			begin
-				oRed <= 3'b000;  
-				oGreen <= 3'b000;  
-				oBlue <= 2'b00; 
-			end
-			if(Hcnt<BLOCK_WIDTH*2&&blocks[6]&&Hcnt>BLOCK_WIDTH)
-			begin
-				oRed <= 3'b010;  
-				oGreen <= 3'b101;  
-				oBlue <= 2'b01; 
-			end
-			else if(Hcnt<BLOCK_WIDTH*2&&!blocks[6]&&Hcnt>BLOCK_WIDTH)
-			begin
-				oRed <= 3'b000;  
-				oGreen <= 3'b000;  
-				oBlue <= 2'b00; 
-			end
-			if(Hcnt<BLOCK_WIDTH*3&&blocks[7]&&Hcnt>BLOCK_WIDTH*2)
-			begin
-				oRed <= 3'b100;  
-				oGreen <= 3'b011;  
-				oBlue <= 2'b11; 
-			end
-			else if(Hcnt<BLOCK_WIDTH*3&&!blocks[7]&&Hcnt>BLOCK_WIDTH*2)
-			begin
-				oRed <= 3'b000;  
-				oGreen <= 3'b000;  
-				oBlue <= 2'b00; 
-			end
-			if(Hcnt<BLOCK_WIDTH*4&&blocks[8]&&Hcnt>BLOCK_WIDTH*3)
-			begin
-				oRed <= 3'b010;  
-				oGreen <= 3'b101;  
-				oBlue <= 2'b11; 
-			end
-			else if(Hcnt<BLOCK_WIDTH*4&&!blocks[8]&&Hcnt>BLOCK_WIDTH*3)
-			begin
-				oRed <= 3'b000;  
-				oGreen <= 3'b000;  
-				oBlue <= 2'b00; 
-			end
-			if(blocks[9]&&Hcnt>BLOCK_WIDTH*4)
-			begin
-				oRed <= 3'b011;  
-				oGreen <= 3'b011;  
-				oBlue <= 2'b11; 
-			end
-			else if(!blocks[9]&&Hcnt>BLOCK_WIDTH*4)
-			begin
-				oRed <= 3'b000;  
-				oGreen <= 3'b000;  
-				oBlue <= 2'b00; 
+			// 显示第二行砖块
+			if(Hcnt < BLOCK_WIDTH * ball_num) begin
+				block_idx2 = Hcnt / BLOCK_WIDTH + ball_num;
+				if(blocks[block_idx2]) begin
+					{oRed, oGreen, oBlue} = get_block_color(block_idx2);
+				end else begin
+					{oRed, oGreen, oBlue} = 8'b0;
+				end
 			end
 		end
 		else 
@@ -334,8 +241,8 @@ module VGA_display(
 			end  
 			else if(iToRight && right_pos <= RIGHT_BOUND)
 			begin
-				left_pos <= left_pos + iBarMoveSpeed; 
-				right_pos <= right_pos + iBarMoveSpeed;  
+				left_pos <= left_pos + iBarMoveSpeed;
+				right_pos <= right_pos + iBarMoveSpeed;
 			end  
 		
 			// 小球移动
@@ -351,6 +258,7 @@ module VGA_display(
 		end 	
    	end 
 	
+	reg [5:0] block_idx;
 	// 改变小球方向
 	always @ (negedge oVSync)  
 	begin
@@ -366,88 +274,50 @@ module VGA_display(
 		end
 		else if(ball_y_pos <= BLOCK_DOWN_first && ball_y_pos > BLOCK_DOWN_second) // 小球在砖块之间
 		begin
-			if (ball_x_pos < BLOCK_WIDTH && blocks[0])
-			begin
-				if(ball_y_pos > BLOCK_DOWN_first - iBarMoveSpeed) // 碰到下面
-					v_speed<=`DOWN;
-				else // 碰到左边
-					h_speed <= ~h_speed;
-				blocks[0]<=0;
-			end
-			else if (ball_x_pos < BLOCK_WIDTH * 2 && blocks[1] && ball_x_pos > BLOCK_WIDTH)
-			begin
-				if(ball_y_pos > BLOCK_DOWN_first - iBarMoveSpeed) // 碰到下面
-					v_speed<=`DOWN;
-				else
-					h_speed <= ~h_speed;
-				blocks[1]<=0;
-			end
-			else if (ball_x_pos < BLOCK_WIDTH * 3 && blocks[2] && ball_x_pos > BLOCK_WIDTH * 2)
-			begin
-				if(ball_y_pos > BLOCK_DOWN_first - iBarMoveSpeed) // 碰到下面
-					v_speed<=`DOWN;
-				else
-					h_speed <= ~h_speed;
-				blocks[2]<=0;
-			end
-			else if (ball_x_pos < BLOCK_WIDTH * 4 && blocks[3] && ball_x_pos > BLOCK_WIDTH * 3)
-			begin
-				if(ball_y_pos > BLOCK_DOWN_first - iBarMoveSpeed) // 碰到下面
-					v_speed<=`DOWN;
-				else
-					h_speed <= ~h_speed;
-				blocks[3]<=0;
-			end
-			else if (blocks[4] && ball_x_pos > BLOCK_WIDTH * 4)
-			begin
-				if(ball_y_pos > BLOCK_DOWN_first - iBarMoveSpeed) // 碰到下面
-					v_speed<=`DOWN;
-				else // 碰到右边
-					h_speed <= ~h_speed;
-				blocks[4]<=0;
+			// 计算小球碰到的砖块索引
+			block_idx = ball_x_pos / BLOCK_WIDTH;
+			
+			// 检查是否碰到砖块
+			if(block_idx < ball_num && blocks[block_idx]) begin
+				// 判断碰撞方向
+				if(ball_y_pos > BLOCK_DOWN_first - iBarMoveSpeed)
+					v_speed <= `DOWN;  // 碰到下面
+				else begin
+					// 碰到左右边
+					if(block_idx == 0)
+						h_speed <= `RIGHT;  // 最左边砖块
+					else if(block_idx == 4) 
+						h_speed <= `LEFT;   // 最右边砖块
+					else
+						h_speed <= ~h_speed; // 中间砖块
+				end
+				
+				// 消除被碰撞的砖块
+				blocks[block_idx] <= 0;
 			end
 		end
 		else if(ball_y_pos <= BLOCK_DOWN_second) // 小球在第二行砖块
 		begin
-			if (ball_x_pos < BLOCK_WIDTH && blocks[5])
-			begin
-				if(ball_y_pos > BLOCK_DOWN_second - iBarMoveSpeed) // 碰到下面
-					v_speed<=`DOWN;
-				else // 碰到左边
-					h_speed <= `RIGHT;
-				blocks[5]<=0;
-			end
-			else if (ball_x_pos < BLOCK_WIDTH * 2 && blocks[6] && ball_x_pos > BLOCK_WIDTH)
-			begin
-				if(ball_y_pos > BLOCK_DOWN_second - iBarMoveSpeed) // 碰到下面
-					v_speed<=`DOWN;
-				else
-					h_speed <= ~h_speed;
-				blocks[6]<=0;
-			end
-			else if (ball_x_pos < BLOCK_WIDTH * 3 && blocks[7] && ball_x_pos > BLOCK_WIDTH * 2)
-			begin
-				if(ball_y_pos > BLOCK_DOWN_second - iBarMoveSpeed) // 碰到下面
-					v_speed<=`DOWN;
-				else
-					h_speed <= ~h_speed;
-				blocks[7]<=0;
-			end
-			else if (ball_x_pos < BLOCK_WIDTH * 4 && blocks[8] && ball_x_pos > BLOCK_WIDTH * 3)
-			begin
-				if(ball_y_pos > BLOCK_DOWN_second - iBarMoveSpeed) // 碰到下面
-					v_speed<=`DOWN;
-				else
-					h_speed <= ~h_speed;
-				blocks[8]<=0;
-			end
-			else if (blocks[9] && ball_x_pos > BLOCK_WIDTH * 4)
-			begin
-				if(ball_y_pos > BLOCK_DOWN_second - iBarMoveSpeed) // 碰到下面
-					v_speed<=`DOWN;
-				else // 碰到右边
-					h_speed <= ~h_speed;
-				blocks[9]<=0;
+						// 计算小球碰到的砖块索引
+			block_idx = ball_x_pos / BLOCK_WIDTH + ball_num;
+			
+			// 检查是否碰到砖块
+			if(block_idx < 2 * ball_num && blocks[block_idx]) begin
+				// 判断碰撞方向
+				if(ball_y_pos > BLOCK_DOWN_second - iBarMoveSpeed)
+					v_speed <= `DOWN;  // 碰到下面
+				else begin
+					// 碰到左右边
+					if(block_idx == ball_num)
+						h_speed <= `RIGHT;  // 最左边砖块
+					else if(block_idx == 2 * ball_num - 1)
+						h_speed <= `LEFT;   // 最右边砖块 
+					else
+						h_speed <= ~h_speed; // 中间砖块
+				end
+				// 消除被碰撞的砖块
+				blocks[block_idx] <= 0;  
+				
 			end
 		end
 

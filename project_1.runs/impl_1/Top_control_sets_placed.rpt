@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Sat Jan 04 00:25:18 2025
+| Date         : Sat Jan 04 01:58:25 2025
 | Host         : Chiaro running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Top_control_sets_placed.rpt
 | Design       : Top
@@ -33,35 +33,35 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              47 |           25 |
+| No           | No                    | No                     |              47 |           22 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |               4 |            1 |
-| Yes          | No                    | No                     |              30 |           10 |
+| No           | Yes                   | No                     |               4 |            2 |
+| Yes          | No                    | No                     |              38 |           12 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |              46 |           20 |
+| Yes          | Yes                   | No                     |              38 |           12 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 3. Detailed Control Set Information
 -----------------------------------
 
-+-------------------------------+-----------------------------------+--------------------------------+------------------+----------------+
-|          Clock Signal         |           Enable Signal           |        Set/Reset Signal        | Slice Load Count | Bel Load Count |
-+-------------------------------+-----------------------------------+--------------------------------+------------------+----------------+
-|  game/VGA_Disp/clk_25M        | game/VGA_Disp/oHSync_1            | game/VGA_Disp/oHSync_i_1_n_0   |                1 |              1 |
-|  game/VGA_Disp/clk_50M        |                                   |                                |                1 |              1 |
-|  game/VGA_Disp/pe             |                                   |                                |                1 |              1 |
-|  display/count_reg[3]_i_2_n_0 |                                   | display/count0_inferred__1_n_0 |                1 |              4 |
-|  iClk_IBUF_BUFG               | bluetooth/bit_cnt[3]_i_1_n_0      |                                |                2 |              4 |
-|  game/VGA_Disp/clk_25M        | game/VGA_Disp/oRed[2]_i_2_n_0     | game/VGA_Disp/oRed[2]_i_1_n_0  |                6 |              8 |
-|  iClk_IBUF_BUFG               | bluetooth/data_out[7]_i_1_n_0     |                                |                2 |              8 |
-|  iClk_IBUF_BUFG               | bluetooth/rx_data[7]_i_1_n_0      |                                |                1 |              8 |
-|  game/VGA_Disp/clk_25M        | game/VGA_Disp/Vcnt_2              |                                |                5 |             10 |
-|  game/VGA_Disp/clk_25M        |                                   |                                |                6 |             11 |
-| ~oVSync_OBUF_BUFG             |                                   |                                |                8 |             13 |
-|  oVSync_OBUF_BUFG             | game/VGA_Disp/left_pos[9]_i_1_n_0 | game/VGA_Disp/lose             |                6 |             18 |
-|  oVSync_OBUF_BUFG             | game/VGA_Disp/pau_i_1_n_0         | game/VGA_Disp/lose             |                7 |             19 |
-|  iClk_IBUF_BUFG               |                                   |                                |                9 |             21 |
-+-------------------------------+-----------------------------------+--------------------------------+------------------+----------------+
++-------------------------------+------------------------------------+--------------------------------+------------------+----------------+
+|          Clock Signal         |            Enable Signal           |        Set/Reset Signal        | Slice Load Count | Bel Load Count |
++-------------------------------+------------------------------------+--------------------------------+------------------+----------------+
+|  game/VGA_Disp/clk_25M        | game/VGA_Disp/oHSync_1             | game/VGA_Disp/oHSync_i_1_n_0   |                1 |              1 |
+|  game/VGA_Disp/clk_50M        |                                    |                                |                1 |              1 |
+|  game/VGA_Disp/pe             |                                    |                                |                1 |              1 |
+|  display/count_reg[3]_i_2_n_0 |                                    | display/count0_inferred__1_n_0 |                2 |              4 |
+|  iClk_IBUF_BUFG               | bluetooth/bit_cnt[3]_i_1_n_0       |                                |                2 |              4 |
+|  game/VGA_Disp/clk_25M        | game/VGA_Disp/oRed[2]_i_1_n_0      |                                |                4 |              8 |
+|  iClk_IBUF_BUFG               | bluetooth/data_out[7]_i_1_n_0      |                                |                2 |              8 |
+|  iClk_IBUF_BUFG               | bluetooth/rx_data[7]_i_1_n_0       |                                |                1 |              8 |
+|  game/VGA_Disp/clk_25M        | game/VGA_Disp/Vcnt[9]_i_1_n_0      |                                |                3 |             10 |
+|  game/VGA_Disp/clk_25M        |                                    |                                |                4 |             11 |
+| ~oVSync_OBUF_BUFG             |                                    |                                |                8 |             13 |
+|  oVSync_OBUF_BUFG             | game/VGA_Disp/pau_i_1_n_0          | game/VGA_Disp/lose             |                5 |             17 |
+|  oVSync_OBUF_BUFG             | game/VGA_Disp/right_pos[9]_i_1_n_0 | game/VGA_Disp/lose             |                6 |             20 |
+|  iClk_IBUF_BUFG               |                                    |                                |                8 |             21 |
++-------------------------------+------------------------------------+--------------------------------+------------------+----------------+
 
 

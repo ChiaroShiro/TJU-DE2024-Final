@@ -568,3 +568,367 @@ WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Cha
 Resolution: 
 1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
 2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
+[Sat Jan 04 01:06:37 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
+[Sat Jan 04 01:08:24 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
+[Sat Jan 04 01:12:28 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 73 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+launch_runs impl_1
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 2094.895 ; gain = 0.000
+[Sat Jan 04 01:12:58 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Sat Jan 04 01:13:43 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
+[Sat Jan 04 01:15:56 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 73 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+launch_runs impl_1
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 2094.895 ; gain = 0.000
+[Sat Jan 04 01:16:28 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Sat Jan 04 01:17:07 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
+[Sat Jan 04 01:20:49 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 71 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+launch_runs impl_1
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 2097.035 ; gain = 0.000
+[Sat Jan 04 01:21:21 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Sat Jan 04 01:22:08 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
+[Sat Jan 04 01:24:06 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 71 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+launch_runs impl_1
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 2098.160 ; gain = 0.000
+[Sat Jan 04 01:24:36 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Sat Jan 04 01:25:17 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
+[Sat Jan 04 01:27:09 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 71 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+launch_runs impl_1
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 2122.809 ; gain = 0.000
+[Sat Jan 04 01:28:19 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Sat Jan 04 01:29:11 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+[Sat Jan 04 01:29:11 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
+[Sat Jan 04 01:32:03 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 71 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+reset_run synth_1
+launch_runs impl_1
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Sat Jan 04 01:32:55 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+[Sat Jan 04 01:32:55 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -to_step write_bitstream
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Sat Jan 04 01:34:05 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+[Sat Jan 04 01:34:05 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "else". [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:413]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "<=". [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:414]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "<=". [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:418]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "<=". [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:421]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "<=". [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:423]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "<=". [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:425]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "<=". [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:428]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "<=". [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:430]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "<=". [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:432]
+[Sat Jan 04 01:40:06 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
+[Sat Jan 04 01:40:48 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+close_design
+open_run synth_1 -name synth_1
+Design is defaulting to impl run constrset: constrs_1
+Design is defaulting to synth run part: xc7a100tcsg324-1
+INFO: [Netlist 29-17] Analyzing 65 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2016.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+launch_runs impl_1
+Writing placer database...
+Writing XDEF routing.
+Writing XDEF routing logical nets.
+Writing XDEF routing special nets.
+Write XDEF Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.021 . Memory (MB): peak = 2126.375 ; gain = 0.000
+[Sat Jan 04 01:41:27 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Sat Jan 04 01:42:09 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
+[Sat Jan 04 01:44:35 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+launch_runs impl_1
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Sat Jan 04 01:45:03 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Sat Jan 04 01:45:45 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "genvar". [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:160]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "endgenerate". [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:199]
+[Sat Jan 04 01:48:13 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
+[Sat Jan 04 01:52:32 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+launch_runs impl_1
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Sat Jan 04 01:52:57 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+launch_runs impl_1 -to_step write_bitstream
+[Sat Jan 04 01:53:42 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-3164] End of startup status: HIGH
+refresh_hw_device [lindex [get_hw_devices] 0]
+INFO: [Labtools 27-1434] Device xc7a100t (JTAG device index = 0) is programmed with a design that has no supported debug core(s) in it.
+WARNING: [Labtools 27-3123] The debug hub core was not detected at User Scan Chain 1 or 3.
+Resolution: 
+1. Make sure the clock connected to the debug hub (dbg_hub) core is a free running clock and is active OR
+2. Manually launch hw_server with -e "set xsdb-user-bscan <C_USER_SCAN_CHAIN scan_chain_number>" to detect the debug hub at User Scan Chain of 2 or 4. To determine the user scan chain setting, open the implemented design and use: get_property C_USER_SCAN_CHAIN [get_debug_cores dbg_hub].
