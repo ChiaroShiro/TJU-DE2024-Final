@@ -69,7 +69,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/vs1003b_top.v">
+      <File Path="$PSRCDIR/sources_1/imports/new/mp3.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -82,76 +82,6 @@
           <Attr Name="ImportTime" Val="1735835235"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/bluetooth.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/white_balance.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../VGA_game/color_game.srcs/sources_1/new/white_balance.v"/>
-          <Attr Name="ImportTime" Val="1735835235"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/identify_color.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../VGA_game/color_game.srcs/sources_1/new/identify_color.v"/>
-          <Attr Name="ImportTime" Val="1735835235"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/conbine_wire.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../VGA_game/color_game.srcs/sources_1/new/conbine_wire.v"/>
-          <Attr Name="ImportTime" Val="1735835235"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/Top_module.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../VGA_game/color_game.srcs/sources_1/new/Top_module.v"/>
-          <Attr Name="ImportTime" Val="1735835235"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/score_display.v">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../VGA_game/color_game.srcs/sources_1/new/score_display.v"/>
-          <Attr Name="ImportTime" Val="1735835235"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/music0.coe">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/music1.coe">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
@@ -215,52 +145,6 @@
         <Option Name="TransportPathDelay" Val="0"/>
         <Option Name="TransportIntDelay" Val="0"/>
         <Option Name="SrcSet" Val="sources_1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="music_rom_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/music_rom_0">
-      <File Path="$PSRCDIR/sources_1/ip/music_rom_0/music_rom_0.xci">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <Config>
-        <Option Name="TopModule" Val="music_rom_0"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
-      </Config>
-    </FileSet>
-    <FileSet Name="music_rom_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/music_rom_1">
-      <File Path="$PSRCDIR/sources_1/ip/music_rom_1/music_rom_1.xci">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-        <CompFileExtendedInfo CompFileName="music_rom_1.xci" FileRelPathName="music_rom_1.xml"/>
-        <CompFileExtendedInfo CompFileName="music_rom_1.xci" FileRelPathName="synth/music_rom_1.vhd"/>
-        <CompFileExtendedInfo CompFileName="music_rom_1.xci" FileRelPathName="blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3.vhd"/>
-        <CompFileExtendedInfo CompFileName="music_rom_1.xci" FileRelPathName="blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3_vhsyn_rfs.vhd"/>
-        <CompFileExtendedInfo CompFileName="music_rom_1.xci" FileRelPathName="music_rom_1_ooc.xdc"/>
-        <CompFileExtendedInfo CompFileName="music_rom_1.xci" FileRelPathName="music_rom_1.veo"/>
-        <CompFileExtendedInfo CompFileName="music_rom_1.xci" FileRelPathName="music_rom_1.vho"/>
-        <CompFileExtendedInfo CompFileName="music_rom_1.xci" FileRelPathName="summary.log"/>
-        <CompFileExtendedInfo CompFileName="music_rom_1.xci" FileRelPathName="blk_mem_gen_v8_3_3/simulation/blk_mem_gen_v8_3.v"/>
-        <CompFileExtendedInfo CompFileName="music_rom_1.xci" FileRelPathName="misc/blk_mem_gen_v8_3.vhd"/>
-        <CompFileExtendedInfo CompFileName="music_rom_1.xci" FileRelPathName="sim/music_rom_1.v"/>
-        <CompFileExtendedInfo CompFileName="music_rom_1.xci" FileRelPathName="music_rom_1.mif"/>
-        <CompFileExtendedInfo CompFileName="music_rom_1.xci" FileRelPathName="doc/blk_mem_gen_v8_3_changelog.txt"/>
-        <CompFileExtendedInfo CompFileName="music_rom_1.xci" FileRelPathName="e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/music1.coe"/>
-        <CompFileExtendedInfo CompFileName="music_rom_1.xci" FileRelPathName="music_rom_1_sim_netlist.vhdl"/>
-        <CompFileExtendedInfo CompFileName="music_rom_1.xci" FileRelPathName="music_rom_1_sim_netlist.v"/>
-        <CompFileExtendedInfo CompFileName="music_rom_1.xci" FileRelPathName="music_rom_1_stub.vhdl"/>
-        <CompFileExtendedInfo CompFileName="music_rom_1.xci" FileRelPathName="music_rom_1_stub.v"/>
-      </File>
-      <Config>
-        <Option Name="TopModule" Val="music_rom_1"/>
-        <Option Name="UseBlackboxStub" Val="1"/>
       </Config>
     </FileSet>
     <FileSet Name="music_win" Type="BlockSrcs" RelSrcDir="$PSRCDIR/music_win">
@@ -348,24 +232,6 @@
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
     </Run>
-    <Run Id="music_rom_0_synth_1" Type="Ft3:Synth" SrcSet="music_rom_0" Part="xc7a100tcsg324-1" ConstrsSet="music_rom_0" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/music_rom_0_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-    </Run>
-    <Run Id="music_rom_1_synth_1" Type="Ft3:Synth" SrcSet="music_rom_1" Part="xc7a100tcsg324-1" ConstrsSet="music_rom_1" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/music_rom_1_synth_1" IncludeInArchive="true">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
-          <Desc>Vivado Synthesis Defaults</Desc>
-        </StratHandle>
-        <Step Id="synth_design"/>
-      </Strategy>
-      <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-    </Run>
     <Run Id="music_win_synth_1" Type="Ft3:Synth" SrcSet="music_win" Part="xc7a100tcsg324-1" ConstrsSet="music_win" Description="Vivado Synthesis Defaults" Dir="$PRUNDIR/music_win_synth_1" IncludeInArchive="true">
       <Strategy Version="1" Minor="2">
         <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2016">
@@ -416,38 +282,6 @@
         <Step Id="write_bitstream"/>
       </Strategy>
       <GeneratedRun Dir="$PRUNDIR" File="gen_run.xml"/>
-    </Run>
-    <Run Id="music_rom_0_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="music_rom_0" Description="Default settings for Implementation." SynthRun="music_rom_0_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
-    </Run>
-    <Run Id="music_rom_1_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="music_rom_1" Description="Default settings for Implementation." SynthRun="music_rom_1_synth_1" IncludeInArchive="false">
-      <Strategy Version="1" Minor="2">
-        <StratHandle Name="Vivado Implementation Defaults" Flow="Vivado Implementation 2016">
-          <Desc>Default settings for Implementation.</Desc>
-        </StratHandle>
-        <Step Id="init_design"/>
-        <Step Id="opt_design"/>
-        <Step Id="power_opt_design"/>
-        <Step Id="place_design"/>
-        <Step Id="post_place_power_opt_design"/>
-        <Step Id="phys_opt_design"/>
-        <Step Id="route_design"/>
-        <Step Id="post_route_phys_opt_design"/>
-        <Step Id="write_bitstream"/>
-      </Strategy>
     </Run>
     <Run Id="music_win_impl_1" Type="Ft2:EntireDesign" Part="xc7a100tcsg324-1" ConstrsSet="music_win" Description="Default settings for Implementation." SynthRun="music_win_synth_1" IncludeInArchive="false">
       <Strategy Version="1" Minor="2">

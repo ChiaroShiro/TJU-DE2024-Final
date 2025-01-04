@@ -9,9 +9,7 @@ module Top(
 	input speed_up, // 加速信号
 	input speed_down, // 减速信号
 
-	input rxd, // 蓝牙接收信号
 	output [6:0] oDisplay, // 数码管显示
-	output dataled, // 数据LED
 
 	output oHSync, // VGA 水平同步信号
 	output [2:1] oOutBlue, // VGA 蓝色输出
@@ -27,69 +25,20 @@ module Top(
 	output port_vs1003b_xreset
 );
 
-	// wire [7:0] data_out;
-	// wire [7:0]data_rxd;
-	// assign data_rxd = {6'd0, rxd};
-	// bluetooth_uart_receive bluetooth(
-	// 	.clk(iClk),
-	// 	.reset(1'b0),
-	// 	.rxd(rxd),
-	// 	.data_out(data_out),
-	// 	.data_flag(dataled)
-	// );
-
 	wire [3:0] display_data;
 	display7 display(
-		// .clk(iClk),
 		.iData(display_data),
 		.oData(oDisplay)
 	);
 
-	// reg [7:0] IntMP3Vol;
-	// reg       IntMP3Sel;
-	// always @(posedge IntClk10M_u0)
-	// begin
-	// 	if (IntSysRst) begin
-	// 		IntMP3Vol <= `DL ;
-	// 		IntMP3Sel <= `DL ;
-	// 	end else begin
-	// 		if (IntBtnU_posedge) begin
-	// 			if(IntMP3Vol > 8'd0) IntMP3Vol <= `DL IntMP3Vol - 8'd5;
-	// 		end
-	// 		else if (IntBtnD_posedge) begin
-	// 			if(IntMP3Vol < 8'd255) IntMP3Vol <= `DL IntMP3Vol + 8'd5;
-	// 		end
-	// 		if (IntBtnR_posedge) IntMP3Sel <= `DL ~IntMP3Sel;
-	// 	end
-	// end
-
 	wire mp3_rst;
 	reg [1:0] mp3_select;
-	// wire [1:0]rate;
-	// wire [9:0]r,g,b;
-	// wire to_left,to_right;
-	// Top_module_of_color color_sensor(
-	// 	.iClk(iClk),
-	// 	.iFrequncy(iColorFrequncy),
-	// 	.oFilterSelect(oFilterSelect),
-	// 	.oFrequncyRate(oFrequncyRate),
-	// 	.oLed(oLed),
-	// 	.oR(r),
-	// 	.oG(g),
-	// 	.oB(b)
-	// );
-		
-	// assign to_left= r>200&&g>200&&b>200;    
-	// assign to_right=r<20&&g<20&&b<20;   
-	// assign oFrequncyRate=2'b11;
 	wire oLose;
 	wire oWin;
 	wire oGet;
 	wire oCrash;
 	reg game_pause;
-	
 	reg [3:0] speed = 4'd4;
-	
 	reg speed_up_reg, speed_down_reg;
 	
 	always @(posedge iClk) begin

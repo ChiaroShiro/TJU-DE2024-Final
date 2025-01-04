@@ -2,15 +2,15 @@
 
 
 module Top_module_of_game(
-	input iClk,    
+	input iClk,
 	input iPause,
 	input iToLeft,
 	input iToRight,
 	input [3:0] iBarMoveSpeed,
-	output oHSync,         
+	output oHSync,
 	output [2:1] oBlue,
 	output [2:0] oGreen, 
-	output [2:0] oRed,         
+	output [2:0] oRed,
 	output oVSync,
 	output oLose,
 	output oWin,

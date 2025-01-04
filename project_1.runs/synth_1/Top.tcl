@@ -17,8 +17,6 @@ set_property parent.project_path E:/work/tju/DE/Final/ball/project_1/project_1.x
 set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-add_files e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/music0.coe
-add_files e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/music1.coe
 add_files e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/win.coe
 add_files e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/lose.coe
 add_files e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/get.coe
@@ -35,7 +33,7 @@ read_verilog -library xil_defaultlib {
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v
-  E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/vs1003b_top.v
+  E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v
 }
 foreach dcp [get_files -quiet -all *.dcp] {
