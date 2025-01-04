@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Sat Jan 04 18:13:06 2025
+| Date         : Sat Jan 04 18:23:04 2025
 | Host         : Chiaro running 64-bit major release  (build 9200)
 | Command      : report_io -file Top_io_placed.rpt
 | Design       : Top
@@ -23,7 +23,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            30 |
+|            31 |
 +---------------+
 
 
@@ -191,7 +191,7 @@ Table of Contents
 | J12        |                     |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |
 | J13        |                     | High Range | IO_L17N_T2_A25_15            | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |
 | J14        |                     | High Range | IO_L19P_T3_A22_15            | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |
-| J15        | mp3_select          | High Range | IO_L24N_T3_RS0_15            | INPUT       | LVCMOS33    |      15 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
+| J15        | mp3_select[0]       | High Range | IO_L24N_T3_RS0_15            | INPUT       | LVCMOS33    |      15 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
 | J16        |                     |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |
 | J17        |                     | High Range | IO_L23P_T3_FOE_B_15          | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |
 | J18        |                     | High Range | IO_L23N_T3_FWE_B_15          | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |
@@ -228,7 +228,7 @@ Table of Contents
 | L13        |                     | High Range | IO_L6P_T0_FCS_B_14           | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |
 | L14        |                     | High Range | IO_L2P_T0_D02_14             | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |
 | L15        |                     | High Range | IO_L3P_T0_DQS_PUDC_B_14      | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |
-| L16        |                     | High Range | IO_L3N_T0_DQS_EMCCLK_14      | User IO     |             |      14 |            |      |                     |                      |         |            |           |          |      |                  |
+| L16        | mp3_select[1]       | High Range | IO_L3N_T0_DQS_EMCCLK_14      | INPUT       | LVCMOS33    |      14 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
 | L17        |                     | High Range | VCCO_14                      | VCCO        |             |      14 |            |      |                     |                      |    3.30 |            |           |          |      |                  |
 | L18        | oDisplay[6]         | High Range | IO_L4P_T0_D04_14             | OUTPUT      | LVCMOS33    |      14 |         12 | SLOW |                     |            FP_VTT_50 |         | FIXED      |           |          |      | NONE             |
 | M1         |                     | High Range | IO_L1N_T0_34                 | User IO     |             |      34 |            |      |                     |                      |         |            |           |          |      |                  |

@@ -28,7 +28,7 @@ module Top(
 	output port_vs1003b_sclk,
 	output port_vs1003b_xreset,
 
-	input mp3_select
+	input [1:0] mp3_select
 );
 
 	wire [7:0] data_out;

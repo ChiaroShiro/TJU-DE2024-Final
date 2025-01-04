@@ -29,7 +29,7 @@ parameter PLAY              = 4'd5;
 //-----------------------------------------------------------------------------
 wire            IntClkDiv;
 reg  [3:0]      IntMp3State;
-wire [15:0]     IntMusicRomDout[1:0];
+wire [15:0]     IntMusicRomDout[3:0];
 wire [15:0]     IntMusicData;
 reg  [12:0]     IntMusicRomAddr;
 reg  [15:0]     IntMusicData_buff;
@@ -39,11 +39,14 @@ integer         IntDataTxCnt;
 //
 reg  [31:0]     IntCmdSci;
 reg  [7:0]      IntCurVol;
-reg             IntCurMusic;
+reg  [1:0]      IntCurMusic;
 //-----------------------------------------------------------------------------
 // Process
 //-----------------------------------------------------------------------------
-assign IntMusicData = MusicSel ? IntMusicRomDout[1] : IntMusicRomDout[0];
+assign IntMusicData = (MusicSel == 2'b00) ? IntMusicRomDout[0] :
+                     (MusicSel == 2'b01) ? IntMusicRomDout[1] :
+                     (MusicSel == 2'b10) ? IntMusicRomDout[2] :
+                     IntMusicRomDout[3];
 // MP3Ä£¿éµÄ×´Ì¬»ú
 always @(posedge IntClkDiv) begin
 	if(RST) begin
@@ -163,8 +166,10 @@ end
 // Instance
 //-----------------------------------------------------------------------------
 Divider #(.Time(100)) div(CLK, IntClkDiv);
-music_win music_0 (.clka(CLK), .addra(IntMusicRomAddr), .douta(IntMusicRomDout[0]));
-music_lose music_1 (.clka(CLK), .addra(IntMusicRomAddr), .douta(IntMusicRomDout[1]));
+music_lose music_0 (.clka(CLK), .addra(IntMusicRomAddr), .douta(IntMusicRomDout[0]));
+music_win music_1 (.clka(CLK), .addra(IntMusicRomAddr), .douta(IntMusicRomDout[1]));
+music_get music_2 (.clka(CLK), .addra(IntMusicRomAddr), .douta(IntMusicRomDout[2]));
+music_crash music_3 (.clka(CLK), .addra(IntMusicRomAddr), .douta(IntMusicRomDout[3]));
 endmodule
 //
 module Divider #(parameter Time=20) (

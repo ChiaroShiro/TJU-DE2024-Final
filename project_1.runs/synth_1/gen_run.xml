@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1735985522">
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1735986122">
   <File Type="RDS-PROPCONSTRS" Name="Top_drc_synth.rpt"/>
   <File Type="PA-TCL" Name="Top.tcl"/>
   <File Type="RDS-RDS" Name="Top.vds"/>
@@ -169,4 +169,6 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="music_win"/>
   <BlockFileSet Type="BlockSrcs" Name="music_lose"/>
+  <BlockFileSet Type="BlockSrcs" Name="music_get"/>
+  <BlockFileSet Type="BlockSrcs" Name="music_crash"/>
 </GenRun>

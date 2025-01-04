@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1735985563">
+<GenRun Id="impl_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1735986162">
   <File Type="OPT-DCP" Name="Top_opt.dcp"/>
   <File Type="ROUTE-STATUS-PB" Name="Top_route_status.pb"/>
   <File Type="PA-TCL" Name="Top.tcl"/>
@@ -226,4 +226,6 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="music_win"/>
   <BlockFileSet Type="BlockSrcs" Name="music_lose"/>
+  <BlockFileSet Type="BlockSrcs" Name="music_get"/>
+  <BlockFileSet Type="BlockSrcs" Name="music_crash"/>
 </GenRun>
