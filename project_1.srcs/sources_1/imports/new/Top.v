@@ -125,7 +125,7 @@ module Top(
 		else if(oWin && !oWin_prev) begin // oWinÉÏÉıÑØ
 			mp3_select <= 2'b01;
 			mp3_rst_reg <= 1'b1;
-			rst_counter <= 32'd150000000; // 3Ãë
+			rst_counter <= 32'd200000000; // 4Ãë
 		end
 		else if(oGet && !oGet_prev) begin // oGetÉÏÉıÑØ
 			mp3_select <= 2'b10;

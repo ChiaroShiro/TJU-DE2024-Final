@@ -61,9 +61,14 @@ module VGA_display(
 	//The blocks
 	reg [9:0] blocks = block_init;
 	
+	// 闪烁相关参数
+	reg win_flash = 0;  // 闪烁标志
+	reg [31:0] flash_cnt = 0; // 闪烁计数器
+	reg prev_win = 0; // 用于检测oWin上升沿
 	
 	// 暂停状态寄存器,1表示暂停,0表示不暂停
 	reg pau=1;
+	reg set_pau = 0;
 	
 	/*寄存器定义*/
 	// 水平计数器,用于生成水平同步信号
@@ -94,8 +99,14 @@ module VGA_display(
 	
 	always@(posedge iPause)
 	begin
-	   pau=~pau;
+		pau <= ~pau;
 	end
+
+	// 使用 set_pau 作为时钟信号
+	// always@(posedge set_pau)
+	// begin
+	// 	pau <= ~pau;
+	// end
 	
 	// 生成50MHz时钟信号
 	always@(posedge(iClk))
