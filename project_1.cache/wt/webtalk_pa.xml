@@ -3,10 +3,10 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
-<application name="pa" timeStamp="Sat Jan 04 23:09:10 2025">
+<application name="pa" timeStamp="Sat Jan 04 23:22:12 2025">
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="046e7ea767a249c68a2df523d520a34c" type="ProjectID"/>
-<property name="ProjectIteration" value="173" type="ProjectIteration"/>
+<property name="ProjectIteration" value="175" type="ProjectIteration"/>
 </section>
 <section name="PlanAhead Usage" visible="true">
 <item name="Project Data">
@@ -24,18 +24,18 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="EditDelete" value="15" type="JavaHandler"/>
 <property name="FlipToViewTaskSynthesis" value="2" type="JavaHandler"/>
 <property name="LaunchOpenTarget" value="4" type="JavaHandler"/>
-<property name="LaunchProgramFpga" value="94" type="JavaHandler"/>
+<property name="LaunchProgramFpga" value="95" type="JavaHandler"/>
 <property name="NewProject" value="1" type="JavaHandler"/>
-<property name="OpenHardwareManager" value="43" type="JavaHandler"/>
+<property name="OpenHardwareManager" value="44" type="JavaHandler"/>
 <property name="OpenRecentTarget" value="7" type="JavaHandler"/>
 <property name="ProjectSettingsCmdHandler" value="10" type="JavaHandler"/>
 <property name="RecustomizeCore" value="4" type="JavaHandler"/>
 <property name="RefreshDevice" value="3" type="JavaHandler"/>
 <property name="ReportClockInteraction" value="1" type="JavaHandler"/>
 <property name="ReportTimingSummary" value="1" type="JavaHandler"/>
-<property name="RunBitgen" value="82" type="JavaHandler"/>
-<property name="RunImplementation" value="91" type="JavaHandler"/>
-<property name="RunSynthesis" value="134" type="JavaHandler"/>
+<property name="RunBitgen" value="83" type="JavaHandler"/>
+<property name="RunImplementation" value="92" type="JavaHandler"/>
+<property name="RunSynthesis" value="138" type="JavaHandler"/>
 <property name="SaveFileProxyHandler" value="2" type="JavaHandler"/>
 <property name="SetTopNode" value="2" type="JavaHandler"/>
 <property name="ShowView" value="26" type="JavaHandler"/>
@@ -45,6 +45,15 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ViewTaskProgramandDebug" value="2" type="JavaHandler"/>
 <property name="ViewTaskProjectManager" value="17" type="JavaHandler"/>
 <property name="ViewTaskSynthesis" value="43" type="JavaHandler"/>
+</item>
+<item name="Gui Resources Info">
+<property name="PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, [, Synthesis, Run Synthesis], 17, false" value="1" type="GuiResourceData"/>
+<property name="RDIResource.BaseDialog_OK, OK" value="1" type="GuiResourceData"/>
+</item>
+<item name="Other">
+<property name="GuiMode" value="82" type="GuiMode"/>
+<property name="BatchMode" value="0" type="BatchMode"/>
+<property name="TclMode" value="64" type="TclMode"/>
 </item>
 </section>
 </application>

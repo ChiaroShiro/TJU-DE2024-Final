@@ -19,8 +19,10 @@ module game_control(
 	reg pause;
 
 	always@(*) begin
-		if(!oLose) pause = iPause;
-		else pause=1;
+		if(!oLose) 
+			pause = iPause;
+		else 
+			pause = 1;
 	end
 
 	VGA_display VGA_Disp(
