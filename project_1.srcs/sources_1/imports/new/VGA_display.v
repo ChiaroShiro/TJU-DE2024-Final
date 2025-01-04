@@ -101,12 +101,6 @@ module VGA_display(
 	begin
 		pau <= ~pau;
 	end
-
-	// 使用 set_pau 作为时钟信号
-	// always@(posedge set_pau)
-	// begin
-	// 	pau <= ~pau;
-	// end
 	
 	// 生成50MHz时钟信号
 	always@(posedge(iClk))

@@ -87,10 +87,11 @@ module Top(
 	wire oWin;
 	wire oGet;
 	wire oCrash;
+	reg game_pause;
 
 	Top_module_of_game game(
 		.iClk(iClk),    
-		.iPause(iPause),
+		.iPause(iPause || game_pause),
 		.iToLeft(to_left),
 		.iToRight(to_right),
 		.oHSync(oHSync),
@@ -126,6 +127,7 @@ module Top(
 			mp3_select <= 2'b01;
 			mp3_rst_reg <= 1'b1;
 			rst_counter <= 32'd200000000; // 4Ãë
+			game_pause <= 1'b1; // ÓÎÏ·Ê¤ÀûÊ±ÔÝÍ£
 		end
 		else if(oGet && !oGet_prev) begin // oGetÉÏÉýÑØ
 			mp3_select <= 2'b10;
