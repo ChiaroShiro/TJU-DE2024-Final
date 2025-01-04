@@ -14,9 +14,9 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 10632 
+INFO: Helper process launched with PID 2988 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 305.938 ; gain = 98.688
+Starting RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:04 . Memory (MB): peak = 306.020 ; gain = 98.758
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'Top' [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:3]
 INFO: [Synth 8-638] synthesizing module 'speed_control' [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/speed_control.v:3]
@@ -63,25 +63,24 @@ INFO: [Synth 8-638] synthesizing module 'MP3_control' [E:/work/tju/DE/Final/ball
 	Parameter STATUS_VOLUMN bound to: 4'b0011 
 	Parameter STATUS_LOAD bound to: 4'b0100 
 	Parameter STATUS_PLAY bound to: 4'b0101 
-INFO: [Synth 8-155] case statement is not full and has no default [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v:54]
 INFO: [Synth 8-638] synthesizing module 'Divider' [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/divider.v:20]
 	Parameter Time bound to: 100 - type: integer 
 INFO: [Synth 8-256] done synthesizing module 'Divider' (7#1) [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/divider.v:20]
-INFO: [Synth 8-638] synthesizing module 'music_lose' [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-2464-Chiaro/realtime/music_lose_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'music_lose' (8#1) [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-2464-Chiaro/realtime/music_lose_stub.v:6]
-WARNING: [Synth 8-689] width (13) of port connection 'addra' does not match port width (14) of module 'music_lose' [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v:153]
-INFO: [Synth 8-638] synthesizing module 'music_win' [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-2464-Chiaro/realtime/music_win_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'music_win' (9#1) [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-2464-Chiaro/realtime/music_win_stub.v:6]
-INFO: [Synth 8-638] synthesizing module 'music_get' [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-2464-Chiaro/realtime/music_get_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'music_get' (10#1) [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-2464-Chiaro/realtime/music_get_stub.v:6]
-WARNING: [Synth 8-689] width (13) of port connection 'addra' does not match port width (14) of module 'music_get' [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v:155]
-INFO: [Synth 8-638] synthesizing module 'music_crash' [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-2464-Chiaro/realtime/music_crash_stub.v:6]
-INFO: [Synth 8-256] done synthesizing module 'music_crash' (11#1) [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-2464-Chiaro/realtime/music_crash_stub.v:6]
-WARNING: [Synth 8-689] width (13) of port connection 'addra' does not match port width (14) of module 'music_crash' [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v:156]
+INFO: [Synth 8-638] synthesizing module 'music_lose' [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-16036-Chiaro/realtime/music_lose_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'music_lose' (8#1) [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-16036-Chiaro/realtime/music_lose_stub.v:6]
+WARNING: [Synth 8-689] width (13) of port connection 'addra' does not match port width (14) of module 'music_lose' [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v:140]
+INFO: [Synth 8-638] synthesizing module 'music_win' [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-16036-Chiaro/realtime/music_win_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'music_win' (9#1) [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-16036-Chiaro/realtime/music_win_stub.v:6]
+INFO: [Synth 8-638] synthesizing module 'music_get' [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-16036-Chiaro/realtime/music_get_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'music_get' (10#1) [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-16036-Chiaro/realtime/music_get_stub.v:6]
+WARNING: [Synth 8-689] width (13) of port connection 'addra' does not match port width (14) of module 'music_get' [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v:142]
+INFO: [Synth 8-638] synthesizing module 'music_crash' [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-16036-Chiaro/realtime/music_crash_stub.v:6]
+INFO: [Synth 8-256] done synthesizing module 'music_crash' (11#1) [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-16036-Chiaro/realtime/music_crash_stub.v:6]
+WARNING: [Synth 8-689] width (13) of port connection 'addra' does not match port width (14) of module 'music_crash' [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v:143]
 INFO: [Synth 8-256] done synthesizing module 'MP3_control' (12#1) [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v:3]
 INFO: [Synth 8-256] done synthesizing module 'Top' (13#1) [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v:3]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 343.340 ; gain = 136.090
+Finished RTL Elaboration : Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 343.477 ; gain = 136.215
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -91,25 +90,25 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:02 ; elapsed = 00:00:05 . Memory (MB): peak = 343.340 ; gain = 136.090
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 343.477 ; gain = 136.215
 ---------------------------------------------------------------------------------
-WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'music_crash' instantiated as 'mp3/music_3' [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v:156]
-WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'music_get' instantiated as 'mp3/music_2' [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v:155]
-WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'music_lose' instantiated as 'mp3/music_0' [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v:153]
-WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'music_win' instantiated as 'mp3/music_1' [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v:154]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'music_crash' instantiated as 'mp3/music_3' [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v:143]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'music_get' instantiated as 'mp3/music_2' [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v:142]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'music_lose' instantiated as 'mp3/music_0' [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v:140]
+WARNING: [Project 1-486] Could not resolve non-primitive black box cell 'music_win' instantiated as 'mp3/music_1' [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v:141]
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-2464-Chiaro/dcp/music_win_in_context.xdc] for cell 'mp3/music_1'
-Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-2464-Chiaro/dcp/music_win_in_context.xdc] for cell 'mp3/music_1'
-Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-2464-Chiaro/dcp_2/music_lose_in_context.xdc] for cell 'mp3/music_0'
-Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-2464-Chiaro/dcp_2/music_lose_in_context.xdc] for cell 'mp3/music_0'
-Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-2464-Chiaro/dcp_3/music_get_in_context.xdc] for cell 'mp3/music_2'
-Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-2464-Chiaro/dcp_3/music_get_in_context.xdc] for cell 'mp3/music_2'
-Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-2464-Chiaro/dcp_4/music_crash_in_context.xdc] for cell 'mp3/music_3'
-Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-2464-Chiaro/dcp_4/music_crash_in_context.xdc] for cell 'mp3/music_3'
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-16036-Chiaro/dcp/music_win_in_context.xdc] for cell 'mp3/music_1'
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-16036-Chiaro/dcp/music_win_in_context.xdc] for cell 'mp3/music_1'
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-16036-Chiaro/dcp_2/music_lose_in_context.xdc] for cell 'mp3/music_0'
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-16036-Chiaro/dcp_2/music_lose_in_context.xdc] for cell 'mp3/music_0'
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-16036-Chiaro/dcp_3/music_get_in_context.xdc] for cell 'mp3/music_2'
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-16036-Chiaro/dcp_3/music_get_in_context.xdc] for cell 'mp3/music_2'
+Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-16036-Chiaro/dcp_4/music_crash_in_context.xdc] for cell 'mp3/music_3'
+Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/.Xil/Vivado-16036-Chiaro/dcp_4/music_crash_in_context.xdc] for cell 'mp3/music_3'
 Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/port.xdc]
 WARNING: [Vivado 12-507] No nets matched 'iPause_IBUF'. [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/port.xdc:39]
 Finished Parsing XDC File [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/port.xdc]
@@ -121,22 +120,22 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 645.715 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 645.895 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 645.715 ; gain = 438.465
+Finished Constraint Validation : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 645.895 ; gain = 438.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:05 ; elapsed = 00:00:12 . Memory (MB): peak = 645.715 ; gain = 438.465
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 645.895 ; gain = 438.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:05 ; elapsed = 00:00:13 . Memory (MB): peak = 645.715 ; gain = 438.465
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:04 ; elapsed = 00:00:09 . Memory (MB): peak = 645.895 ; gain = 438.633
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/speed_control.v:17]
 INFO: [Synth 8-5818] HDL ADVISOR - The operator resource <adder> is shared. To prevent sharing consider applying a KEEP on the output of the operator [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:216]
@@ -166,16 +165,17 @@ INFO: [Synth 8-5544] ROM "status" won't be mapped to Block RAM because address s
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
 ---------------------------------------------------------------------------------------------------
-             STATUS_WAIT |                              000 |                             0000
-           STATUS_RESETH |                              001 |                             0001
-           STATUS_RESETS |                              010 |                             0010
-           STATUS_VOLUMN |                              011 |                             0011
-             STATUS_LOAD |                              100 |                             0100
-             STATUS_PLAY |                              101 |                             0101
+                  iSTATE |                              000 |                             0000
+                 iSTATE0 |                              001 |                             0001
+                 iSTATE1 |                              010 |                             0010
+                 iSTATE2 |                              011 |                             0011
+                 iSTATE3 |                              100 |                             0100
+                 iSTATE4 |                              101 |                             0101
+*
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'status_reg' using encoding 'sequential' in module 'MP3_control'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:14 . Memory (MB): peak = 645.715 ; gain = 438.465
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 645.895 ; gain = 438.633
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -189,13 +189,13 @@ Start RTL Component Statistics
 Detailed RTL Component Info : 
 +---Adders : 
 	   3 Input     32 Bit       Adders := 2     
-	   2 Input     32 Bit       Adders := 6     
+	   2 Input     32 Bit       Adders := 5     
 	   2 Input     10 Bit       Adders := 2     
 	   3 Input     10 Bit       Adders := 4     
 	   2 Input      6 Bit       Adders := 2     
 	   2 Input      4 Bit       Adders := 1     
 +---Registers : 
-	               32 Bit    Registers := 4     
+	               32 Bit    Registers := 3     
 	               16 Bit    Registers := 1     
 	               10 Bit    Registers := 8     
 	                8 Bit    Registers := 1     
@@ -207,12 +207,13 @@ Detailed RTL Component Info :
 	                32x32  Multipliers := 2     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 2     
-	   6 Input     32 Bit        Muxes := 3     
+	   5 Input     32 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 1     
 	   2 Input     28 Bit        Muxes := 2     
 	   2 Input     27 Bit        Muxes := 1     
 	   2 Input     20 Bit        Muxes := 10    
 	   4 Input     16 Bit        Muxes := 1     
-	   6 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
 	   2 Input     10 Bit        Muxes := 3     
 	   2 Input      8 Bit        Muxes := 2     
 	  16 Input      8 Bit        Muxes := 2     
@@ -220,9 +221,12 @@ Detailed RTL Component Info :
 	   2 Input      3 Bit        Muxes := 12    
 	   7 Input      3 Bit        Muxes := 1     
 	   2 Input      2 Bit        Muxes := 10    
-	   2 Input      1 Bit        Muxes := 29    
-	   5 Input      1 Bit        Muxes := 1     
-	   6 Input      1 Bit        Muxes := 16    
+	   2 Input      1 Bit        Muxes := 38    
+	   5 Input      1 Bit        Muxes := 3     
+	   6 Input      1 Bit        Muxes := 6     
+	   7 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -295,21 +299,26 @@ Detailed RTL Component Info :
 Module MP3_control 
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input     32 Bit       Adders := 3     
+	   2 Input     32 Bit       Adders := 2     
 +---Registers : 
-	               32 Bit    Registers := 4     
+	               32 Bit    Registers := 3     
 	               16 Bit    Registers := 1     
 	                8 Bit    Registers := 1     
 	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 5     
 +---Muxes : 
 	   2 Input     32 Bit        Muxes := 2     
-	   6 Input     32 Bit        Muxes := 3     
+	   5 Input     32 Bit        Muxes := 1     
+	   4 Input     32 Bit        Muxes := 1     
 	   4 Input     16 Bit        Muxes := 1     
-	   6 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 1     
 	   7 Input      3 Bit        Muxes := 1     
-	   2 Input      1 Bit        Muxes := 4     
-	   6 Input      1 Bit        Muxes := 16    
+	   2 Input      1 Bit        Muxes := 13    
+	   5 Input      1 Bit        Muxes := 2     
+	   6 Input      1 Bit        Muxes := 6     
+	   7 Input      1 Bit        Muxes := 4     
+	   4 Input      1 Bit        Muxes := 2     
+	   3 Input      1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Hierarchical Component Statistics
 ---------------------------------------------------------------------------------
@@ -322,7 +331,7 @@ BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
 ---------------------------------------------------------------------------------
 Finished Part Resource Summary
 ---------------------------------------------------------------------------------
-Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 645.715 ; gain = 438.465
+Start Parallel Synthesis Optimization  : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 645.895 ; gain = 438.633
 ---------------------------------------------------------------------------------
 Start Cross Boundary Optimization
 ---------------------------------------------------------------------------------
@@ -356,12 +365,12 @@ DSP Report: Generating DSP VGA_Disp/oRed3, operation Mode is: (PCIN>>17)+A*B.
 DSP Report: operator VGA_Disp/oRed3 is absorbed into DSP VGA_Disp/oRed3.
 DSP Report: operator VGA_Disp/oRed3 is absorbed into DSP VGA_Disp/oRed3.
 INFO: [Synth 8-5545] ROM "countDelay" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
-INFO: [Synth 8-5545] ROM "countcmd" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 INFO: [Synth 8-5545] ROM "oXRESET" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
+INFO: [Synth 8-5545] ROM "countcmd" won't be mapped to RAM because address size (32) is larger than maximum supported(25)
 ---------------------------------------------------------------------------------
-Finished Cross Boundary Optimization : Time (s): cpu = 00:00:06 ; elapsed = 00:00:15 . Memory (MB): peak = 645.715 ; gain = 438.465
+Finished Cross Boundary Optimization : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 645.895 ; gain = 438.633
 ---------------------------------------------------------------------------------
-Finished Parallel Reinference  : Time (s): cpu = 00:00:06 ; elapsed = 00:00:15 . Memory (MB): peak = 645.715 ; gain = 438.465
+Finished Parallel Reinference  : Time (s): cpu = 00:00:04 ; elapsed = 00:00:10 . Memory (MB): peak = 645.895 ; gain = 438.633
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -450,9 +459,9 @@ WARNING: [Synth 8-3332] Sequential element (mp3/volumn_reg[2]) is unused and wil
 WARNING: [Synth 8-3332] Sequential element (mp3/volumn_reg[1]) is unused and will be removed from module Top.
 WARNING: [Synth 8-3332] Sequential element (mp3/volumn_reg[0]) is unused and will be removed from module Top.
 ---------------------------------------------------------------------------------
-Finished Area Optimization : Time (s): cpu = 00:00:07 ; elapsed = 00:00:17 . Memory (MB): peak = 645.715 ; gain = 438.465
+Finished Area Optimization : Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 645.895 ; gain = 438.633
 ---------------------------------------------------------------------------------
-Finished Parallel Area Optimization  : Time (s): cpu = 00:00:07 ; elapsed = 00:00:17 . Memory (MB): peak = 645.715 ; gain = 438.465
+Finished Parallel Area Optimization  : Time (s): cpu = 00:00:05 ; elapsed = 00:00:11 . Memory (MB): peak = 645.895 ; gain = 438.633
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
@@ -466,10 +475,10 @@ Start Timing Optimization
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:29 . Memory (MB): peak = 668.824 ; gain = 461.574
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:08 ; elapsed = 00:00:18 . Memory (MB): peak = 668.105 ; gain = 460.844
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:29 . Memory (MB): peak = 668.824 ; gain = 461.574
+Finished Timing Optimization : Time (s): cpu = 00:00:09 ; elapsed = 00:00:18 . Memory (MB): peak = 668.105 ; gain = 460.844
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -481,16 +490,16 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:30 . Memory (MB): peak = 698.195 ; gain = 490.945
+Finished Technology Mapping : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 698.371 ; gain = 491.109
 ---------------------------------------------------------------------------------
-Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:30 . Memory (MB): peak = 698.195 ; gain = 490.945
+Finished Parallel Technology Mapping Optimization  : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 698.371 ; gain = 491.109
 
 Report RTL Partitions: 
 +-+--------------+------------+----------+
 | |RTL Partition |Replication |Instances |
 +-+--------------+------------+----------+
 +-+--------------+------------+----------+
-Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:14 ; elapsed = 00:00:30 . Memory (MB): peak = 698.195 ; gain = 490.945
+Finished Parallel Synthesis Optimization  : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 698.371 ; gain = 491.109
 ---------------------------------------------------------------------------------
 Start IO Insertion
 ---------------------------------------------------------------------------------
@@ -507,7 +516,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:14 ; elapsed = 00:00:30 . Memory (MB): peak = 698.195 ; gain = 490.945
+Finished IO Insertion : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 698.371 ; gain = 491.109
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -520,7 +529,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:14 ; elapsed = 00:00:30 . Memory (MB): peak = 698.195 ; gain = 490.945
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 698.371 ; gain = 491.109
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -532,25 +541,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:14 ; elapsed = 00:00:30 . Memory (MB): peak = 698.195 ; gain = 490.945
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 698.371 ; gain = 491.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:14 ; elapsed = 00:00:30 . Memory (MB): peak = 698.195 ; gain = 490.945
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 698.371 ; gain = 491.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:30 . Memory (MB): peak = 698.195 ; gain = 490.945
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 698.371 ; gain = 491.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:14 ; elapsed = 00:00:30 . Memory (MB): peak = 698.195 ; gain = 490.945
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 698.371 ; gain = 491.109
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -577,15 +586,15 @@ Report Cell Usage:
 |5     |BUFG        |     3|
 |6     |CARRY4      |   125|
 |7     |DSP48E1     |     6|
-|8     |LUT1        |   213|
-|9     |LUT2        |   324|
-|10    |LUT3        |   121|
-|11    |LUT4        |   110|
-|12    |LUT5        |    81|
-|13    |LUT6        |   166|
+|8     |LUT1        |   214|
+|9     |LUT2        |   292|
+|10    |LUT3        |   107|
+|11    |LUT4        |   130|
+|12    |LUT5        |    80|
+|13    |LUT6        |   169|
 |14    |MUXF7       |     2|
-|15    |FDRE        |   322|
-|16    |FDSE        |    23|
+|15    |FDRE        |   323|
+|16    |FDSE        |    22|
 |17    |IBUF        |     7|
 |18    |OBUF        |    22|
 +------+------------+------+
@@ -594,21 +603,21 @@ Report Instance Areas:
 +------+--------------+--------------+------+
 |      |Instance      |Module        |Cells |
 +------+--------------+--------------+------+
-|1     |top           |              |  1589|
+|1     |top           |              |  1566|
 |2     |  game        |game_control  |   657|
 |3     |    VGA_Disp  |VGA_display   |   657|
 |4     |      divider |divider4Times |     4|
-|5     |  mp3         |MP3_control   |   759|
+|5     |  mp3         |MP3_control   |   736|
 |6     |    div       |Divider       |   127|
 |7     |  sound_ctrl  |sound_control |   118|
 |8     |  speed_ctrl  |speed_control |    23|
 +------+--------------+--------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:14 ; elapsed = 00:00:30 . Memory (MB): peak = 698.195 ; gain = 490.945
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 698.371 ; gain = 491.109
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 28 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:12 ; elapsed = 00:00:24 . Memory (MB): peak = 698.195 ; gain = 160.289
-Synthesis Optimization Complete : Time (s): cpu = 00:00:14 ; elapsed = 00:00:30 . Memory (MB): peak = 698.195 ; gain = 490.945
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:06 ; elapsed = 00:00:14 . Memory (MB): peak = 698.371 ; gain = 160.395
+Synthesis Optimization Complete : Time (s): cpu = 00:00:09 ; elapsed = 00:00:19 . Memory (MB): peak = 698.371 ; gain = 491.109
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 138 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -618,8 +627,8 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-101 Infos, 37 Warnings, 0 Critical Warnings and 0 Errors encountered.
+100 Infos, 37 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:13 ; elapsed = 00:00:28 . Memory (MB): peak = 698.195 ; gain = 466.965
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 698.195 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Sun Jan 05 00:41:56 2025...
+synth_design: Time (s): cpu = 00:00:08 ; elapsed = 00:00:17 . Memory (MB): peak = 698.371 ; gain = 467.164
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 698.371 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Sun Jan 05 00:48:38 2025...

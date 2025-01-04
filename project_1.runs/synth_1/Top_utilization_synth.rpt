@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Sun Jan 05 00:41:56 2025
+| Date         : Sun Jan 05 00:48:38 2025
 | Host         : Chiaro running 64-bit major release  (build 9200)
 | Command      : report_utilization -file Top_utilization_synth.rpt -pb Top_utilization_synth.pb
 | Design       : Top
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             |  676 |     0 |     63400 |  1.07 |
-|   LUT as Logic          |  676 |     0 |     63400 |  1.07 |
+| Slice LUTs*             |  652 |     0 |     63400 |  1.03 |
+|   LUT as Logic          |  652 |     0 |     63400 |  1.03 |
 |   LUT as Memory         |    0 |     0 |     19000 |  0.00 |
 | Slice Registers         |  345 |     0 |    126800 |  0.27 |
 |   Register as Flip Flop |  345 |     0 |    126800 |  0.27 |
@@ -56,8 +56,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 23    |          Yes |         Set |            - |
-| 322   |          Yes |       Reset |            - |
+| 22    |          Yes |         Set |            - |
+| 323   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -147,16 +147,16 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT2     |  324 |                 LUT |
-| FDRE     |  322 |        Flop & Latch |
-| LUT6     |  166 |                 LUT |
+| FDRE     |  323 |        Flop & Latch |
+| LUT2     |  292 |                 LUT |
+| LUT6     |  169 |                 LUT |
+| LUT4     |  130 |                 LUT |
 | CARRY4   |  125 |          CarryLogic |
-| LUT3     |  121 |                 LUT |
-| LUT4     |  110 |                 LUT |
-| LUT5     |   81 |                 LUT |
-| LUT1     |   37 |                 LUT |
-| FDSE     |   23 |        Flop & Latch |
+| LUT3     |  107 |                 LUT |
+| LUT5     |   80 |                 LUT |
+| LUT1     |   38 |                 LUT |
 | OBUF     |   22 |                  IO |
+| FDSE     |   22 |        Flop & Latch |
 | IBUF     |    7 |                  IO |
 | DSP48E1  |    6 |    Block Arithmetic |
 | BUFG     |    3 |               Clock |

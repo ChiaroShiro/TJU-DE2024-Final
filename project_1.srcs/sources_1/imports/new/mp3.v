@@ -51,101 +51,88 @@ module MP3_control(
 			cur        <= iSelect;
 		end
 		else begin
-			case(status)
-				STATUS_WAIT:
-				begin
-					oSCLK <= 0;
-					if(countDelay==MAX_DELAY) begin
-						status     <= STATUS_RESETH;
-						countcmd   <= 0;
-						oXRESET    <= 1'b1;
-						countDelay <= 0;
-					end
-					else
-						countDelay <= countDelay + 1;
+			if(status == STATUS_WAIT) begin
+				oSCLK <= 0;
+				if(countDelay == MAX_DELAY) begin
+					status     <= STATUS_RESETH;
+					countcmd   <= 0;
+					oXRESET    <= 1'b1;
+					countDelay <= 0;
 				end
-
-				STATUS_RESETH:
-				begin
-					countcmd <= 0;
-					oXCS     <= 1'b1;
-					status   <= STATUS_RESETS;
-					cmdSci   <= 32'h02000804;
-					oSCLK    <= 1'b0;
-				end
-
-				STATUS_RESETS:
-				begin
-					if(iDREQ && oSCLK) begin
-						if(countcmd >= 32) begin
-							countcmd <= 0;
-							oXCS     <= 1'b1;
-							status   <= STATUS_VOLUMN;
-							cmdSci   <= {16'h020b, iVol, iVol};
-						end
-						else begin
-							oXCS     <= 1'b0;
-							oSI      <= cmdSci[31];
-							cmdSci   <= {cmdSci[30:0], cmdSci[31]};
-							countcmd <= countcmd + 1'b1;
-						end
-					end
-					oSCLK <= ~oSCLK;
-				end
-
-				STATUS_VOLUMN:
-				begin
-					if(iDREQ && oSCLK) begin
-						if(countcmd >= 32) begin
-							countcmd <= 0;
-							oXCS     <= 1'b1;
-							status   <= STATUS_LOAD;
-						end
-						else begin
-							oXCS     <= 0;
-							oSI      <= cmdSci[31] ;
-							cmdSci   <= {cmdSci[30:0], cmdSci[31]};
-							countcmd <= countcmd + 1'b1;
-						end
-					end
-					oSCLK <= ~oSCLK;
-				end
-
-				STATUS_LOAD:
-				begin
-					if(volumn != iVol) begin
-						volumn   <= iVol;
+				else
+					countDelay <= countDelay + 1;
+			end
+			else if(status == STATUS_RESETH) begin
+				countcmd <= 0;
+				oXCS     <= 1'b1;
+				status   <= STATUS_RESETS;
+				cmdSci   <= 32'h02000804;
+				oSCLK    <= 1'b0;
+			end
+			else if(status == STATUS_RESETS) begin
+				if(iDREQ && oSCLK) begin
+					if(countcmd >= 32) begin
 						countcmd <= 0;
+						oXCS     <= 1'b1;
 						status   <= STATUS_VOLUMN;
 						cmdSci   <= {16'h020b, iVol, iVol};
+					end
+					else begin
+						oXCS     <= 1'b0;
+						oSI      <= cmdSci[31];
+						cmdSci   <= {cmdSci[30:0], cmdSci[31]};
+						countcmd <= countcmd + 1'b1;
+					end
+				end
+				oSCLK <= ~oSCLK;
+			end
+			else if(status == STATUS_VOLUMN) begin
+				if(iDREQ && oSCLK) begin
+					if(countcmd >= 32) begin
+						countcmd <= 0;
 						oXCS     <= 1'b1;
+						status   <= STATUS_LOAD;
 					end
-					else if(iDREQ) begin
-						oSCLK     <= 0;
-						status    <= STATUS_PLAY;
-						buff      <= data;
-						countData <= 0;
+					else begin
+						oXCS     <= 0;
+						oSI      <= cmdSci[31];
+						cmdSci   <= {cmdSci[30:0], cmdSci[31]};
+						countcmd <= countcmd + 1'b1;
 					end
 				end
-				
-				STATUS_PLAY:
-				begin
-					if(oSCLK) begin
-						if(countData >=16) begin
-							oXDCS   <= 1'b1;
-							romAddr <= romAddr + 1'b1;
-							status  <= STATUS_LOAD;
-						end
-						else begin
-							oXDCS     <= 1'b0;
-							oSI       <= buff[15];
-							buff      <= {buff[14:0], buff[15]};
-							countData <= countData + 1;
-						end
-					end
-					oSCLK <= ~oSCLK;
+				oSCLK <= ~oSCLK;
+			end
+			else if(status == STATUS_LOAD) begin
+				if(volumn != iVol) begin
+					volumn   <= iVol;
+					countcmd <= 0;
+					status   <= STATUS_VOLUMN;
+					cmdSci   <= {16'h020b, iVol, iVol};
+					oXCS     <= 1'b1;
 				end
-			endcase
+				else if(iDREQ) begin
+					oSCLK     <= 0;
+					status    <= STATUS_PLAY;
+					buff      <= data;
+					countData <= 0;
+				end
+			end
+			else if(status == STATUS_PLAY) begin
+				if(oSCLK) begin
+					if(countData >=16) begin
+						oXDCS   <= 1'b1;
+						romAddr <= romAddr + 1'b1;
+						status  <= STATUS_LOAD;
+					end
+					else begin
+						oXDCS     <= 1'b0;
+						oSI       <= buff[15];
+						buff      <= {buff[14:0], buff[15]};
+						countData <= countData + 1;
+					end
+				end
+				oSCLK <= ~oSCLK;
+			end
 		end
 	end
 
