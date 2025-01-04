@@ -84,15 +84,15 @@ module Top(
 	);
 	
 	Top_module_of_mp3 mp3(
-		.CLK            (iClk),
-		.RST            (!mp3_rst),
-		.Vol            (8'd0),
-		.MusicSel       (mp3_select),
-		.PortDREQ       (port_vs1003b_dreq),
-		.PortXDCS       (port_vs1003b_xdcs),
-		.PortXCS        (port_vs1003b_xcs),
-		.PortSI         (port_vs1003b_si),
-		.PortSCLK       (port_vs1003b_sclk),
-		.PortXRESET     (port_vs1003b_xreset)
+		.iClk           (iClk),
+		.iRst           (!mp3_rst),
+		.iVol           (8'd0),
+		.iMusicSel      (mp3_select),
+		.iPortDREQ      (port_vs1003b_dreq),
+		.oPortXDCS      (port_vs1003b_xdcs),
+		.oPortXCS       (port_vs1003b_xcs),
+		.oPortSI        (port_vs1003b_si),
+		.oPortSCLK      (port_vs1003b_sclk),
+		.oPortXRESET    (port_vs1003b_xreset)
 	);
 endmodule

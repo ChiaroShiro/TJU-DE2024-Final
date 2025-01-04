@@ -2,16 +2,16 @@
 
 `define DL #0.5
 module Top_module_of_mp3(
-	input           CLK,
-	input           RST,
-	input [7:0]     Vol,
-	input [1:0]     MusicSel,
-	input           PortDREQ,
-	output reg      PortXDCS,
-	output reg      PortXCS,
-	output reg      PortSI,
-	output reg      PortSCLK,
-	output reg      PortXRESET
+	input           iClk,
+	input           iRst,
+	input [7:0]     iVol,
+	input [1:0]     iMusicSel,
+	input           iPortDREQ,
+	output reg      oPortXDCS,
+	output reg      oPortXCS,
+	output reg      oPortSI,
+	output reg      oPortSCLK,
+	output reg      oPortXRESET
 );
 //-----------------------------------------------------------------------------
 // Definition of Parameters
@@ -43,42 +43,42 @@ reg  [1:0]      IntCurMusic;
 //-----------------------------------------------------------------------------
 // Process
 //-----------------------------------------------------------------------------
-assign IntMusicData = (MusicSel == 2'b00) ? IntMusicRomDout[0] :
-                     (MusicSel == 2'b01) ? IntMusicRomDout[1] :
-                     (MusicSel == 2'b10) ? IntMusicRomDout[2] :
+assign IntMusicData = (iMusicSel == 2'b00) ? IntMusicRomDout[0] :
+                     (iMusicSel == 2'b01) ? IntMusicRomDout[1] :
+                     (iMusicSel == 2'b10) ? IntMusicRomDout[2] :
                      IntMusicRomDout[3];
 // MP3Ä£¿éµÄ×´Ì¬»ú
 always @(posedge IntClkDiv) begin
-	if(RST) begin
-		PortXRESET <= `DL 1'b0;
-		PortXCS <= `DL 1'b1;
-		PortXDCS <= `DL 1'b1;
-		PortSI <= `DL 1'b1;
+	if(iRst) begin
+		oPortXRESET <= `DL 1'b0;
+		oPortXCS <= `DL 1'b1;
+		oPortXDCS <= `DL 1'b1;
+		oPortSI <= `DL 1'b1;
 		IntDelayCnt <= `DL 0;
 		IntMusicRomAddr <= `DL 0;
 		IntMp3State <= `DL WAITING;
-		IntCurVol <= `DL Vol;
-		IntCurMusic <= `DL MusicSel;
+		IntCurVol <= `DL iVol;
+		IntCurMusic <= `DL iMusicSel;
 	end
-	else if(IntCurMusic != MusicSel) begin
-		PortXRESET <= `DL 1'b0;
-		PortXCS <= `DL 1'b1;
-		PortXDCS <= `DL 1'b1;
-		PortSI <= `DL 1'b1;
+	else if(IntCurMusic != iMusicSel) begin
+		oPortXRESET <= `DL 1'b0;
+		oPortXCS <= `DL 1'b1;
+		oPortXDCS <= `DL 1'b1;
+		oPortSI <= `DL 1'b1;
 		IntDelayCnt <= `DL 0;
 		IntMusicRomAddr <= `DL 0;
 		IntMp3State <= `DL WAITING;
-		IntCurVol <= `DL Vol;
-		IntCurMusic <= `DL MusicSel;
+		IntCurVol <= `DL iVol;
+		IntCurMusic <= `DL iMusicSel;
 	end
 	else begin
 		case(IntMp3State)
 			WAITING:begin       // Waiting time delay
-				PortSCLK <= `DL 0;
+				oPortSCLK <= `DL 0;
 				if(IntDelayCnt==MAX_DELAY) begin
 					IntMp3State <= `DL H_RESET;
 					IntCmdCnt <= `DL 0;
-					PortXRESET <= `DL 1'b1;
+					oPortXRESET <= `DL 1'b1;
 					IntDelayCnt <= `DL 0;
 				end
 				else
@@ -86,78 +86,78 @@ always @(posedge IntClkDiv) begin
 			end
 			H_RESET:begin       // hardware reset
 				IntCmdCnt <= `DL 0;
-				PortXCS <= `DL 1'b1;
+				oPortXCS <= `DL 1'b1;
 				IntMp3State <= `DL S_RESET;
 				IntCmdSci <= `DL 32'h02000804;
-				PortSCLK <= `DL 1'b0;
+				oPortSCLK <= `DL 1'b0;
 			end
 			S_RESET:begin       // software reset
-				if(PortDREQ) begin
-					if(PortSCLK) begin
+				if(iPortDREQ) begin
+					if(oPortSCLK) begin
 						if(IntCmdCnt >= 32) begin
 							IntCmdCnt <= `DL 0;
-							PortXCS <= `DL 1'b1;
+							oPortXCS <= `DL 1'b1;
 							IntMp3State <= `DL SET_VOL;
-							IntCmdSci <= `DL {16'h020b, Vol, Vol};
+							IntCmdSci <= `DL {16'h020b, iVol, iVol};
 						end
 						else begin
-							PortXCS <= `DL 1'b0;
-							PortSI <= `DL IntCmdSci[31];
+							oPortXCS <= `DL 1'b0;
+							oPortSI <= `DL IntCmdSci[31];
 							IntCmdSci <= `DL {IntCmdSci[30:0], IntCmdSci[31]};
 							IntCmdCnt <= `DL IntCmdCnt + 1'b1;
 						end
 					end
 				end
-				PortSCLK <= `DL ~PortSCLK;
+				oPortSCLK <= `DL ~oPortSCLK;
 			end
 			SET_VOL:begin       // MP3 volume Settings
-				if(PortDREQ) begin
-					if(PortSCLK) begin
+				if(iPortDREQ) begin
+					if(oPortSCLK) begin
 						if(IntCmdCnt >= 32) begin
 							IntCmdCnt <= `DL 0;
-							PortXCS <= `DL 1'b1;
+							oPortXCS <= `DL 1'b1;
 							IntMp3State <= `DL LOAD_DATA;
 						end
 						else begin
-							PortXCS <= `DL 0;
-							PortSI <= `DL IntCmdSci[31] ;
+							oPortXCS <= `DL 0;
+							oPortSI <= `DL IntCmdSci[31] ;
 							IntCmdSci <= `DL {IntCmdSci[30:0], IntCmdSci[31]};
 							IntCmdCnt <= `DL IntCmdCnt + 1'b1;
 						end
 					end
 				end
-				PortSCLK <= `DL ~PortSCLK;
+				oPortSCLK <= `DL ~oPortSCLK;
 			end
 			LOAD_DATA:begin     // Loading MP3 data
-				if(IntCurVol != Vol) begin
-					IntCurVol <= `DL Vol;
+				if(IntCurVol != iVol) begin
+					IntCurVol <= `DL iVol;
 					IntCmdCnt <= `DL 0;
 					IntMp3State <= `DL SET_VOL;
-					IntCmdSci <= `DL {16'h020b, Vol, Vol};
-					PortXCS <= `DL 1'b1;
+					IntCmdSci <= `DL {16'h020b, iVol, iVol};
+					oPortXCS <= `DL 1'b1;
 				end
-				else if(PortDREQ) begin
-					PortSCLK <= `DL 0;
+				else if(iPortDREQ) begin
+					oPortSCLK <= `DL 0;
 					IntMp3State <= `DL PLAY;
 					IntMusicData_buff <= `DL IntMusicData;
 					IntDataTxCnt <= `DL 0;
 				end
 			end
 			PLAY:begin          // Transfer and play MP3 data
-				if(PortSCLK) begin
+				if(oPortSCLK) begin
 					if(IntDataTxCnt >=16) begin
-						PortXDCS <= `DL 1'b1;
+						oPortXDCS <= `DL 1'b1;
 						IntMusicRomAddr <= `DL IntMusicRomAddr + 1'b1;
 						IntMp3State <= `DL LOAD_DATA;
 					end
 					else begin
-						PortXDCS <= `DL 1'b0;
-						PortSI <= `DL IntMusicData_buff[15];
+						oPortXDCS <= `DL 1'b0;
+						oPortSI <= `DL IntMusicData_buff[15];
 						IntMusicData_buff <= `DL {IntMusicData_buff[14:0], IntMusicData_buff[15]};
 						IntDataTxCnt <= `DL IntDataTxCnt + 1;
 					end
 				end
-				PortSCLK <= `DL ~PortSCLK;
+				oPortSCLK <= `DL ~oPortSCLK;
 			end
 		endcase
 	end
@@ -165,24 +165,24 @@ end
 //-----------------------------------------------------------------------------
 // Instance
 //-----------------------------------------------------------------------------
-Divider #(.Time(100)) div(CLK, IntClkDiv);
-music_lose music_0 (.clka(CLK), .addra(IntMusicRomAddr), .douta(IntMusicRomDout[0]));
-music_win music_1 (.clka(CLK), .addra(IntMusicRomAddr), .douta(IntMusicRomDout[1]));
-music_get music_2 (.clka(CLK), .addra(IntMusicRomAddr), .douta(IntMusicRomDout[2]));
-music_crash music_3 (.clka(CLK), .addra(IntMusicRomAddr), .douta(IntMusicRomDout[3]));
+Divider #(.Time(100)) div(iClk, IntClkDiv);
+music_lose music_0 (.clka(iClk), .addra(IntMusicRomAddr), .douta(IntMusicRomDout[0]));
+music_win music_1 (.clka(iClk), .addra(IntMusicRomAddr), .douta(IntMusicRomDout[1]));
+music_get music_2 (.clka(iClk), .addra(IntMusicRomAddr), .douta(IntMusicRomDout[2]));
+music_crash music_3 (.clka(iClk), .addra(IntMusicRomAddr), .douta(IntMusicRomDout[3]));
 endmodule
 //
 module Divider #(parameter Time=20) (
-	input I_CLK,
-	output reg O_CLK
+	input iClk,
+	output reg oClk
 );
 	integer counter=0;
-	initial O_CLK = 0;
-	always @(posedge I_CLK)
+	initial oClk = 0;
+	always @(posedge iClk)
 	begin
 		if((counter + 1) == Time / 2) begin
 			counter <= `DL 0;
-			O_CLK <= `DL ~O_CLK;
+			oClk <= `DL ~oClk;
 		end
 		else counter <= `DL counter+1;
 	end
