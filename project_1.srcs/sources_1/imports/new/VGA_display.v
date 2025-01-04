@@ -179,9 +179,9 @@ module VGA_display(
 		// œ‘ æ–°«Ú
 		else if ( (Hcnt - ball_x_pos) * (Hcnt - ball_x_pos) + (Vcnt - ball_y_pos) * (Vcnt - ball_y_pos) <= (ball_r * ball_r))  
 		begin  
-			oRed   <= Hcnt[3:1];
-			oGreen <= Hcnt[6:4];
-			oBlue  <= Hcnt[8:7];
+			oRed   <= 3'b101;  
+			oGreen <= 3'b101;  
+			oBlue  <= 2'b10; 
 		end  
 		else if(Vcnt <= BLOCK_DOWN_first && Vcnt >= BLOCK_DOWN_second)
 		begin
