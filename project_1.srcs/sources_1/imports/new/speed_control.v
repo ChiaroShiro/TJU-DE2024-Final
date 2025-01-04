@@ -14,12 +14,10 @@ module speed_control(
 		speed_up_reg <= iSpeedUp;
 		speed_down_reg <= iSpeedDown;
 		
-		if(speed_up_reg != iSpeedUp && iSpeedUp && speed_reg < 4'd9) begin // 速度增加
+		if(speed_up_reg != iSpeedUp && iSpeedUp && speed_reg < 4'd9) // 速度增加
 			speed_reg <= speed_reg + 1;
-		end
-		else if(speed_down_reg != iSpeedDown && iSpeedDown && speed_reg > 4'd1) begin // 速度减少
+		else if(speed_down_reg != iSpeedDown && iSpeedDown && speed_reg > 4'd1) // 速度减少
 			speed_reg <= speed_reg - 1;
-		end
 	end
 
 	assign oSpeed = speed_reg;

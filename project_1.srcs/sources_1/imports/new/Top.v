@@ -54,7 +54,7 @@ module Top(
 		.oData			(oDisplay)
 	);
 
-	Top_module_of_game game(
+	game_control game(
 		.iClk			(iClk),    
 		.iPause			(iPause || game_pause),
 		.iToLeft		(to_left),

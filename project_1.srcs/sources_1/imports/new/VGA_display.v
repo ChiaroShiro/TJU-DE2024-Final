@@ -6,27 +6,17 @@
 `define DOWN  1'b1
 
 module VGA_display(
-    // 系统时钟输入
     input iClk,
-    // 暂停游戏输入信号
     input iPause,
-    // 控制挡板左移输入
     input iToLeft,
-    // 控制挡板右移输入
     input iToRight,
-    // 挡板移动速度控制(4位)
+    input iToRight,
     input [3:0] iBarMoveSpeed,
-    // VGA水平同步信号输出
     output reg oHSync,
-    // VGA垂直同步信号输出
     output reg oVSync,
-    // VGA红色分量输出(3位)
     output reg [2:0] oRed,
-    // VGA绿色分量输出(3位)
     output reg [2:0] oGreen,
-    // VGA蓝色分量输出(2位)
     output reg [1:0] oBlue,
-    // 游戏失败信号输出
     output reg oLose,
 	output wire oWin,
 	output reg oGet,

@@ -60,15 +60,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/new/Game.v">
-        <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../VGA_game/color_game.srcs/sources_1/new/Game.v"/>
-          <Attr Name="ImportTime" Val="1735835235"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/new/mp3.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -84,6 +75,13 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/imports/new/speed_control.v">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/new/game_control.v">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -131,10 +129,8 @@
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
       <Filter Type="Constrs"/>
-      <File Path="$PSRCDIR/constrs_1/imports/new/color_game.xdc">
+      <File Path="$PSRCDIR/constrs_1/imports/new/port.xdc">
         <FileInfo>
-          <Attr Name="ImportPath" Val="$PPRDIR/../VGA_game/color_game.srcs/constrs_1/new/color_game.xdc"/>
-          <Attr Name="ImportTime" Val="1735835235"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
         </FileInfo>

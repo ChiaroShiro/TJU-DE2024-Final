@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc rfile:../../../project_1.srcs/constrs_1/imports/new/color_game.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/port.xdc rfile:../../../project_1.srcs/constrs_1/imports/new/port.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:24 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN E3 [get_ports iClk]
 set_property src_info {type:XDC file:1 line:25 export:INPUT save:INPUT read:READ} [current_design]

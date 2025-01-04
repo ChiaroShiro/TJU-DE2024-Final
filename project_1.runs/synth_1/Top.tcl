@@ -32,17 +32,17 @@ set_property used_in_implementation false [get_files e:/work/tju/DE/Final/ball/p
 read_verilog -library xil_defaultlib {
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v
-  E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/sound_control.v
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/speed_control.v
+  E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/game_control.v
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v
 }
 foreach dcp [get_files -quiet -all *.dcp] {
   set_property used_in_implementation false $dcp
 }
-read_xdc E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc
-set_property used_in_implementation false [get_files E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/color_game.xdc]
+read_xdc E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/port.xdc
+set_property used_in_implementation false [get_files E:/work/tju/DE/Final/ball/project_1/project_1.srcs/constrs_1/imports/new/port.xdc]
 
 
 synth_design -top Top -part xc7a100tcsg324-1
