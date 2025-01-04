@@ -71,3 +71,6 @@ set_property IOSTANDARD LVCMOS33 [get_ports port_vs1003b_si]
 set_property IOSTANDARD LVCMOS33 [get_ports port_vs1003b_xcs]
 set_property IOSTANDARD LVCMOS33 [get_ports port_vs1003b_xdcs]
 set_property IOSTANDARD LVCMOS33 [get_ports port_vs1003b_xreset]
+
+set_property PACKAGE_PIN J15 [get_ports mp3_select]
+set_property IOSTANDARD LVCMOS33 [get_ports mp3_select]

@@ -19,10 +19,14 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 add_files e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/music0.coe
 add_files e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/music1.coe
-add_files -quiet e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/ip/music_rom_0/music_rom_0.dcp
-set_property used_in_implementation false [get_files e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/ip/music_rom_0/music_rom_0.dcp]
-add_files -quiet e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/ip/music_rom_1/music_rom_1.dcp
-set_property used_in_implementation false [get_files e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/ip/music_rom_1/music_rom_1.dcp]
+add_files e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/win.coe
+add_files e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/lose.coe
+add_files e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/get.coe
+add_files e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/crash.coe
+add_files -quiet e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/ip/music_win/music_win.dcp
+set_property used_in_implementation false [get_files e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/ip/music_win/music_win.dcp]
+add_files -quiet e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/ip/music_lose/music_lose.dcp
+set_property used_in_implementation false [get_files e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/ip/music_lose/music_lose.dcp]
 read_verilog -library xil_defaultlib {
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v

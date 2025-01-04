@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Sat Jan 04 15:40:25 2025
+| Date         : Sat Jan 04 18:13:06 2025
 | Host         : Chiaro running 64-bit major release  (build 9200)
 | Command      : report_io -file Top_io_placed.rpt
 | Design       : Top
@@ -23,7 +23,7 @@ Table of Contents
 +---------------+
 | Total User IO |
 +---------------+
-|            29 |
+|            30 |
 +---------------+
 
 
@@ -191,7 +191,7 @@ Table of Contents
 | J12        |                     |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |
 | J13        |                     | High Range | IO_L17N_T2_A25_15            | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |
 | J14        |                     | High Range | IO_L19P_T3_A22_15            | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |
-| J15        |                     | High Range | IO_L24N_T3_RS0_15            | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |
+| J15        | mp3_select          | High Range | IO_L24N_T3_RS0_15            | INPUT       | LVCMOS33    |      15 |            |      |                     |                 NONE |         | FIXED      |           |          |      | NONE             |
 | J16        |                     |            | GND                          | GND         |             |         |            |      |                     |                      |     0.0 |            |           |          |      |                  |
 | J17        |                     | High Range | IO_L23P_T3_FOE_B_15          | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |
 | J18        |                     | High Range | IO_L23N_T3_FWE_B_15          | User IO     |             |      15 |            |      |                     |                      |         |            |           |          |      |                  |

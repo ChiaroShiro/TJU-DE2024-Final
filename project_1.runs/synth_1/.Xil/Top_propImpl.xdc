@@ -59,3 +59,5 @@ set_property src_info {type:XDC file:1 line:65 export:INPUT save:INPUT read:READ
 set_property PACKAGE_PIN C17 [get_ports port_vs1003b_xdcs]
 set_property src_info {type:XDC file:1 line:66 export:INPUT save:INPUT read:READ} [current_design]
 set_property PACKAGE_PIN D18 [get_ports port_vs1003b_xreset]
+set_property src_info {type:XDC file:1 line:75 export:INPUT save:INPUT read:READ} [current_design]
+set_property PACKAGE_PIN J15 [get_ports mp3_select]

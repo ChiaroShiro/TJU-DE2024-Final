@@ -26,7 +26,9 @@ module Top(
 	output port_vs1003b_xcs,
 	output port_vs1003b_si,
 	output port_vs1003b_sclk,
-	output port_vs1003b_xreset
+	output port_vs1003b_xreset,
+
+	input mp3_select
 );
 
 	wire [7:0] data_out;
@@ -73,7 +75,7 @@ module Top(
 		.CLK            (iClk),
 		.RST            (mp3_rst),
 		.Vol            (8'd0),
-		.MusicSel       (1'b0),
+		.MusicSel       (mp3_select),
 		.PortDREQ       (port_vs1003b_dreq),
 		.PortXDCS       (port_vs1003b_xdcs),
 		.PortXCS        (port_vs1003b_xcs),
