@@ -40,6 +40,15 @@ module VGA_display(
     parameter BALL_RAD = 10;
     parameter BALL_NUM = 10;      // 一层的球个数
 	parameter BLOCK_INIT = 20'b1111_1111_1111_1111_1111;
+
+    // 初始位置参数定义
+    parameter INIT_BALL_X = 330;  // 小球初始X坐标
+    parameter INIT_BALL_Y = 390;  // 小球初始Y坐标
+    parameter INIT_UP_POS = 400;  // 挡板初始上边缘Y坐标
+    parameter INIT_DOWN_POS = 430;// 挡板初始下边缘Y坐标
+    parameter INIT_LEFT_POS = 230;// 挡板初始左边缘X坐标
+    parameter INIT_RIGHT_POS = 430;// 挡板初始右边缘X坐标
+
 	//The blocks
 	reg [19:0] blocks = BLOCK_INIT;
 	
@@ -60,14 +69,14 @@ module VGA_display(
 	reg v_speed = 1'b0; 
 	
 	// 挡板位置参数定义
-	reg [9:0] up_pos = 400;    // 挡板上边缘Y坐标
-	reg [9:0] down_pos = 430;  // 挡板下边缘Y坐标
-	reg [9:0] left_pos = 230;  // 挡板左边缘X坐标
-	reg [9:0] right_pos = 430; // 挡板右边缘X坐标
+	reg [9:0] up_pos = INIT_UP_POS;    // 挡板上边缘Y坐标
+	reg [9:0] down_pos = INIT_DOWN_POS;  // 挡板下边缘Y坐标
+	reg [9:0] left_pos = INIT_LEFT_POS;  // 挡板左边缘X坐标
+	reg [9:0] right_pos = INIT_RIGHT_POS; // 挡板右边缘X坐标
 		
 	// 小球位置参数定义
-	reg [9:0] ball_x_pos = 330; // 小球中心X坐标,初始值330
-	reg [9:0] ball_y_pos = 390; // 小球中心Y坐标,初始值390
+	reg [9:0] ball_x_pos = INIT_BALL_X; // 小球中心X坐标
+	reg [9:0] ball_y_pos = INIT_BALL_Y; // 小球中心Y坐标
 	
 	always @(posedge iPause)
 		pau <= ~pau;
@@ -155,58 +164,49 @@ module VGA_display(
 			// 显示第一行砖块
 			if(HCount < BLOCK_WIDTH * BALL_NUM) begin
 				block_idx1 = HCount / BLOCK_WIDTH;
-				if(blocks[block_idx1]) begin
+				if(blocks[block_idx1])
 					{oRed, oGreen, oBlue} = get_block_color(block_idx1);
-				end else begin
+				else
 					{oRed, oGreen, oBlue} = 8'b0;
-				end
 			end
 		end
 		else if(VCount <= BLOCK_UP_LINE) begin
 			// 显示第二行砖块
 			if(HCount < BLOCK_WIDTH * BALL_NUM) begin
 				block_idx2 = HCount / BLOCK_WIDTH + BALL_NUM;
-				if(blocks[block_idx2]) begin
+				if(blocks[block_idx2])
 					{oRed, oGreen, oBlue} = get_block_color(block_idx2);
-				end else
+				else
 					{oRed, oGreen, oBlue} = 8'b0;
 			end
 		end
-		else 
-		begin  
-			oRed <= 3'b000;  
+		else begin  
+			oRed <=   3'b000;  
 			oGreen <= 3'b000;  
-			oBlue <= 2'b00;  
+			oBlue <=  2'b00;  
 		end		 
-		
-		
 	end
-	
+
 	reg flag;
 	// 刷新图像
-	always @ (posedge oVSync)  
-   	begin  		
+	always @ (posedge oVSync) begin  		
 		// 挡板移动
-		if(oLose || oWin)
-		begin 
-			ball_x_pos <= 330;
-			ball_y_pos <= 390;
-			up_pos <= 400;
-			down_pos <= 430;
-			left_pos <= 230;
-			right_pos <= 430; 
-			flag<=1;
+		if(oLose || oWin) begin 
+			ball_x_pos <= INIT_BALL_X;
+			ball_y_pos <= INIT_BALL_Y;
+			up_pos <= INIT_UP_POS;
+			down_pos <= INIT_DOWN_POS;
+			left_pos <= INIT_LEFT_POS;
+			right_pos <= INIT_RIGHT_POS; 
+			flag <= 1;
 		end
-		else if(!pau)
-		begin
+		else if(!pau) begin
 			flag<=0;
-			if (iToLeft && left_pos >= LEFT_BOUND) 
-			begin  
+			if (iToLeft && left_pos >= LEFT_BOUND) begin  
 				left_pos <= left_pos - iBarMoveSpeed;  
 				right_pos <= right_pos - iBarMoveSpeed;  
 			end  
-			else if(iToRight && right_pos <= RIGHT_BOUND)
-			begin
+			else if(iToRight && right_pos <= RIGHT_BOUND) begin
 				left_pos <= left_pos + iBarMoveSpeed;
 				right_pos <= right_pos + iBarMoveSpeed;
 			end  
@@ -220,7 +220,6 @@ module VGA_display(
 				ball_x_pos <= ball_x_pos + iBarMoveSpeed;  
 			else //go down
 				ball_x_pos <= ball_x_pos - iBarMoveSpeed; 
-
 		end 	
    	end 
 	
@@ -228,52 +227,36 @@ module VGA_display(
 	// 改变小球方向
 	always @ (negedge oVSync)  
 	begin
-		if(flag)
-		begin
+		if(flag) begin
 			oLose<=0;
 			blocks<=BLOCK_INIT; 
 		end
-		if (ball_y_pos <= UP_BOUND)   // 这里，所有判断都应该使用>=或<=，而不是==
-		begin	
-			v_speed <= 1'b1;              // 因为当偏移量大于1时，轴可能会跨过线
+		if (ball_y_pos <= UP_BOUND) begin 
+			v_speed <= 1'b1;
 			oLose <= 0;
 		end
-		else if(ball_y_pos <= BLOCK_DOWN_LINE && ball_y_pos > BLOCK_UP_LINE) // 小球在砖块之间
-		begin
-			// 计算小球碰到的砖块索引
+		else if(ball_y_pos <= BLOCK_DOWN_LINE && ball_y_pos > BLOCK_UP_LINE) begin // 小球在砖块之间
 			block_idx = ball_x_pos / BLOCK_WIDTH;
-			
-			// 检查是否碰到砖块
 			if(block_idx < BALL_NUM && blocks[block_idx]) begin
 				v_speed <= 1'b1;
-				// 消除被碰撞的砖块
 				blocks[block_idx] <= 0;
 				oGet <= 1;
 			end
 		end
-		else if(ball_y_pos <= BLOCK_UP_LINE) // 小球在第二行砖块
-		begin
-			// 计算小球碰到的砖块索引
+		else if(ball_y_pos <= BLOCK_UP_LINE) begin // 小球在第二行砖块
 			block_idx = ball_x_pos / BLOCK_WIDTH + BALL_NUM;
-			
-			// 检查是否碰到砖块
 			if(block_idx < 2 * BALL_NUM && blocks[block_idx]) begin
 				v_speed <= 1'b1;
-				// 消除被碰撞的砖块
 				blocks[block_idx] <= 0;  
 				oGet <= 1;
 			end
 		end
-		else if (ball_y_pos >= (up_pos - BALL_RAD) && ball_x_pos <= right_pos && ball_x_pos >= left_pos)  // 小球碰到挡板
-		begin
+		else if (ball_y_pos >= (up_pos - BALL_RAD) && ball_x_pos <= right_pos && ball_x_pos >= left_pos) begin // 小球碰到挡板
 			v_speed <= 1'b0;
 			oCrash <= 1;
 		end
 		else if (ball_y_pos >= down_pos && ball_y_pos < (DOWN_BOUND - BALL_RAD)) // 小球碰到下边界
-		begin
-			//Do what you want when lose
 			oLose <= 1;
-		end
 		else if(blocks==0) // 所有砖块都被击碎
 			oLose<=0;
 		else if (ball_y_pos >= (DOWN_BOUND - BALL_RAD + 1)) // 小球碰到下边界

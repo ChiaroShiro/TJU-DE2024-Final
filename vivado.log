@@ -2009,3 +2009,61 @@ launch_runs synth_1 -jobs 10
 INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
 [Sat Jan 04 22:57:24 2025] Launched synth_1...
 Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
+[Sat Jan 04 22:58:00 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
+[Sat Jan 04 22:58:29 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
+[Sat Jan 04 22:59:14 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs impl_1 -jobs 10
+WARNING: [Project 1-478] Design 'synth_1' is stale and will not be used when launching 'impl_1'
+[Sat Jan 04 23:00:21 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+[Sat Jan 04 23:00:21 2025] Launched impl_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/runme.log
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "else". [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:160]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "flag". [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:181]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "[". [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:217]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "endmodule". [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:285]
+[Sat Jan 04 23:03:41 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "else". [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:160]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "flag". [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:181]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "[". [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:217]
+CRITICAL WARNING: [HDL 9-806] Syntax error near "endmodule". [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:281]
+[Sat Jan 04 23:04:12 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
+[Sat Jan 04 23:04:57 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+INFO: [HDL 9-2216] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v" into library work [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v:1]
+[Sat Jan 04 23:07:32 2025] Launched synth_1...
+Run output will be captured here: E:/work/tju/DE/Final/ball/project_1/project_1.runs/synth_1/runme.log
