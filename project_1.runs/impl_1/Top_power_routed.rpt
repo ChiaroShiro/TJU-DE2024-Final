@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date             : Sun Jan 05 00:24:25 2025
+| Date             : Sun Jan 05 00:42:40 2025
 | Host             : Chiaro running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_power_routed.rpt -pb Top_power_summary_routed.pb -rpx Top_power_routed.rpx
 | Design           : Top
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+----------------------------------+
-| Total On-Chip Power (W)  | 20.913 (Junction temp exceeded!) |
-| Dynamic (W)              | 20.192                           |
-| Device Static (W)        | 0.721                            |
+| Total On-Chip Power (W)  | 20.922 (Junction temp exceeded!) |
+| Dynamic (W)              | 20.200                           |
+| Device Static (W)        | 0.722                            |
 | Effective TJA (C/W)      | 4.6                              |
 | Max Ambient (C)          | 0.0                              |
-| Junction Temperature (C) | 120.4                            |
+| Junction Temperature (C) | 120.5                            |
 | Confidence Level         | Low                              |
 | Setting File             | ---                              |
 | Simulation Activity File | ---                              |
@@ -49,19 +49,19 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     2.291 |     1425 |       --- |             --- |
-|   LUT as Logic |     1.905 |      736 |     63400 |            1.16 |
+| Slice Logic    |     2.321 |     1423 |       --- |             --- |
+|   LUT as Logic |     1.935 |      735 |     63400 |            1.16 |
 |   CARRY4       |     0.317 |      125 |     15850 |            0.79 |
 |   Register     |     0.057 |      353 |    126800 |            0.28 |
 |   BUFG         |     0.012 |        3 |        32 |            9.38 |
 |   F7/F8 Muxes  |     0.001 |        2 |     63400 |           <0.01 |
 |   Others       |     0.000 |       54 |       --- |             --- |
-| Signals        |     2.565 |     1329 |       --- |             --- |
+| Signals        |     2.544 |     1327 |       --- |             --- |
 | Block RAM      |     0.905 |       16 |       135 |           11.85 |
 | DSPs           |     5.370 |        6 |       240 |            2.50 |
 | I/O            |     9.061 |       29 |       210 |           13.81 |
-| Static Power   |     0.721 |          |           |                 |
-| Total          |    20.913 |          |           |                 |
+| Static Power   |     0.722 |          |           |                 |
+| Total          |    20.922 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -71,7 +71,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |    11.575 |      11.077 |      0.498 |
+| Vccint    |       1.000 |    11.584 |      11.085 |      0.499 |
 | Vccaux    |       1.800 |     0.413 |       0.331 |      0.082 |
 | Vcco33    |       3.300 |     2.561 |       2.557 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
@@ -138,11 +138,11 @@ Table of Contents
 +------------------------------------------------+-----------+
 | Name                                           | Power (W) |
 +------------------------------------------------+-----------+
-| Top                                            |    20.192 |
-|   game                                         |     9.324 |
-|     VGA_Disp                                   |     9.324 |
-|       divider                                  |     0.151 |
-|   mp3                                          |     1.130 |
+| Top                                            |    20.200 |
+|   game                                         |     9.340 |
+|     VGA_Disp                                   |     9.340 |
+|       divider                                  |     0.163 |
+|   mp3                                          |     1.126 |
 |     div                                        |     0.208 |
 |     music_0                                    |     0.226 |
 |       U0                                       |     0.226 |
@@ -200,8 +200,8 @@ Table of Contents
 |                 prim_init.ram                  |     0.113 |
 |               ramloop[4].ram.r                 |     0.000 |
 |                 prim_init.ram                  |     0.000 |
-|   sound_ctrl                                   |     0.397 |
-|   speed_ctrl                                   |     0.177 |
+|   sound_ctrl                                   |     0.403 |
+|   speed_ctrl                                   |     0.167 |
 +------------------------------------------------+-----------+
 
 

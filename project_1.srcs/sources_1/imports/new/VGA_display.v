@@ -82,8 +82,8 @@ module VGA_display(
 	
 	// 实例化分频器
 	divider4Times divider(
-	    .iClk(iClk),
-	    .clk_25M(clk_25M)
+	    .iClk		(iClk),
+	    .clk_25M	(clk_25M)
 	);
 	
 	// 生成水平和垂直同步信号
