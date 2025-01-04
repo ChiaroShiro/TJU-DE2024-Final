@@ -1,5 +1,21 @@
 `timescale 1ns / 1ps
 
+// 分频器模块
+module clk_divider(
+    input iClk,
+    output reg clk_25M
+);
+    reg clk_50M = 0;
+    
+    // 生成50MHz时钟信号
+    always @(posedge iClk)
+        clk_50M <= ~clk_50M;
+    
+    // 生成25MHz时钟信号 
+    always @(posedge clk_50M)
+        clk_25M <= ~clk_25M;
+endmodule
+
 module VGA_display(
     input iClk,
     input iPause,
@@ -60,8 +76,7 @@ module VGA_display(
 	reg [9:0] VCount;
 	
 	// 分频时钟信号
-	reg clk_25M = 0;
-	reg clk_50M = 0;
+	wire clk_25M;
 	
 	// 小球水平运动方向,1表示向右,0表示向左
 	reg h_speed = 1'b1;
@@ -81,13 +96,11 @@ module VGA_display(
 	always @(posedge iPause)
 		pau <= ~pau;
 	
-	// 生成50MHz时钟信号
-	always @(posedge iClk)
-		clk_50M <= ~clk_50M;
-	
-	// 生成25MHz时钟信号
-	always @(posedge clk_50M)
-		clk_25M <= ~clk_25M;
+	// 实例化分频器
+	clk_divider divider(
+	    .iClk(iClk),
+	    .clk_25M(clk_25M)
+	);
 	
 	// 生成水平和垂直同步信号
 	always @(posedge clk_25M) begin
