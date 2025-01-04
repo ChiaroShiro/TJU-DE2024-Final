@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Sat Jan 04 21:00:18 2025
+| Date         : Sat Jan 04 22:04:14 2025
 | Host         : Chiaro running 64-bit major release  (build 9200)
 | Command      : report_drc -file Top_drc_routed.rpt -pb Top_drc_routed.pb
 | Design       : Top
@@ -23,7 +23,7 @@ Table of Contents
       Design limits: <entire design considered>
            Ruledeck: default
              Max violations: <unlimited>
-             Violations found: 28
+             Violations found: 27
 
 2. REPORT DETAILS
 -----------------
@@ -161,11 +161,6 @@ DSP game/VGA_Disp/oRed3__4 multiplier stage game/VGA_Disp/oRed3__4/P[47:0] is no
 Related violations: <none>
 
 PDRC-153#1 Warning
-Gated clock check  
-Net display/count_reg[3]_i_2_n_0 is a gated clock net sourced by a combinational pin display/count_reg[3]_i_2/O, cell display/count_reg[3]_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
-Related violations: <none>
-
-PDRC-153#2 Warning
 Gated clock check  
 Net game/VGA_Disp/pe is a gated clock net sourced by a combinational pin game/VGA_Disp/pau_i_2/O, cell game/VGA_Disp/pau_i_2. This is not good design practice and will likely impact performance. For SLICE registers, for example, use the CE pin to control the loading of data.
 Related violations: <none>

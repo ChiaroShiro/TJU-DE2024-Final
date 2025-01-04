@@ -52,14 +52,14 @@ module VGA_display(
     // 砖块位置参数
     parameter BLOCK_DOWN_first = 70;   // 第一行砖块底部位置
     parameter BLOCK_DOWN_second = 35;  // 第二行砖块底部位置
-    parameter BLOCK_WIDTH = 125;       // 砖块宽度
+    parameter BLOCK_WIDTH = 63;       // 砖块宽度
     
     // 球的半径
     parameter ball_r = 10;
-    parameter ball_num = 5;      // 一层的球个数
+    parameter ball_num = 10;      // 一层的球个数
 	parameter block_init = 20'b1111_1111_1111_1111_1111;
 	//The blocks
-	reg [9:0] blocks = block_init;
+	reg [19:0] blocks = block_init;
 	
 	// 闪烁相关参数
 	reg win_flash = 0;  // 闪烁标志

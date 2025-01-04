@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Sat Jan 04 21:00:03 2025
+| Date         : Sat Jan 04 22:03:57 2025
 | Host         : Chiaro running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Top_control_sets_placed.rpt
 | Design       : Top
@@ -22,7 +22,7 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Number of unique control sets                            |    27 |
+| Number of unique control sets                            |    24 |
 | Unused register locations in slices containing registers |    95 |
 +----------------------------------------------------------+-------+
 
@@ -33,48 +33,45 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              72 |           36 |
+| No           | No                    | No                     |              64 |           38 |
 | No           | No                    | Yes                    |               0 |            0 |
-| No           | Yes                   | No                     |              36 |            9 |
-| Yes          | No                    | No                     |              90 |           29 |
+| No           | Yes                   | No                     |              32 |            8 |
+| Yes          | No                    | No                     |              74 |           29 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             179 |           60 |
+| Yes          | Yes                   | No                     |             183 |           62 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 3. Detailed Control Set Information
 -----------------------------------
 
-+-------------------------------+------------------------------------------+-------------------------------------+------------------+----------------+
-|          Clock Signal         |               Enable Signal              |           Set/Reset Signal          | Slice Load Count | Bel Load Count |
-+-------------------------------+------------------------------------------+-------------------------------------+------------------+----------------+
-|  game/VGA_Disp/clk_25M        | game/VGA_Disp/oHSync                     | game/VGA_Disp/oHSync_i_1_n_0        |                1 |              1 |
-|  game/VGA_Disp/clk_50M        |                                          |                                     |                1 |              1 |
-|  game/VGA_Disp/pe             |                                          |                                     |                1 |              1 |
-|  IntClkDiv                    | mp3/PortSI_i_1_n_0                       | mp3/IntDelayCnt[31]_i_1_n_0         |                1 |              1 |
-|  IntClkDiv                    | mp3/PortXCS_i_1_n_0                      | mp3/IntDelayCnt[31]_i_1_n_0         |                1 |              1 |
-|  IntClkDiv                    | mp3/PortXDCS_i_1_n_0                     | mp3/IntDelayCnt[31]_i_1_n_0         |                1 |              1 |
-|  IntClkDiv                    | mp3/PortXRESET_i_1_n_0                   | mp3/IntDelayCnt[31]_i_1_n_0         |                1 |              1 |
-|  display/count_reg[3]_i_2_n_0 |                                          | display/count0_inferred__1_n_0      |                1 |              4 |
-|  iClk_IBUF_BUFG               | bluetooth/bit_cnt[3]_i_1_n_0             |                                     |                1 |              4 |
-|  IntClkDiv                    |                                          |                                     |                4 |              6 |
-|  game/VGA_Disp/clk_25M        | game/VGA_Disp/oRed[2]_i_1_n_0            |                                     |                5 |              8 |
-|  iClk_IBUF_BUFG               | bluetooth/data_out[7]_i_1_n_0            |                                     |                3 |              8 |
-|  iClk_IBUF_BUFG               | bluetooth/rx_data[7]_i_1_n_0             |                                     |                2 |              8 |
-|  game/VGA_Disp/clk_25M        | game/VGA_Disp/Vcnt[9]_i_1_n_0            |                                     |                4 |             10 |
-|  game/VGA_Disp/clk_25M        |                                          |                                     |                4 |             11 |
-|  IntClkDiv                    | mp3/IntCmdSci[25]_i_1_n_0                | mp3/IntCmdSci[31]_i_1_n_0           |                4 |             12 |
-|  IntClkDiv                    | mp3/IntMusicRomAddr                      | mp3/IntDelayCnt[31]_i_1_n_0         |                4 |             13 |
-| ~oVSync_OBUF_BUFG             |                                          |                                     |                8 |             15 |
-|  oVSync_OBUF_BUFG             | game/VGA_Disp/pau_i_1_n_0                | game/VGA_Disp/ball_y_pos[9]_i_1_n_0 |                4 |             17 |
-|  IntClkDiv                    | mp3/IntCmdSci[25]_i_1_n_0                |                                     |                6 |             20 |
-|  oVSync_OBUF_BUFG             | game/VGA_Disp/right_pos[9]_i_1_n_0       | game/VGA_Disp/ball_y_pos[9]_i_1_n_0 |                6 |             20 |
-|  IntClkDiv                    | mp3/IntCmdCnt[31]_i_2_n_0                | mp3/IntCmdCnt[31]_i_1_n_0           |               10 |             32 |
-|  IntClkDiv                    | mp3/IntDelayCnt                          | mp3/IntDelayCnt[31]_i_1_n_0         |                9 |             32 |
-|  iClk_IBUF_BUFG               |                                          | mp3/div/clear                       |                8 |             32 |
-|  iClk_IBUF_BUFG               | game/VGA_Disp/rst_counter_reg_0__s_net_1 |                                     |                8 |             32 |
-|  iClk_IBUF_BUFG               |                                          |                                     |               18 |             38 |
-|  IntClkDiv                    | mp3/IntDataTxCnt[31]_i_2_n_0             | mp3/IntDataTxCnt[31]_i_1_n_0        |               18 |             48 |
-+-------------------------------+------------------------------------------+-------------------------------------+------------------+----------------+
++------------------------+------------------------------------+-------------------------------------+------------------+----------------+
+|      Clock Signal      |            Enable Signal           |           Set/Reset Signal          | Slice Load Count | Bel Load Count |
++------------------------+------------------------------------+-------------------------------------+------------------+----------------+
+|  game/VGA_Disp/clk_25M | game/VGA_Disp/oHSync               | game/VGA_Disp/oHSync_i_1_n_0        |                1 |              1 |
+|  game/VGA_Disp/clk_50M |                                    |                                     |                1 |              1 |
+|  game/VGA_Disp/pe      |                                    |                                     |                1 |              1 |
+|  IntClkDiv             | mp3/PortSI_i_1_n_0                 | mp3/IntDelayCnt[31]_i_1_n_0         |                1 |              1 |
+|  IntClkDiv             | mp3/PortXCS_i_1_n_0                | mp3/IntDelayCnt[31]_i_1_n_0         |                1 |              1 |
+|  IntClkDiv             | mp3/PortXDCS_i_1_n_0               | mp3/IntDelayCnt[31]_i_1_n_0         |                1 |              1 |
+|  IntClkDiv             | mp3/PortXRESET_i_1_n_0             | mp3/IntDelayCnt[31]_i_1_n_0         |                1 |              1 |
+|  iClk_IBUF_BUFG        | speed[3]_i_1_n_0                   |                                     |                3 |              4 |
+|  IntClkDiv             |                                    |                                     |                3 |              6 |
+|  game/VGA_Disp/clk_25M | game/VGA_Disp/oRed[2]_i_1_n_0      |                                     |                5 |              8 |
+|  game/VGA_Disp/clk_25M | game/VGA_Disp/Vcnt[9]_i_1_n_0      |                                     |                5 |             10 |
+|  game/VGA_Disp/clk_25M |                                    |                                     |                4 |             11 |
+|  IntClkDiv             | mp3/IntCmdSci[25]_i_1_n_0          | mp3/IntCmdSci[31]_i_1_n_0           |                4 |             12 |
+|  IntClkDiv             | mp3/IntMusicRomAddr                | mp3/IntDelayCnt[31]_i_1_n_0         |                4 |             13 |
+|  IntClkDiv             | mp3/IntCmdSci[25]_i_1_n_0          |                                     |                8 |             20 |
+|  iClk_IBUF_BUFG        |                                    |                                     |               14 |             20 |
+|  oVSync_OBUF_BUFG      | game/VGA_Disp/right_pos[9]_i_1_n_0 | game/VGA_Disp/ball_y_pos[9]_i_1_n_0 |                6 |             20 |
+|  oVSync_OBUF_BUFG      | game/VGA_Disp/pau_i_1_n_0          | game/VGA_Disp/ball_y_pos[9]_i_1_n_0 |                7 |             21 |
+| ~oVSync_OBUF_BUFG      |                                    |                                     |               15 |             25 |
+|  IntClkDiv             | mp3/IntCmdCnt[31]_i_2_n_0          | mp3/IntCmdCnt[31]_i_1_n_0           |                9 |             32 |
+|  IntClkDiv             | mp3/IntDelayCnt                    | mp3/IntDelayCnt[31]_i_1_n_0         |                7 |             32 |
+|  iClk_IBUF_BUFG        |                                    | mp3/div/clear                       |                8 |             32 |
+|  iClk_IBUF_BUFG        | game/VGA_Disp/rst_counter          |                                     |                8 |             32 |
+|  IntClkDiv             | mp3/IntDataTxCnt[31]_i_2_n_0       | mp3/IntDataTxCnt[31]_i_1_n_0        |               20 |             48 |
++------------------------+------------------------------------+-------------------------------------+------------------+----------------+
 
 

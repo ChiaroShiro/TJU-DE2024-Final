@@ -2,14 +2,12 @@
 
 module Top(
 	input iClk, // 100MHz时钟
-	// input iColorFrequncy,
 	input iPause, // 暂停信号
-	// output [1:0] oFilterSelect,
-	// output [1:0] oFrequncyRate,
-	// output oLed,
 	
 	input to_left, // 左移信号
 	input to_right, // 右移信号
+	input speed_up, // 加速信号
+	input speed_down, // 减速信号
 
 	input rxd, // 蓝牙接收信号
 	output [6:0] oDisplay, // 数码管显示
@@ -29,20 +27,21 @@ module Top(
 	output port_vs1003b_xreset
 );
 
-	wire [7:0] data_out;
-	wire [7:0]data_rxd;
-	assign data_rxd = {6'd0, rxd};
-	bluetooth_uart_receive bluetooth(
-		.clk(iClk),
-		.reset(1'b0),
-		.rxd(rxd),
-		.data_out(data_out),
-		.data_flag(dataled)
-	);
+	// wire [7:0] data_out;
+	// wire [7:0]data_rxd;
+	// assign data_rxd = {6'd0, rxd};
+	// bluetooth_uart_receive bluetooth(
+	// 	.clk(iClk),
+	// 	.reset(1'b0),
+	// 	.rxd(rxd),
+	// 	.data_out(data_out),
+	// 	.data_flag(dataled)
+	// );
 
+	wire [3:0] display_data;
 	display7 display(
 		// .clk(iClk),
-		.iData(data_out),
+		.iData(display_data),
 		.oData(oDisplay)
 	);
 
@@ -80,7 +79,7 @@ module Top(
 	// 	.oB(b)
 	// );
 		
-	// assign to_left= r>200&&g>200&&b>200;   
+	// assign to_left= r>200&&g>200&&b>200;    
 	// assign to_right=r<20&&g<20&&b<20;   
 	// assign oFrequncyRate=2'b11;
 	wire oLose;
@@ -88,12 +87,31 @@ module Top(
 	wire oGet;
 	wire oCrash;
 	reg game_pause;
+	
+	reg [3:0] speed = 4'd4;
+	
+	reg speed_up_reg, speed_down_reg;
+	
+	always @(posedge iClk) begin
+		speed_up_reg <= speed_up;
+		speed_down_reg <= speed_down;
+		
+		if(speed_up_reg != speed_up && speed_up && speed < 4'd9) begin
+			speed <= speed + 1;
+		end
+		else if(speed_down_reg != speed_down && speed_down && speed > 4'd1) begin
+			speed <= speed - 1;
+		end
+	end
+
+	assign display_data = speed;
 
 	Top_module_of_game game(
 		.iClk(iClk),    
 		.iPause(iPause || game_pause),
 		.iToLeft(to_left),
 		.iToRight(to_right),
+		.iBarMoveSpeed(speed), // 传入当前速度
 		.oHSync(oHSync),
 		.oBlue(oOutBlue),
 		.oGreen(oOutGreen), 
@@ -115,7 +133,10 @@ module Top(
 		oGet_prev <= oGet;
 		oCrash_prev <= oCrash;
 		
-		if(rst_counter > 0) begin
+		if(game_pause && iPause) begin
+			game_pause <= 1'b0;
+		end
+		else if(rst_counter > 0) begin
 			rst_counter <= rst_counter - 1;
 		end
 		else if(oLose && !oLose_prev) begin // oLose上升沿
@@ -132,7 +153,7 @@ module Top(
 		else if(oGet && !oGet_prev) begin // oGet上升沿
 			mp3_select <= 2'b10;
 			mp3_rst_reg <= 1'b1;
-			rst_counter <= 32'd80000000; // 1.6秒
+			rst_counter <= 32'd70000000; // 1.4秒
 		end
 		else if(oCrash && !oCrash_prev) begin // oCrash上升沿
 			mp3_select <= 2'b11;
