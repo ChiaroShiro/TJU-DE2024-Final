@@ -1,6 +1,5 @@
 `timescale 1ns / 1ps
 
-
 module Top_module_of_game(
 	input iClk,
 	input iPause,

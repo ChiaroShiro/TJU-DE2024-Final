@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Sat Jan 04 22:15:22 2025
+| Date         : Sat Jan 04 22:27:23 2025
 | Host         : Chiaro running 64-bit major release  (build 9200)
 | Command      : report_utilization -file Top_utilization_synth.rpt -pb Top_utilization_synth.pb
 | Design       : Top
@@ -147,13 +147,13 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
+| LUT2     |  323 |                 LUT |
 | FDRE     |  322 |        Flop & Latch |
-| LUT2     |  321 |                 LUT |
-| LUT6     |  171 |                 LUT |
+| LUT6     |  169 |                 LUT |
 | CARRY4   |  125 |          CarryLogic |
-| LUT3     |  122 |                 LUT |
+| LUT3     |  121 |                 LUT |
 | LUT4     |  109 |                 LUT |
-| LUT5     |   81 |                 LUT |
+| LUT5     |   82 |                 LUT |
 | LUT1     |   37 |                 LUT |
 | FDSE     |   23 |        Flop & Latch |
 | OBUF     |   22 |                  IO |
