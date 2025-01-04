@@ -56,3 +56,18 @@ set_property PACKAGE_PIN H17 [get_ports {dataled}]
 
 set_property PACKAGE_PIN G6 [get_ports {rxd}]				
 set_property IOSTANDARD LVCMOS33 [get_ports {rxd}]
+
+
+set_property PACKAGE_PIN E18 [get_ports port_vs1003b_dreq]
+set_property PACKAGE_PIN E17 [get_ports port_vs1003b_sclk]
+set_property PACKAGE_PIN F18 [get_ports port_vs1003b_si]
+set_property PACKAGE_PIN D17 [get_ports port_vs1003b_xcs]
+set_property PACKAGE_PIN C17 [get_ports port_vs1003b_xdcs]
+set_property PACKAGE_PIN D18 [get_ports port_vs1003b_xreset]
+
+set_property IOSTANDARD LVCMOS33 [get_ports port_vs1003b_dreq]
+set_property IOSTANDARD LVCMOS33 [get_ports port_vs1003b_sclk]
+set_property IOSTANDARD LVCMOS33 [get_ports port_vs1003b_si]
+set_property IOSTANDARD LVCMOS33 [get_ports port_vs1003b_xcs]
+set_property IOSTANDARD LVCMOS33 [get_ports port_vs1003b_xdcs]
+set_property IOSTANDARD LVCMOS33 [get_ports port_vs1003b_xreset]

@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date             : Sat Jan 04 12:40:40 2025
+| Date             : Sat Jan 04 15:40:54 2025
 | Host             : Chiaro running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_power_routed.rpt -pb Top_power_summary_routed.pb -rpx Top_power_routed.rpx
 | Design           : Top
@@ -30,12 +30,12 @@ Table of Contents
 ----------
 
 +--------------------------+--------+
-| Total On-Chip Power (W)  | 12.547 |
-| Dynamic (W)              | 12.294 |
-| Device Static (W)        | 0.253  |
+| Total On-Chip Power (W)  | 13.116 |
+| Dynamic (W)              | 12.844 |
+| Device Static (W)        | 0.272  |
 | Effective TJA (C/W)      | 4.6    |
-| Max Ambient (C)          | 27.7   |
-| Junction Temperature (C) | 82.3   |
+| Max Ambient (C)          | 25.2   |
+| Junction Temperature (C) | 84.8   |
 | Confidence Level         | Low    |
 | Setting File             | ---    |
 | Simulation Activity File | ---    |
@@ -49,18 +49,19 @@ Table of Contents
 +----------------+-----------+----------+-----------+-----------------+
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
-| Slice Logic    |     1.782 |      717 |       --- |             --- |
-|   LUT as Logic |     1.515 |      407 |     63400 |            0.64 |
-|   CARRY4       |     0.230 |       62 |     15850 |            0.39 |
-|   Register     |     0.023 |      137 |    126800 |            0.11 |
-|   BUFG         |     0.012 |        2 |        32 |            6.25 |
+| Slice Logic    |     1.895 |     1266 |       --- |             --- |
+|   LUT as Logic |     1.581 |      627 |     63400 |            0.99 |
+|   CARRY4       |     0.261 |      117 |     15850 |            0.74 |
+|   Register     |     0.034 |      338 |    126800 |            0.27 |
+|   BUFG         |     0.017 |        4 |        32 |           12.50 |
 |   F7/F8 Muxes  |     0.002 |        3 |     63400 |           <0.01 |
-|   Others       |     0.000 |        7 |       --- |             --- |
-| Signals        |     1.969 |      686 |       --- |             --- |
+|   Others       |     0.000 |       23 |       --- |             --- |
+| Signals        |     2.175 |     1141 |       --- |             --- |
+| Block RAM      |     0.226 |        4 |       135 |            2.96 |
 | DSPs           |     5.092 |        6 |       240 |            2.50 |
-| I/O            |     3.451 |       23 |       210 |           10.95 |
-| Static Power   |     0.253 |          |           |                 |
-| Total          |    12.547 |          |           |                 |
+| I/O            |     3.455 |       29 |       210 |           13.81 |
+| Static Power   |     0.272 |          |           |                 |
+| Total          |    13.116 |          |           |                 |
 +----------------+-----------+----------+-----------+-----------------+
 
 
@@ -70,8 +71,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     9.002 |       8.863 |      0.139 |
-| Vccaux    |       1.800 |     0.160 |       0.126 |      0.034 |
+| Vccint    |       1.000 |     9.546 |       9.392 |      0.153 |
+| Vccaux    |       1.800 |     0.162 |       0.126 |      0.036 |
 | Vcco33    |       3.300 |     0.975 |       0.971 |      0.004 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |
@@ -79,7 +80,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |
-| Vccbram   |       1.000 |     0.004 |       0.000 |      0.004 |
+| Vccbram   |       1.000 |     0.025 |       0.020 |      0.005 |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |
 | Vccadc    |       1.800 |     0.020 |       0.000 |      0.020 |
@@ -134,14 +135,30 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+--------------+-----------+
-| Name         | Power (W) |
-+--------------+-----------+
-| Top          |    12.294 |
-|   bluetooth  |     0.139 |
-|   display    |    <0.001 |
-|   game       |     8.629 |
-|     VGA_Disp |     8.629 |
-+--------------+-----------+
++------------------------------------------------+-----------+
+| Name                                           | Power (W) |
++------------------------------------------------+-----------+
+| Top                                            |    12.844 |
+|   bluetooth                                    |     0.138 |
+|   display                                      |    <0.001 |
+|   game                                         |     8.708 |
+|     VGA_Disp                                   |     8.708 |
+|   vs1003b_top_u0                               |     0.441 |
+|     div                                        |     0.211 |
+|     music_0                                    |     0.226 |
+|       U0                                       |     0.226 |
+|         inst_blk_mem_gen                       |     0.226 |
+|           gnbram.gnativebmg.native_blk_mem_gen |     0.226 |
+|             valid.cstr                         |     0.226 |
+|               has_mux_a.A                      |     0.000 |
+|               ramloop[0].ram.r                 |     0.113 |
+|                 prim_init.ram                  |     0.113 |
+|               ramloop[1].ram.r                 |     0.000 |
+|                 prim_init.ram                  |     0.000 |
+|               ramloop[2].ram.r                 |     0.113 |
+|                 prim_init.ram                  |     0.113 |
+|               ramloop[3].ram.r                 |     0.000 |
+|                 prim_init.ram                  |     0.000 |
++------------------------------------------------+-----------+
 
 

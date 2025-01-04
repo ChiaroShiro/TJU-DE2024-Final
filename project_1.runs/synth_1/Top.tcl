@@ -4,6 +4,7 @@
 
 set_param xicom.use_bs_reader 1
 set_param simulator.modelsimInstallPath F:/Program/ModelSim/win32pe
+set_msg_config -id {Common 17-41} -limit 10000000
 set_msg_config -id {HDL 9-1061} -limit 100000
 set_msg_config -id {HDL 9-1654} -limit 100000
 create_project -in_memory -part xc7a100tcsg324-1
@@ -13,13 +14,21 @@ set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_property webtalk.parent_dir E:/work/tju/DE/Final/ball/project_1/project_1.cache/wt [current_project]
 set_property parent.project_path E:/work/tju/DE/Final/ball/project_1/project_1.xpr [current_project]
+set_property XPM_LIBRARIES XPM_MEMORY [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
+add_files e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/music0.coe
+add_files e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/music1.coe
+add_files -quiet e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/ip/music_rom_0/music_rom_0.dcp
+set_property used_in_implementation false [get_files e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/ip/music_rom_0/music_rom_0.dcp]
+add_files -quiet e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/ip/music_rom_1/music_rom_1.dcp
+set_property used_in_implementation false [get_files e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/ip/music_rom_1/music_rom_1.dcp]
 read_verilog -library xil_defaultlib {
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v
-  E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/bluetooth.v
-  E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v
+  E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/bluetooth.v
+  E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/vs1003b_top.v
+  E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v
 }
 foreach dcp [get_files -quiet -all *.dcp] {
