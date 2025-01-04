@@ -26,9 +26,7 @@ module Top(
 	output port_vs1003b_xcs,
 	output port_vs1003b_si,
 	output port_vs1003b_sclk,
-	output port_vs1003b_xreset,
-
-	input [1:0] mp3_select
+	output port_vs1003b_xreset
 );
 
 	wire [7:0] data_out;
@@ -66,23 +64,8 @@ module Top(
 	// 	end
 	// end
 
-	reg mp3_rst;
-	always @(posedge iPause) begin
-		mp3_rst <= ~mp3_rst;
-	end
-
-	vs1003b_top vs1003b_top_u0(
-		.CLK            (iClk),
-		.RST            (mp3_rst),
-		.Vol            (8'd0),
-		.MusicSel       (mp3_select),
-		.PortDREQ       (port_vs1003b_dreq),
-		.PortXDCS       (port_vs1003b_xdcs),
-		.PortXCS        (port_vs1003b_xcs),
-		.PortSI         (port_vs1003b_si),
-		.PortSCLK       (port_vs1003b_sclk),
-		.PortXRESET     (port_vs1003b_xreset)
-	);
+	wire mp3_rst;
+	reg [1:0] mp3_select;
 	// wire [1:0]rate;
 	// wire [9:0]r,g,b;
 	// wire to_left,to_right;
@@ -100,6 +83,11 @@ module Top(
 	// assign to_left= r>200&&g>200&&b>200;   
 	// assign to_right=r<20&&g<20&&b<20;   
 	// assign oFrequncyRate=2'b11;
+	wire oLose;
+	wire oWin;
+	wire oGet;
+	wire oCrash;
+
 	Top_module_of_game game(
 		.iClk(iClk),    
 		.iPause(iPause),
@@ -109,6 +97,63 @@ module Top(
 		.oBlue(oOutBlue),
 		.oGreen(oOutGreen), 
 		.oRed(oOutRed),
-		.oVSync(oVSync)
+		.oVSync(oVSync),
+		.oLose(oLose),
+		.oWin(oWin),
+		.oGet(oGet),
+		.oCrash(oCrash)
+	);
+
+	reg [31:0] rst_counter;
+	reg oLose_prev, oWin_prev, oGet_prev, oCrash_prev;
+	reg mp3_rst_reg;
+	
+	always @(posedge iClk) begin
+		oLose_prev <= oLose;
+		oWin_prev <= oWin; 
+		oGet_prev <= oGet;
+		oCrash_prev <= oCrash;
+		
+		if(rst_counter > 0) begin
+			rst_counter <= rst_counter - 1;
+		end
+		else if(oLose && !oLose_prev) begin // oLoseÉÏÉýÑØ
+			mp3_select <= 2'b00;
+			mp3_rst_reg <= 1'b1;
+			rst_counter <= 32'd200000000; // 4Ãë = 100MHz * 4
+		end
+		else if(oWin && !oWin_prev) begin // oWinÉÏÉýÑØ
+			mp3_select <= 2'b01;
+			mp3_rst_reg <= 1'b1;
+			rst_counter <= 32'd150000000; // 3Ãë
+		end
+		else if(oGet && !oGet_prev) begin // oGetÉÏÉýÑØ
+			mp3_select <= 2'b10;
+			mp3_rst_reg <= 1'b1;
+			rst_counter <= 32'd80000000; // 1.6Ãë
+		end
+		else if(oCrash && !oCrash_prev) begin // oCrashÉÏÉýÑØ
+			mp3_select <= 2'b11;
+			mp3_rst_reg <= 1'b1;
+			rst_counter <= 32'd50000000; // 1Ãë
+		end
+		else begin
+			mp3_rst_reg <= 1'b0;
+		end
+	end
+	
+	assign mp3_rst = mp3_rst_reg;
+	
+	Top_module_of_mp3 mp3(
+		.CLK            (iClk),
+		.RST            (!mp3_rst),
+		.Vol            (8'd0),
+		.MusicSel       (mp3_select),
+		.PortDREQ       (port_vs1003b_dreq),
+		.PortXDCS       (port_vs1003b_xdcs),
+		.PortXCS        (port_vs1003b_xcs),
+		.PortSI         (port_vs1003b_si),
+		.PortSCLK       (port_vs1003b_sclk),
+		.PortXRESET     (port_vs1003b_xreset)
 	);
 endmodule

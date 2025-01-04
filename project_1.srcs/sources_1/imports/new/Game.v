@@ -11,13 +11,17 @@ module Top_module_of_game(
 	output [2:1] oBlue,
 	output [2:0] oGreen, 
 	output [2:0] oRed,         
-	output oVSync
+	output oVSync,
+	output oLose,
+	output oWin,
+	output oGet,
+	output oCrash
 );
 	reg pe;
 
 	always@(*)
 	begin
-		if(!lose)
+		if(!oLose)
 			pe=iPause;
 		else
 			pe=1;
@@ -34,6 +38,9 @@ module Top_module_of_game(
 		.oGreen(oGreen),
 		.oRed(oRed),
 		.oVSync(oVSync),
-		.oLose(lose)
+		.oLose(oLose),
+		.oWin(oWin),
+		.oGet(oGet),
+		.oCrash(oCrash)
 	);
 endmodule

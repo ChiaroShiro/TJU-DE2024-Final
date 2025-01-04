@@ -73,8 +73,8 @@ void convertToCoe(const string& inputFile, const string& outputFile) {
 }
 
 int main() {
-    string inputFile = "lose.mp3";   // 输入文件名（MP3文件）
-    string outputFile = "lose.coe";  // 输出文件名（COE文件）
+    string inputFile = "win.mp3";   // 输入文件名（MP3文件）
+    string outputFile = "win.coe";  // 输出文件名（COE文件）
 
     convertToCoe(inputFile, outputFile);
 

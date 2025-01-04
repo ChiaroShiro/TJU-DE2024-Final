@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 `define DL #0.5
-module vs1003b_top(
+module Top_module_of_mp3(
 	input           CLK,
 	input           RST,
 	input [7:0]     Vol,
