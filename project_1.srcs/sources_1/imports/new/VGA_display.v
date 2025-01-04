@@ -49,11 +49,14 @@ module VGA_display(
     // 砖块位置参数
     parameter BLOCK_DOWN_first = 70;   // 第一行砖块底部位置
     parameter BLOCK_DOWN_second = 35;  // 第二行砖块底部位置
-    parameter BLOCK_WIDTH = 125;       // 砖块宽度
+    parameter BLOCK_WIDTH = 63;       // 砖块宽度
     
     // 球的半径
     parameter ball_r = 10;
-    parameter ball_num = 5;      // 一层的球个数
+    parameter ball_num = 10;      // 一层的球个数
+	parameter block_init = 20'b1111_1111_1111_1111_1111;
+	//The blocks
+	reg [19:0] blocks = block_init;
 	
 	
 	// 暂停状态寄存器,1表示暂停,0表示不暂停
@@ -87,8 +90,6 @@ module VGA_display(
 	reg [9:0] ball_y_pos = 390; // 小球中心Y坐标,初始值390
 	
 	
-	//The blocks
-	reg [9:0] blocks=10'b1111111111;
 	
 	always@(posedge iPause)
 	begin
@@ -168,21 +169,21 @@ module VGA_display(
 	always @ (posedge clk_25M)   
 	begin  
 		// 显示挡板
-		if (Vcnt>=up_pos && Vcnt<=down_pos && Hcnt>=left_pos && Hcnt<=right_pos) 
+		if (Vcnt >= up_pos && Vcnt <= down_pos && Hcnt >= left_pos && Hcnt <= right_pos) 
 		begin  
-			oRed <= 3'b111;  
+			oRed   <= 3'b111;  
 			oGreen <= 3'b111;  
-			oBlue <= 2'b11; 
+			oBlue  <= 2'b11; 
 		end  
 		
 		// 显示小球
-		else if ( (Hcnt - ball_x_pos)*(Hcnt - ball_x_pos) + (Vcnt - ball_y_pos)*(Vcnt - ball_y_pos) <= (ball_r * ball_r))  
+		else if ( (Hcnt - ball_x_pos) * (Hcnt - ball_x_pos) + (Vcnt - ball_y_pos) * (Vcnt - ball_y_pos) <= (ball_r * ball_r))  
 		begin  
-			oRed <= Hcnt[3:1];
+			oRed   <= Hcnt[3:1];
 			oGreen <= Hcnt[6:4];
-			oBlue <= Hcnt[8:7];
+			oBlue  <= Hcnt[8:7];
 		end  
-		else if(Vcnt<=BLOCK_DOWN_first&&Vcnt>BLOCK_DOWN_second)
+		else if(Vcnt <= BLOCK_DOWN_first && Vcnt >= BLOCK_DOWN_second)
 		begin
 			// 显示第一行砖块
 			if(Hcnt < BLOCK_WIDTH * ball_num) begin
@@ -194,7 +195,7 @@ module VGA_display(
 				end
 			end
 		end
-		else if(Vcnt<=BLOCK_DOWN_second)
+		else if(Vcnt <= BLOCK_DOWN_second)
 		begin
 			// 显示第二行砖块
 			if(Hcnt < BLOCK_WIDTH * ball_num) begin
@@ -265,7 +266,7 @@ module VGA_display(
 		if(flag)
 		begin
 			oLose<=0;
-			blocks=10'b1111111111; 
+			blocks<=block_init; 
 		end
 		if (ball_y_pos <= UP_BOUND)   // 这里，所有判断都应该使用>=或<=，而不是==
 		begin	
@@ -279,19 +280,19 @@ module VGA_display(
 			
 			// 检查是否碰到砖块
 			if(block_idx < ball_num && blocks[block_idx]) begin
-				// 判断碰撞方向
-				if(ball_y_pos > BLOCK_DOWN_first - iBarMoveSpeed)
-					v_speed <= `DOWN;  // 碰到下面
-				else begin
-					// 碰到左右边
-					if(block_idx == 0)
-						h_speed <= `RIGHT;  // 最左边砖块
-					else if(block_idx == 4) 
-						h_speed <= `LEFT;   // 最右边砖块
-					else
-						h_speed <= ~h_speed; // 中间砖块
-				end
-				
+			// 	// 判断碰撞方向
+			// 	if(ball_y_pos > BLOCK_DOWN_first - iBarMoveSpeed)
+			// 		v_speed <= `DOWN;  // 碰到下面
+			// 	else begin
+			// 		// 碰到左右边
+			// 		if(block_idx == 0)
+			// 			h_speed <= `RIGHT;  // 最左边砖块
+			// 		else if(block_idx == 4) 
+			// 			h_speed <= `LEFT;   // 最右边砖块
+			// 		else
+			// 			h_speed <= ~h_speed; // 中间砖块
+			// 	end
+				v_speed <= `DOWN;
 				// 消除被碰撞的砖块
 				blocks[block_idx] <= 0;
 			end
@@ -304,17 +305,18 @@ module VGA_display(
 			// 检查是否碰到砖块
 			if(block_idx < 2 * ball_num && blocks[block_idx]) begin
 				// 判断碰撞方向
-				if(ball_y_pos > BLOCK_DOWN_second - iBarMoveSpeed)
-					v_speed <= `DOWN;  // 碰到下面
-				else begin
-					// 碰到左右边
-					if(block_idx == ball_num)
-						h_speed <= `RIGHT;  // 最左边砖块
-					else if(block_idx == 2 * ball_num - 1)
-						h_speed <= `LEFT;   // 最右边砖块 
-					else
-						h_speed <= ~h_speed; // 中间砖块
-				end
+				// if(ball_y_pos > BLOCK_DOWN_second - iBarMoveSpeed)
+				// 	v_speed <= `DOWN;  // 碰到下面
+				// else begin
+				// 	// 碰到左右边
+				// 	if(block_idx == ball_num)
+				// 		h_speed <= `RIGHT;  // 最左边砖块
+				// 	else if(block_idx == 2 * ball_num - 1)
+				// 		h_speed <= `LEFT;   // 最右边砖块 
+				// 	else
+				// 		h_speed <= ~h_speed; // 中间砖块
+				// end
+				v_speed <= `DOWN;
 				// 消除被碰撞的砖块
 				blocks[block_idx] <= 0;  
 				

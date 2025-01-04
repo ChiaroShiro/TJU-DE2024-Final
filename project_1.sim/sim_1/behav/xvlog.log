@@ -4,7 +4,7 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1
 INFO: [VRFC 10-311] analyzing module bluetooth_uart_receive
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Top_module_of_game
-INFO: [VRFC 10-2458] undeclared symbol lose, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v:61]
+INFO: [VRFC 10-2458] undeclared symbol lose, assumed default net type wire [E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v:37]
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module display7
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v" into library xil_defaultlib
