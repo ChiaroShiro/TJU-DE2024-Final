@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Sun Jan 05 00:10:41 2025
+| Date         : Sun Jan 05 00:19:40 2025
 | Host         : Chiaro running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Top_control_sets_placed.rpt
 | Design       : Top
@@ -51,10 +51,10 @@ Table of Contents
 |  game/VGA_Disp/divider/CLK     | game/VGA_Disp/oHSync               | game/VGA_Disp/oHSync_i_1_n_0        |                1 |              1 |
 |  game/VGA_Disp/divider/clk_50M |                                    |                                     |                1 |              1 |
 |  sound_ctrl/pause              |                                    |                                     |                1 |              1 |
-|  dclk                          | mp3/oPortSI_i_1_n_0                | sound_ctrl/countDelay_reg[0]        |                1 |              1 |
-|  dclk                          | mp3/oPortXCS_i_1_n_0               | sound_ctrl/countDelay_reg[0]        |                1 |              1 |
-|  dclk                          | mp3/oPortXDCS_i_1_n_0              | sound_ctrl/countDelay_reg[0]        |                1 |              1 |
-|  dclk                          | mp3/oPortXRESET_i_1_n_0            | sound_ctrl/countDelay_reg[0]        |                1 |              1 |
+|  dclk                          | mp3/oSI_i_1_n_0                    | sound_ctrl/countDelay_reg[0]        |                1 |              1 |
+|  dclk                          | mp3/oXCS_i_1_n_0                   | sound_ctrl/countDelay_reg[0]        |                1 |              1 |
+|  dclk                          | mp3/oXDCS_i_1_n_0                  | sound_ctrl/countDelay_reg[0]        |                1 |              1 |
+|  dclk                          | mp3/oXRESET_i_1_n_0                | sound_ctrl/countDelay_reg[0]        |                1 |              1 |
 |  iClk_IBUF_BUFG                | speed_ctrl/speed_reg[3]_i_1_n_0    |                                     |                3 |              4 |
 |  dclk                          |                                    |                                     |                2 |              6 |
 |  game/VGA_Disp/divider/CLK     | game/VGA_Disp/oRed[2]_i_1_n_0      |                                     |                4 |              8 |

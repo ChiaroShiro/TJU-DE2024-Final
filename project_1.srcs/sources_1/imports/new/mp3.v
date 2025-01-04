@@ -1,17 +1,16 @@
 `timescale 1ns / 1ps
 
-`define DL #0.5
-module Top_module_of_mp3(
+module MP3_control(
 	input           iClk,
 	input           iRst,
 	input [7:0]     iVol,
-	input [1:0]     iMusicSel,
-	input           iPortDREQ,
-	output reg      oPortXDCS,
-	output reg      oPortXCS,
-	output reg      oPortSI,
-	output reg      oPortSCLK,
-	output reg      oPortXRESET
+	input [1:0]     iSelect,
+	input           iDREQ,
+	output reg      oXDCS,
+	output reg      oXCS,
+	output reg      oSI,
+	output reg      oSCLK,
+	output reg      oXRESET
 );
 //-----------------------------------------------------------------------------
 // Definition of Parameters
@@ -43,121 +42,121 @@ reg  [1:0]      cur;
 //-----------------------------------------------------------------------------
 // Process
 //-----------------------------------------------------------------------------
-assign data = (iMusicSel == 2'b00) ? romOut[0] :
-                     (iMusicSel == 2'b01) ? romOut[1] :
-                     (iMusicSel == 2'b10) ? romOut[2] :
-                     romOut[3];
+assign data = (iSelect == 2'b00) ? romOut[0] :
+              (iSelect == 2'b01) ? romOut[1] :
+              (iSelect == 2'b10) ? romOut[2] :
+               romOut[3];
 // MP3Ä£¿éµÄ×´Ì¬»ú
 always @(posedge dclk) begin
 	if(iRst) begin
-		oPortXRESET <= `DL 1'b0;
-		oPortXCS <= `DL 1'b1;
-		oPortXDCS <= `DL 1'b1;
-		oPortSI <= `DL 1'b1;
-		countDelay <= `DL 0;
-		romAddr <= `DL 0;
-		status <= `DL STATUS_WAIT;
-		volumn <= `DL iVol;
-		cur <= `DL iMusicSel;
+		oXRESET <= 1'b0;
+		oXCS <= 1'b1;
+		oXDCS <= 1'b1;
+		oSI <= 1'b1;
+		countDelay <= 0;
+		romAddr <= 0;
+		status <= STATUS_WAIT;
+		volumn <= iVol;
+		cur <= iSelect;
 	end
-	else if(cur != iMusicSel) begin
-		oPortXRESET <= `DL 1'b0;
-		oPortXCS <= `DL 1'b1;
-		oPortXDCS <= `DL 1'b1;
-		oPortSI <= `DL 1'b1;
-		countDelay <= `DL 0;
-		romAddr <= `DL 0;
-		status <= `DL STATUS_WAIT;
-		volumn <= `DL iVol;
-		cur <= `DL iMusicSel;
+	else if(cur != iSelect) begin
+		oXRESET <= 1'b0;
+		oXCS <= 1'b1;
+		oXDCS <= 1'b1;
+		oSI <= 1'b1;
+		countDelay <= 0;
+		romAddr <= 0;
+		status <= STATUS_WAIT;
+		volumn <= iVol;
+		cur <= iSelect;
 	end
 	else begin
 		case(status)
 			STATUS_WAIT:begin       // Waiting time delay
-				oPortSCLK <= `DL 0;
+				oSCLK <= 0;
 				if(countDelay==MAX_DELAY) begin
-					status <= `DL STATUS_RESETH;
-					countcmd <= `DL 0;
-					oPortXRESET <= `DL 1'b1;
-					countDelay <= `DL 0;
+					status <= STATUS_RESETH;
+					countcmd <= 0;
+					oXRESET <= 1'b1;
+					countDelay <= 0;
 				end
 				else
-					countDelay <= `DL countDelay+1;
+					countDelay <= countDelay+1;
 			end
 			STATUS_RESETH:begin       // hardware reset
-				countcmd <= `DL 0;
-				oPortXCS <= `DL 1'b1;
-				status <= `DL STATUS_RESETS;
-				cmdSci <= `DL 32'h02000804;
-				oPortSCLK <= `DL 1'b0;
+				countcmd <= 0;
+				oXCS <= 1'b1;
+				status <= STATUS_RESETS;
+				cmdSci <= 32'h02000804;
+				oSCLK <= 1'b0;
 			end
 			STATUS_RESETS:begin       // software reset
-				if(iPortDREQ) begin
-					if(oPortSCLK) begin
+				if(iDREQ) begin
+					if(oSCLK) begin
 						if(countcmd >= 32) begin
-							countcmd <= `DL 0;
-							oPortXCS <= `DL 1'b1;
-							status <= `DL STATUS_VOLUMN;
-							cmdSci <= `DL {16'h020b, iVol, iVol};
+							countcmd <= 0;
+							oXCS <= 1'b1;
+							status <= STATUS_VOLUMN;
+							cmdSci <= {16'h020b, iVol, iVol};
 						end
 						else begin
-							oPortXCS <= `DL 1'b0;
-							oPortSI <= `DL cmdSci[31];
-							cmdSci <= `DL {cmdSci[30:0], cmdSci[31]};
-							countcmd <= `DL countcmd + 1'b1;
+							oXCS <= 1'b0;
+							oSI <= cmdSci[31];
+							cmdSci <= {cmdSci[30:0], cmdSci[31]};
+							countcmd <= countcmd + 1'b1;
 						end
 					end
 				end
-				oPortSCLK <= `DL ~oPortSCLK;
+				oSCLK <= ~oSCLK;
 			end
 			STATUS_VOLUMN:begin       // MP3 volume Settings
-				if(iPortDREQ) begin
-					if(oPortSCLK) begin
+				if(iDREQ) begin
+					if(oSCLK) begin
 						if(countcmd >= 32) begin
-							countcmd <= `DL 0;
-							oPortXCS <= `DL 1'b1;
-							status <= `DL STATUS_LOAD;
+							countcmd <= 0;
+							oXCS <= 1'b1;
+							status <= STATUS_LOAD;
 						end
 						else begin
-							oPortXCS <= `DL 0;
-							oPortSI <= `DL cmdSci[31] ;
-							cmdSci <= `DL {cmdSci[30:0], cmdSci[31]};
-							countcmd <= `DL countcmd + 1'b1;
+							oXCS <= 0;
+							oSI <= cmdSci[31] ;
+							cmdSci <= {cmdSci[30:0], cmdSci[31]};
+							countcmd <= countcmd + 1'b1;
 						end
 					end
 				end
-				oPortSCLK <= `DL ~oPortSCLK;
+				oSCLK <= ~oSCLK;
 			end
 			STATUS_LOAD:begin     // Loading MP3 data
 				if(volumn != iVol) begin
-					volumn <= `DL iVol;
-					countcmd <= `DL 0;
-					status <= `DL STATUS_VOLUMN;
-					cmdSci <= `DL {16'h020b, iVol, iVol};
-					oPortXCS <= `DL 1'b1;
+					volumn <= iVol;
+					countcmd <= 0;
+					status <= STATUS_VOLUMN;
+					cmdSci <= {16'h020b, iVol, iVol};
+					oXCS <= 1'b1;
 				end
-				else if(iPortDREQ) begin
-					oPortSCLK <= `DL 0;
-					status <= `DL STATUS_PLAY;
-					buff <= `DL data;
-					countData <= `DL 0;
+				else if(iDREQ) begin
+					oSCLK <= 0;
+					status <= STATUS_PLAY;
+					buff <= data;
+					countData <= 0;
 				end
 			end
 			STATUS_PLAY:begin          // Transfer and play MP3 data
-				if(oPortSCLK) begin
+				if(oSCLK) begin
 					if(countData >=16) begin
-						oPortXDCS <= `DL 1'b1;
-						romAddr <= `DL romAddr + 1'b1;
-						status <= `DL STATUS_LOAD;
+						oXDCS <= 1'b1;
+						romAddr <= romAddr + 1'b1;
+						status <= STATUS_LOAD;
 					end
 					else begin
-						oPortXDCS <= `DL 1'b0;
-						oPortSI <= `DL buff[15];
-						buff <= `DL {buff[14:0], buff[15]};
-						countData <= `DL countData + 1;
+						oXDCS <= 1'b0;
+						oSI <= buff[15];
+						buff <= {buff[14:0], buff[15]};
+						countData <= countData + 1;
 					end
 				end
-				oPortSCLK <= `DL ~oPortSCLK;
+				oSCLK <= ~oSCLK;
 			end
 		endcase
 	end
@@ -181,9 +180,9 @@ module Divider #(parameter Time=20) (
 	always @(posedge iClk)
 	begin
 		if((counter + 1) == Time / 2) begin
-			counter <= `DL 0;
-			oClk <= `DL ~oClk;
+			counter <= 0;
+			oClk <= ~oClk;
 		end
-		else counter <= `DL counter+1;
+		else counter <= counter+1;
 	end
 endmodule

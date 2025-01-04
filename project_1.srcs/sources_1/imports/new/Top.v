@@ -83,16 +83,16 @@ module Top(
 		.oGamePause		(game_pause)
 	);
 	
-	Top_module_of_mp3 mp3(
+	MP3_control mp3(
 		.iClk           (iClk),
 		.iRst           (!mp3_rst),
 		.iVol           (8'd0),
-		.iMusicSel      (mp3_select),
-		.iPortDREQ      (port_vs1003b_dreq),
-		.oPortXDCS      (port_vs1003b_xdcs),
-		.oPortXCS       (port_vs1003b_xcs),
-		.oPortSI        (port_vs1003b_si),
-		.oPortSCLK      (port_vs1003b_sclk),
-		.oPortXRESET    (port_vs1003b_xreset)
+		.iSelect        (mp3_select),
+		.iDREQ          (port_vs1003b_dreq),
+		.oXDCS          (port_vs1003b_xdcs),
+		.oXCS           (port_vs1003b_xcs),
+		.oSI            (port_vs1003b_si),
+		.oSCLK          (port_vs1003b_sclk),
+		.oXRESET        (port_vs1003b_xreset)
 	);
 endmodule
