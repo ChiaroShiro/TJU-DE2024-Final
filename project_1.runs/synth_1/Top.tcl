@@ -30,6 +30,7 @@ set_property used_in_implementation false [get_files e:/work/tju/DE/Final/ball/p
 add_files -quiet e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/ip/music_crash/music_crash.dcp
 set_property used_in_implementation false [get_files e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/ip/music_crash/music_crash.dcp]
 read_verilog -library xil_defaultlib {
+  E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/divider.v
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v

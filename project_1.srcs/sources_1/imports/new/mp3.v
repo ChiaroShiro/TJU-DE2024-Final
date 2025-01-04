@@ -171,18 +171,3 @@ music_get music_2 (.clka(iClk), .addra(romAddr), .douta(romOut[2]));
 music_crash music_3 (.clka(iClk), .addra(romAddr), .douta(romOut[3]));
 endmodule
 //
-module Divider #(parameter Time=20) (
-	input iClk,
-	output reg oClk
-);
-	integer counter=0;
-	initial oClk = 0;
-	always @(posedge iClk)
-	begin
-		if((counter + 1) == Time / 2) begin
-			counter <= 0;
-			oClk <= ~oClk;
-		end
-		else counter <= counter+1;
-	end
-endmodule

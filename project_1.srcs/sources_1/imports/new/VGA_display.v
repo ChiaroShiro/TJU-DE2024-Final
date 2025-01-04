@@ -1,21 +1,5 @@
 `timescale 1ns / 1ps
 
-// 分频器模块
-module clk_divider(
-    input iClk,
-    output reg clk_25M
-);
-    reg clk_50M = 0;
-    
-    // 生成50MHz时钟信号
-    always @(posedge iClk)
-        clk_50M <= ~clk_50M;
-    
-    // 生成25MHz时钟信号 
-    always @(posedge clk_50M)
-        clk_25M <= ~clk_25M;
-endmodule
-
 module VGA_display(
     input iClk,
     input iPause,
@@ -97,7 +81,7 @@ module VGA_display(
 		pau <= ~pau;
 	
 	// 实例化分频器
-	clk_divider divider(
+	divider4Times divider(
 	    .iClk(iClk),
 	    .clk_25M(clk_25M)
 	);
