@@ -34,6 +34,8 @@ read_verilog -library xil_defaultlib {
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Game.v
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v
+  E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/sound_control.v
+  E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/speed_control.v
   E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v
 }
 foreach dcp [get_files -quiet -all *.dcp] {
