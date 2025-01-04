@@ -13,12 +13,6 @@ module MP3_control(
 	output reg oXRESET
 );
 	parameter MAX_DELAY = 16600;
-	parameter STATUS_WAIT = 4'd0;
-	parameter STATUS_RESETH = 4'd1;
-	parameter STATUS_RESETS = 4'd2;
-	parameter STATUS_VOLUMN = 4'd3;
-	parameter STATUS_LOAD = 4'd4;
-	parameter STATUS_PLAY = 4'd5;
 
 	integer countDelay;
 	integer countcmd;
@@ -46,15 +40,15 @@ module MP3_control(
 			oSI        <= 1'b1;
 			countDelay <= 0;
 			romAddr    <= 0;
-			status     <= STATUS_WAIT;
+			status     <= 0;
 			volumn     <= iVol;
 			cur        <= iSelect;
 		end
 		else begin
-			if(status == STATUS_WAIT) begin
+			if(status == 0) begin
 				oSCLK <= 0;
 				if(countDelay == MAX_DELAY) begin
-					status     <= STATUS_RESETH;
+					status     <= 1;
 					countcmd   <= 0;
 					oXRESET    <= 1'b1;
 					countDelay <= 0;
@@ -62,19 +56,19 @@ module MP3_control(
 				else
 					countDelay <= countDelay + 1;
 			end
-			else if(status == STATUS_RESETH) begin
+			else if(status == 1) begin
 				countcmd <= 0;
 				oXCS     <= 1'b1;
-				status   <= STATUS_RESETS;
+				status   <= 2;
 				cmdSci   <= 32'h02000804;
 				oSCLK    <= 1'b0;
 			end
-			else if(status == STATUS_RESETS) begin
+			else if(status == 2) begin
 				if(iDREQ && oSCLK) begin
 					if(countcmd >= 32) begin
 						countcmd <= 0;
 						oXCS     <= 1'b1;
-						status   <= STATUS_VOLUMN;
+						status   <= 3;
 						cmdSci   <= {16'h020b, iVol, iVol};
 					end
 					else begin
@@ -86,12 +80,12 @@ module MP3_control(
 				end
 				oSCLK <= ~oSCLK;
 			end
-			else if(status == STATUS_VOLUMN) begin
+			else if(status == 3) begin
 				if(iDREQ && oSCLK) begin
 					if(countcmd >= 32) begin
 						countcmd <= 0;
 						oXCS     <= 1'b1;
-						status   <= STATUS_LOAD;
+						status   <= 4;
 					end
 					else begin
 						oXCS     <= 0;
@@ -102,27 +96,27 @@ module MP3_control(
 				end
 				oSCLK <= ~oSCLK;
 			end
-			else if(status == STATUS_LOAD) begin
+			else if(status == 4) begin
 				if(volumn != iVol) begin
 					volumn   <= iVol;
 					countcmd <= 0;
-					status   <= STATUS_VOLUMN;
+					status   <= 3;
 					cmdSci   <= {16'h020b, iVol, iVol};
 					oXCS     <= 1'b1;
 				end
 				else if(iDREQ) begin
 					oSCLK     <= 0;
-					status    <= STATUS_PLAY;
+					status    <= 5;
 					buff      <= data;
 					countData <= 0;
 				end
 			end
-			else if(status == STATUS_PLAY) begin
+			else if(status == 5) begin
 				if(oSCLK) begin
 					if(countData >=16) begin
 						oXDCS   <= 1'b1;
 						romAddr <= romAddr + 1'b1;
-						status  <= STATUS_LOAD;
+						status  <= 4;
 					end
 					else begin
 						oXDCS     <= 1'b0;

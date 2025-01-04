@@ -1,0 +1,5 @@
+Vivado Simulator 2016.2
+Time resolution is 1 ps
+Time=0 pause=0
+Time=100000 pause=1
+Time=150000 pause=0
