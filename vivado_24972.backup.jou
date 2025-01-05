@@ -1,0 +1,83 @@
+#-----------------------------------------------------------
+# Vivado v2016.2 (64-bit)
+# SW Build 1577090 on Thu Jun  2 16:32:40 MDT 2016
+# IP Build 1577682 on Fri Jun  3 12:00:54 MDT 2016
+# Start of session at: Sun Jan 05 15:19:08 2025
+# Process ID: 24972
+# Current directory: E:/work/tju/DE/Final/ball/project_1
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9980 E:\work\tju\DE\Final\ball\project_1\project_1.xpr
+# Log file: E:/work/tju/DE/Final/ball/project_1/vivado.log
+# Journal file: E:/work/tju/DE/Final/ball/project_1\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project E:/work/tju/DE/Final/ball/project_1/project_1.xpr
+update_compile_order -fileset sources_1
+reset_run music_win_synth_1
+launch_runs music_win_synth_1
+wait_on_run music_win_synth_1
+synth_design -rtl -name rtl_1
+write_schematic E:/work/tju/DE/Final/ball/project_1/schematic_top.sch
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+close_design
+open_run synth_1 -name synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+close_design
+synth_design -rtl -name rtl_1
+write_schematic -format pdf -orientation portrait E:/work/tju/DE/Final/ball/project_1/schematic_all.pdf
+update_compile_order -fileset sources_1
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+open_hw
+connect_hw_server
+open_hw_target
+set_property PROGRAM.FILE {E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+current_hw_device [lindex [get_hw_devices] 0]
+refresh_hw_device -update_hw_probes false [lindex [get_hw_devices] 0]
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+refresh_design
+update_compile_order -fileset sources_1
+remove_files E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v
+file delete -force E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v
+reset_run synth_1
+launch_runs synth_1 -jobs 10
+wait_on_run synth_1
+launch_runs impl_1 -jobs 10
+wait_on_run impl_1
+launch_runs impl_1 -to_step write_bitstream -jobs 10
+wait_on_run impl_1
+refresh_design
+set_property PROBES.FILE {} [lindex [get_hw_devices] 0]
+set_property PROGRAM.FILE {E:/work/tju/DE/Final/ball/project_1/project_1.runs/impl_1/Top.bit} [lindex [get_hw_devices] 0]
+program_hw_devices [lindex [get_hw_devices] 0]
+refresh_hw_device [lindex [get_hw_devices] 0]
+write_schematic -format pdf -orientation portrait E:/work/tju/DE/Final/ball/project_1/schematic.pdf
+update_compile_order -fileset sim_1
+update_compile_order -fileset sim_1
+launch_simulation
+source Top_tb.tcl
+set_property target_simulator ModelSim [current_project]
+close_sim
+launch_simulation -install_path F:/Program/ModelSim/win32pe
+set_property target_simulator XSim [current_project]
+launch_simulation
+source Top_tb.tcl
+close_sim
+launch_simulation
+source Top_tb.tcl
+close_sim
+launch_simulation
+source Top_tb.tcl
+close_sim

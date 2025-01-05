@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="music_win_synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1736061576">
-  <File Type="RDS-PROPCONSTRS" Name="music_win_drc_synth.rpt"/>
   <File Type="PA-TCL" Name="music_win.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="music_win_drc_synth.rpt"/>
   <File Type="RDS-RDS" Name="music_win.vds"/>
   <File Type="RDS-UTIL" Name="music_win_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="music_win_utilization_synth.pb"/>

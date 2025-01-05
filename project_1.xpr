@@ -16,7 +16,6 @@
     <Option Name="CompiledLibDirVCS" Val="$PCACHEDIR/compile_simlib/vcs"/>
     <Option Name="CompiledLibDirRiviera" Val="$PCACHEDIR/compile_simlib/riviera"/>
     <Option Name="CompiledLibDirActivehdl" Val="$PCACHEDIR/compile_simlib/activehdl"/>
-    <Option Name="SimulatorLanguage" Val="Verilog"/>
     <Option Name="BoardPart" Val=""/>
     <Option Name="ActiveSimSet" Val="sim_1"/>
     <Option Name="DefaultLib" Val="xil_defaultlib"/>
@@ -26,8 +25,8 @@
     <Option Name="IPUserFilesDir" Val="$PPRDIR/project_1.ip_user_files"/>
     <Option Name="IPStaticSourceDir" Val="$PPRDIR/project_1.ip_user_files/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="21"/>
-    <Option Name="WTModelSimLaunchSim" Val="6"/>
+    <Option Name="WTXSimLaunchSim" Val="42"/>
+    <Option Name="WTModelSimLaunchSim" Val="7"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
     <Option Name="WTVcsLaunchSim" Val="0"/>
@@ -162,6 +161,24 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="music_win.xci" FileRelPathName="e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/win.coe"/>
+        <CompFileExtendedInfo CompFileName="music_win.xci" FileRelPathName="music_win.xml"/>
+        <CompFileExtendedInfo CompFileName="music_win.xci" FileRelPathName="music_win_sim_netlist.vhdl"/>
+        <CompFileExtendedInfo CompFileName="music_win.xci" FileRelPathName="blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3.vhd"/>
+        <CompFileExtendedInfo CompFileName="music_win.xci" FileRelPathName="blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3_vhsyn_rfs.vhd"/>
+        <CompFileExtendedInfo CompFileName="music_win.xci" FileRelPathName="music_win_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="music_win.xci" FileRelPathName="blk_mem_gen_v8_3_3/simulation/blk_mem_gen_v8_3.v"/>
+        <CompFileExtendedInfo CompFileName="music_win.xci" FileRelPathName="music_win_sim_netlist.v"/>
+        <CompFileExtendedInfo CompFileName="music_win.xci" FileRelPathName="music_win_stub.v"/>
+        <CompFileExtendedInfo CompFileName="music_win.xci" FileRelPathName="music_win.mif"/>
+        <CompFileExtendedInfo CompFileName="music_win.xci" FileRelPathName="summary.log"/>
+        <CompFileExtendedInfo CompFileName="music_win.xci" FileRelPathName="music_win.vho"/>
+        <CompFileExtendedInfo CompFileName="music_win.xci" FileRelPathName="misc/blk_mem_gen_v8_3.vhd"/>
+        <CompFileExtendedInfo CompFileName="music_win.xci" FileRelPathName="sim/music_win.v"/>
+        <CompFileExtendedInfo CompFileName="music_win.xci" FileRelPathName="music_win_stub.vhdl"/>
+        <CompFileExtendedInfo CompFileName="music_win.xci" FileRelPathName="doc/blk_mem_gen_v8_3_changelog.txt"/>
+        <CompFileExtendedInfo CompFileName="music_win.xci" FileRelPathName="music_win.veo"/>
+        <CompFileExtendedInfo CompFileName="music_win.xci" FileRelPathName="synth/music_win.vhd"/>
       </File>
       <Config>
         <Option Name="TopModule" Val="music_win"/>
@@ -175,6 +192,24 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="music_lose.xci" FileRelPathName="music_lose.xml"/>
+        <CompFileExtendedInfo CompFileName="music_lose.xci" FileRelPathName="e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/lose.coe"/>
+        <CompFileExtendedInfo CompFileName="music_lose.xci" FileRelPathName="synth/music_lose.vhd"/>
+        <CompFileExtendedInfo CompFileName="music_lose.xci" FileRelPathName="blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3.vhd"/>
+        <CompFileExtendedInfo CompFileName="music_lose.xci" FileRelPathName="blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3_vhsyn_rfs.vhd"/>
+        <CompFileExtendedInfo CompFileName="music_lose.xci" FileRelPathName="music_lose_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="music_lose.xci" FileRelPathName="music_lose_sim_netlist.vhdl"/>
+        <CompFileExtendedInfo CompFileName="music_lose.xci" FileRelPathName="music_lose_sim_netlist.v"/>
+        <CompFileExtendedInfo CompFileName="music_lose.xci" FileRelPathName="music_lose_stub.vhdl"/>
+        <CompFileExtendedInfo CompFileName="music_lose.xci" FileRelPathName="summary.log"/>
+        <CompFileExtendedInfo CompFileName="music_lose.xci" FileRelPathName="music_lose.mif"/>
+        <CompFileExtendedInfo CompFileName="music_lose.xci" FileRelPathName="music_lose.veo"/>
+        <CompFileExtendedInfo CompFileName="music_lose.xci" FileRelPathName="misc/blk_mem_gen_v8_3.vhd"/>
+        <CompFileExtendedInfo CompFileName="music_lose.xci" FileRelPathName="music_lose_stub.v"/>
+        <CompFileExtendedInfo CompFileName="music_lose.xci" FileRelPathName="sim/music_lose.v"/>
+        <CompFileExtendedInfo CompFileName="music_lose.xci" FileRelPathName="blk_mem_gen_v8_3_3/simulation/blk_mem_gen_v8_3.v"/>
+        <CompFileExtendedInfo CompFileName="music_lose.xci" FileRelPathName="music_lose.vho"/>
+        <CompFileExtendedInfo CompFileName="music_lose.xci" FileRelPathName="doc/blk_mem_gen_v8_3_changelog.txt"/>
       </File>
       <Config>
         <Option Name="TopModule" Val="music_lose"/>
@@ -188,6 +223,24 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="music_get.xci" FileRelPathName="music_get.xml"/>
+        <CompFileExtendedInfo CompFileName="music_get.xci" FileRelPathName="e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/get.coe"/>
+        <CompFileExtendedInfo CompFileName="music_get.xci" FileRelPathName="blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3.vhd"/>
+        <CompFileExtendedInfo CompFileName="music_get.xci" FileRelPathName="blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3_vhsyn_rfs.vhd"/>
+        <CompFileExtendedInfo CompFileName="music_get.xci" FileRelPathName="music_get_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="music_get.xci" FileRelPathName="music_get_sim_netlist.v"/>
+        <CompFileExtendedInfo CompFileName="music_get.xci" FileRelPathName="music_get_stub.vhdl"/>
+        <CompFileExtendedInfo CompFileName="music_get.xci" FileRelPathName="synth/music_get.vhd"/>
+        <CompFileExtendedInfo CompFileName="music_get.xci" FileRelPathName="sim/music_get.v"/>
+        <CompFileExtendedInfo CompFileName="music_get.xci" FileRelPathName="music_get.mif"/>
+        <CompFileExtendedInfo CompFileName="music_get.xci" FileRelPathName="music_get_sim_netlist.vhdl"/>
+        <CompFileExtendedInfo CompFileName="music_get.xci" FileRelPathName="music_get_stub.v"/>
+        <CompFileExtendedInfo CompFileName="music_get.xci" FileRelPathName="music_get.vho"/>
+        <CompFileExtendedInfo CompFileName="music_get.xci" FileRelPathName="misc/blk_mem_gen_v8_3.vhd"/>
+        <CompFileExtendedInfo CompFileName="music_get.xci" FileRelPathName="blk_mem_gen_v8_3_3/simulation/blk_mem_gen_v8_3.v"/>
+        <CompFileExtendedInfo CompFileName="music_get.xci" FileRelPathName="summary.log"/>
+        <CompFileExtendedInfo CompFileName="music_get.xci" FileRelPathName="doc/blk_mem_gen_v8_3_changelog.txt"/>
+        <CompFileExtendedInfo CompFileName="music_get.xci" FileRelPathName="music_get.veo"/>
       </File>
       <Config>
         <Option Name="TopModule" Val="music_get"/>
@@ -201,6 +254,24 @@
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
+        <CompFileExtendedInfo CompFileName="music_crash.xci" FileRelPathName="music_crash.vho"/>
+        <CompFileExtendedInfo CompFileName="music_crash.xci" FileRelPathName="music_crash_sim_netlist.v"/>
+        <CompFileExtendedInfo CompFileName="music_crash.xci" FileRelPathName="music_crash_stub.v"/>
+        <CompFileExtendedInfo CompFileName="music_crash.xci" FileRelPathName="music_crash.mif"/>
+        <CompFileExtendedInfo CompFileName="music_crash.xci" FileRelPathName="blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3.vhd"/>
+        <CompFileExtendedInfo CompFileName="music_crash.xci" FileRelPathName="misc/blk_mem_gen_v8_3.vhd"/>
+        <CompFileExtendedInfo CompFileName="music_crash.xci" FileRelPathName="summary.log"/>
+        <CompFileExtendedInfo CompFileName="music_crash.xci" FileRelPathName="synth/music_crash.vhd"/>
+        <CompFileExtendedInfo CompFileName="music_crash.xci" FileRelPathName="music_crash_sim_netlist.vhdl"/>
+        <CompFileExtendedInfo CompFileName="music_crash.xci" FileRelPathName="music_crash_stub.vhdl"/>
+        <CompFileExtendedInfo CompFileName="music_crash.xci" FileRelPathName="blk_mem_gen_v8_3_3/hdl/blk_mem_gen_v8_3_vhsyn_rfs.vhd"/>
+        <CompFileExtendedInfo CompFileName="music_crash.xci" FileRelPathName="music_crash_ooc.xdc"/>
+        <CompFileExtendedInfo CompFileName="music_crash.xci" FileRelPathName="sim/music_crash.v"/>
+        <CompFileExtendedInfo CompFileName="music_crash.xci" FileRelPathName="blk_mem_gen_v8_3_3/simulation/blk_mem_gen_v8_3.v"/>
+        <CompFileExtendedInfo CompFileName="music_crash.xci" FileRelPathName="music_crash.veo"/>
+        <CompFileExtendedInfo CompFileName="music_crash.xci" FileRelPathName="doc/blk_mem_gen_v8_3_changelog.txt"/>
+        <CompFileExtendedInfo CompFileName="music_crash.xci" FileRelPathName="e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/crash.coe"/>
+        <CompFileExtendedInfo CompFileName="music_crash.xci" FileRelPathName="music_crash.xml"/>
       </File>
       <Config>
         <Option Name="TopModule" Val="music_crash"/>
