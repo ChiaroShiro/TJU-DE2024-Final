@@ -1,7 +1,7 @@
 Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
-| Date         : Sun Jan 05 15:27:26 2025
+| Date         : Sun Jan 05 17:35:10 2025
 | Host         : Chiaro running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file Top_control_sets_placed.rpt
 | Design       : Top
@@ -36,7 +36,7 @@ Table of Contents
 | No           | No                    | No                     |              70 |           42 |
 | No           | No                    | Yes                    |               0 |            0 |
 | No           | Yes                   | No                     |              32 |            8 |
-| Yes          | No                    | No                     |              71 |           32 |
+| Yes          | No                    | No                     |              71 |           25 |
 | Yes          | No                    | Yes                    |               0 |            0 |
 | Yes          | Yes                   | No                     |             180 |           55 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
@@ -45,34 +45,34 @@ Table of Contents
 3. Detailed Control Set Information
 -----------------------------------
 
-+--------------------------------+------------------------------------+-------------------------------------+------------------+----------------+
-|          Clock Signal          |            Enable Signal           |           Set/Reset Signal          | Slice Load Count | Bel Load Count |
-+--------------------------------+------------------------------------+-------------------------------------+------------------+----------------+
-|  game/VGA_Disp/divider/CLK     | game/VGA_Disp/oHSync               | game/VGA_Disp/oHSync_i_1_n_0        |                1 |              1 |
-|  game/VGA_Disp/divider/clk_50M |                                    |                                     |                1 |              1 |
-|  sound_ctrl/pause              |                                    |                                     |                1 |              1 |
-|  dclk                          | mp3/oSI_i_1_n_0                    | sound_ctrl/oSI_reg                  |                1 |              1 |
-|  dclk                          | mp3/oXCS_i_1_n_0                   |                                     |                1 |              1 |
-|  dclk                          | mp3/oXDCS_i_1_n_0                  | sound_ctrl/oSI_reg                  |                1 |              1 |
-|  dclk                          | mp3/oXRESET_i_1_n_0                | sound_ctrl/oSI_reg                  |                1 |              1 |
-|  iClk_IBUF_BUFG                | speed_ctrl/speed_reg[3]_i_1_n_0    |                                     |                3 |              4 |
-|  game/VGA_Disp/divider/CLK     | game/VGA_Disp/oRed[2]_i_1_n_0      |                                     |                6 |              8 |
-|  game/VGA_Disp/divider/CLK     | game/VGA_Disp/VCount[9]_i_1_n_0    |                                     |                5 |             10 |
-|  game/VGA_Disp/divider/CLK     |                                    |                                     |                5 |             11 |
-|  dclk                          |                                    |                                     |                7 |             12 |
-|  dclk                          | mp3/cmdSci[31]_i_2_n_0             | mp3/cmdSci[31]_i_1_n_0              |                3 |             12 |
-|  dclk                          | mp3/romAddr[0]_i_1_n_0             | sound_ctrl/oSI_reg                  |                4 |             13 |
-|  dclk                          | mp3/cmdSci[31]_i_2_n_0             | mp3/cmdSci[15]_i_1_n_0              |                5 |             14 |
-|  dclk                          | mp3/buff[15]_i_1_n_0               |                                     |                9 |             16 |
-|  iClk_IBUF_BUFG                |                                    |                                     |               15 |             20 |
-|  oVSync_OBUF_BUFG              | game/VGA_Disp/right_pos[9]_i_1_n_0 | game/VGA_Disp/ball_y_pos[9]_i_1_n_0 |                6 |             20 |
-|  oVSync_OBUF_BUFG              | game/VGA_Disp/pau_i_1_n_0          | game/VGA_Disp/ball_y_pos[9]_i_1_n_0 |                7 |             21 |
-| ~oVSync_OBUF_BUFG              |                                    |                                     |               13 |             25 |
-|  dclk                          | mp3/countData[0]_i_2_n_0           | mp3/countData[0]_i_1_n_0            |                8 |             32 |
-|  dclk                          | mp3/countDelay                     | sound_ctrl/oSI_reg                  |                8 |             32 |
-|  dclk                          | mp3/countcmd[31]_i_2_n_0           | mp3/countcmd[31]_i_1_n_0            |               10 |             32 |
-|  iClk_IBUF_BUFG                |                                    | mp3/div/clear                       |                8 |             32 |
-|  iClk_IBUF_BUFG                | sound_ctrl/rst_counter             |                                     |                8 |             32 |
-+--------------------------------+------------------------------------+-------------------------------------+------------------+----------------+
++-----------------------+---------------------------------+----------------------------+------------------+----------------+
+|      Clock Signal     |          Enable Signal          |      Set/Reset Signal      | Slice Load Count | Bel Load Count |
++-----------------------+---------------------------------+----------------------------+------------------+----------------+
+|  game/divider/CLK     | game/oHSync_i_2_n_0             | game/oHSync_i_1_n_0        |                1 |              1 |
+|  game/divider/clk_50M |                                 |                            |                1 |              1 |
+|  sound_ctrl/pause     |                                 |                            |                1 |              1 |
+|  dclk                 | mp3/oSI_i_1_n_0                 | sound_ctrl/oSI_reg         |                1 |              1 |
+|  dclk                 | mp3/oXCS_i_1_n_0                |                            |                1 |              1 |
+|  dclk                 | mp3/oXDCS_i_1_n_0               | sound_ctrl/oSI_reg         |                1 |              1 |
+|  dclk                 | mp3/oXRESET_i_1_n_0             | sound_ctrl/oSI_reg         |                1 |              1 |
+|  iClk_IBUF_BUFG       | speed_ctrl/speed_reg[3]_i_1_n_0 |                            |                1 |              4 |
+|  game/divider/CLK     | game/oRed[2]_i_1_n_0            |                            |                5 |              8 |
+|  game/divider/CLK     | game/VCount[9]_i_1_n_0          |                            |                4 |             10 |
+|  game/divider/CLK     |                                 |                            |                5 |             11 |
+|  dclk                 |                                 |                            |                7 |             12 |
+|  dclk                 | mp3/cmdSci[31]_i_2_n_0          | mp3/cmdSci[31]_i_1_n_0     |                3 |             12 |
+|  dclk                 | mp3/romAddr[0]_i_1_n_0          | sound_ctrl/oSI_reg         |                4 |             13 |
+|  dclk                 | mp3/cmdSci[31]_i_2_n_0          | mp3/cmdSci[15]_i_1_n_0     |                6 |             14 |
+|  dclk                 | mp3/buff[15]_i_1_n_0            |                            |                6 |             16 |
+|  iClk_IBUF_BUFG       |                                 |                            |               11 |             20 |
+|  oVSync_OBUF_BUFG     | game/right_pos[9]_i_1_n_0       | game/ball_y_pos[9]_i_1_n_0 |                6 |             20 |
+|  oVSync_OBUF_BUFG     | game/pau_i_1_n_0                | game/ball_y_pos[9]_i_1_n_0 |                7 |             21 |
+| ~oVSync_OBUF_BUFG     |                                 |                            |               17 |             25 |
+|  dclk                 | mp3/countData[0]_i_2_n_0        | mp3/countData[0]_i_1_n_0   |                8 |             32 |
+|  dclk                 | mp3/countDelay                  | sound_ctrl/oSI_reg         |                8 |             32 |
+|  dclk                 | mp3/countcmd[31]_i_2_n_0        | mp3/countcmd[31]_i_1_n_0   |                9 |             32 |
+|  iClk_IBUF_BUFG       |                                 | mp3/div/clear              |                8 |             32 |
+|  iClk_IBUF_BUFG       | sound_ctrl/rst_counter          |                            |                8 |             32 |
++-----------------------+---------------------------------+----------------------------+------------------+----------------+
 
 

@@ -45,12 +45,11 @@ set rt::rc [catch {
       E:/work/tju/DE/Final/ball/project_1/.Xil/Vivado-24972-Chiaro/realtime/music_get_stub.v
       E:/work/tju/DE/Final/ball/project_1/.Xil/Vivado-24972-Chiaro/realtime/music_crash_stub.v
       E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/divider.v
-      E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/VGA_display.v
+      E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/game_control.v
       E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/mp3.v
       E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/display.v
       E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/sound_control.v
       E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/speed_control.v
-      E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/game_control.v
       E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/imports/new/Top.v
     }
       rt::read_vhdl -lib xpm F:/Program/Xilinx/Vivado/2016.2/data/ip/xpm/xpm_VCOMP.vhd
