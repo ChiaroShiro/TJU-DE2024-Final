@@ -1,10 +1,10 @@
 -- Copyright 1986-2016 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2016.2 (win64) Build 1577090 Thu Jun  2 16:32:40 MDT 2016
--- Date        : Sat Jan 04 18:06:15 2025
+-- Date        : Sun Jan 05 15:20:20 2025
 -- Host        : Chiaro running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub
---               e:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/ip/music_win/music_win_stub.vhdl
+--               E:/work/tju/DE/Final/ball/project_1/project_1.srcs/sources_1/ip/music_win/music_win_stub.vhdl
 -- Design      : music_win
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100tcsg324-1

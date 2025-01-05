@@ -22,12 +22,12 @@ module Top(
 	output oVSync, // VGA 垂直同步信号
 
 	// MP3 接口
-	input port_vs1003b_dreq,
-	output port_vs1003b_xdcs,
-	output port_vs1003b_xcs,
-	output port_vs1003b_si,
-	output port_vs1003b_sclk,
-	output port_vs1003b_xreset
+	input iMP3_dreq,
+	output oMP3_xdcs,
+	output oMP3_xcs,
+	output oMP3_si,
+	output oMP3_sclk,
+	output oMP3_xreset
 );
 
 	wire [3:0] display_data;
@@ -88,11 +88,11 @@ module Top(
 		.iRst           (!mp3_rst),
 		.iVol           (8'd0),
 		.iSelect        (mp3_select),
-		.iDREQ          (port_vs1003b_dreq),
-		.oXDCS          (port_vs1003b_xdcs),
-		.oXCS           (port_vs1003b_xcs),
-		.oSI            (port_vs1003b_si),
-		.oSCLK          (port_vs1003b_sclk),
-		.oXRESET        (port_vs1003b_xreset)
+		.iDREQ          (iMP3_dreq),
+		.oXDCS          (oMP3_xdcs),
+		.oXCS           (oMP3_xcs),
+		.oSI            (oMP3_si),
+		.oSCLK          (oMP3_sclk),
+		.oXRESET        (oMP3_xreset)
 	);
 endmodule
